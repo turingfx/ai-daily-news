@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Daily 每日AI快讯 - 2026年4月2日</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #a0a0b0;
+            margin-bottom: 20px;
+        }
+
+        .date-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.2);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .live-indicator {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Grid Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            padding: 24px 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .github-icon { background: linear-gradient(135deg, #333 0%, #24292e 100%); }
+        .twitter-icon { background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%); }
+        .news-icon { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .ai-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .card-subtitle {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .card-body {
+            padding: 0 24px 24px;
+        }
+
+        /* GitHub Trending */
+        .repo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .repo-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .repo-rank {
+            font-size: 24px;
+            font-weight: 700;
+            color: rgba(99, 102, 241, 0.5);
+            min-width: 30px;
+        }
+
+        .repo-info {
+            flex: 1;
+        }
+
+        .repo-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        .repo-name:hover {
+            text-decoration: underline;
+        }
+
+        .repo-desc {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .repo-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .repo-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .lang-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .stars-gain {
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        /* Twitter Topics */
+        .topic-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .topic-item:hover {
+            background: rgba(29, 161, 242, 0.1);
+            border-color: rgba(29, 161, 242, 0.3);
+        }
+
+        .topic-rank {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .rank-1 { background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%); color: #000; }
+        .rank-2 { background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%); color: #000; }
+        .rank-3 { background: linear-gradient(135deg, #cd7f32 0%, #b87333 100%); color: #fff; }
+        .rank-other { background: rgba(255, 255, 255, 0.1); color: #888; }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .topic-stats {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .trend-indicator {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            color: #10b981;
+        }
+
+        .trend-up::before {
+            content: '↗';
+        }
+
+        /* News Section */
+        .news-item {
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #f59e0b;
+            transition: all 0.2s ease;
+        }
+
+        .news-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .news-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .news-tag.breaking { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .news-tag.research { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
+        .news-tag.product { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+
+        .news-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .news-source {
+            font-size: 12px;
+            color: #6b7280;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* AI Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            background: rgba(16, 185, 129, 0.05);
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .tool-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .tool-category {
+            font-size: 11px;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .tool-desc {
+            font-size: 13px;
+            color: #9ca3af;
+            margin-bottom: 12px;
+        }
+
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #60a5fa;
+            text-decoration: none;
+            transition: gap 0.2s ease;
+        }
+
+        .tool-link:hover {
+            gap: 10px;
+        }
+
+        /* Full Width Section */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .update-time {
+            font-size: 12px;
+            color: #4b5563;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 36px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">AI Daily</h1>
+                <p class="subtitle">每日AI快讯 · 聚合GitHub热榜、AI话题与前沿资讯</p>
+                <div class="date-badge">
+                    <span class="live-indicator"></span>
+                    <span>2026年4月2日 星期三</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- GitHub Trending -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon github-icon">⚡</div>
+                    <div>
+                        <div class="card-title">GitHub 热榜</div>
+                        <div class="card-subtitle">今日最热门的开源项目</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="repo-item">
+                        <span class="repo-rank">1</span>
+                        <div class="repo-info">
+                            <div class="repo-name">anthropics/claude-code</div>
+                            <div class="repo-desc">Agentic coding tool that lives in your terminal, understands your codebase</div>
+                            <div class="repo-meta">
+                                <span><span class="lang-dot" style="background:#89e051;"></span>Shell</span>
+                                <span>⭐ 102,198</span>
+                                <span class="stars-gain">+10,749 today</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="repo-item">
+                        <span class="repo-rank">2</span>
+                        <div class="repo-info">
+                            <div class="repo-name">microsoft/VibeVoice</div>
+                            <div class="repo-desc">Open-Source Frontier Voice AI</div>
+                            <div class="repo-meta">
+                                <span><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
+                                <span>⭐ 34,591</span>
+                                <span class="stars-gain">+1,685 today</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="repo-item">
+                        <span class="repo-rank">3</span>
+                        <div class="repo-info">
+                            <div class="repo-name">luongnv89/claude-howto</div>
+                            <div class="repo-desc">Visual, example-driven guide to Claude Code</div>
+                            <div class="repo-meta">
+                                <span><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
+                                <span>⭐ 15,905</span>
+                                <span class="stars-gain">+3,301 today</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="repo-item">
+                        <span class="repo-rank">4</span>
+                        <div class="repo-info">
+                            <div class="repo-name">openai/codex</div>
+                            <div class="repo-desc">Lightweight coding agent that runs in your terminal</div>
+                            <div class="repo-meta">
+                                <span><span class="lang-dot" style="background:#dea584;"></span>Rust</span>
+                                <span>⭐ 71,957</span>
+                                <span class="stars-gain">+2,390 today</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="repo-item">
+                        <span class="repo-rank">5</span>
+                        <div class="repo-info">
+                            <div class="repo-name">google-research/timesfm</div>
+                            <div class="repo-desc">Pretrained time-series foundation model developed by Google Research</div>
+                            <div class="repo-meta">
+                                <span><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
+                                <span>⭐ 12,318</span>
+                                <span class="stars-gain">+380 today</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Twitter/X AI Topics -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon twitter-icon">𝕏</div>
+                    <div>
+                        <div class="card-title">X 热门话题</div>
+                        <div class="card-subtitle">AI相关讨论热度排行</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="topic-item">
+                        <span class="topic-rank rank-1">1</span>
+                        <div class="topic-content">
+                            <div class="topic-name">#AgenticAI</div>
+                            <div class="topic-stats">智能体AI时代 · 125K 讨论</div>
+                        </div>
+                        <span class="trend-indicator trend-up">热门</span>
+                    </div>
+                    <div class="topic-item">
+                        <span class="topic-rank rank-2">2</span>
+                        <div class="topic-content">
+                            <div class="topic-name">#ClaudeCode</div>
+                            <div class="topic-stats">Anthropic终端AI工具 · 89K 讨论</div>
+                        </div>
+                        <span class="trend-indicator trend-up">飙升</span>
+                    </div>
+                    <div class="topic-item">
+                        <span class="topic-rank rank-3">3</span>
+                        <div class="topic-content">
+                            <div class="topic-name">#OpenAI</div>
+                            <div class="topic-stats">OpenAI新动态 · 76K 讨论</div>
+                        </div>
+                        <span class="trend-indicator trend-up">热议</span>
+                    </div>
+                    <div class="topic-item">
+                        <span class="topic-rank rank-other">4</span>
+                        <div class="topic-content">
+                            <div class="topic-name">#VoiceAI</div>
+                            <div class="topic-stats">语音AI技术 · 54K 讨论</div>
+                        </div>
+                        <span class="trend-indicator trend-up">上升</span>
+                    </div>
+                    <div class="topic-item">
+                        <span class="topic-rank rank-other">5</span>
+                        <div class="topic-content">
+                            <div class="topic-name">#AIRegulation</div>
+                            <div class="topic-stats">AI监管政策 · 43K 讨论</div>
+                        </div>
+                        <span class="trend-indicator trend-up">关注</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI News -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon news-icon">📰</div>
+                    <div>
+                        <div class="card-title">AI 前沿资讯</div>
+                        <div class="card-subtitle">最新行业动态与突破</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="news-item">
+                        <span class="news-tag breaking">突发</span>
+                        <div class="news-title">算力热潮带动AI全产业链价值重估，资本市场对AI赛道关注度持续走高</div>
+                        <div class="news-source">
+                            <span>新浪科技</span>
+                            <span>2小时前</span>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-tag research">研究</span>
+                        <div class="news-title">2026十大AI趋势发布：英伟达、AMD和高通等算力巨头新品强调AI从虚拟训练向物理世界延伸</div>
+                        <div class="news-source">
+                            <span>知乎专栏</span>
+                            <span>5小时前</span>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-tag product">产品</span>
+                        <div class="news-title">Google Research发布TimesFM：预训练时间序列基础模型引发关注</div>
+                        <div class="news-source">
+                            <span>Google Research</span>
+                            <span>8小时前</span>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <span class="news-tag">行业</span>
+                        <div class="news-title">OpenClaw火爆引发AI治理讨论：如何穿越"科林格里奇困境"</div>
+                        <div class="news-source">
+                            <span>AI新闻</span>
+                            <span>12小时前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Tools Spotlight -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon ai-icon">🚀</div>
+                    <div>
+                        <div class="card-title">AI 工具推荐</div>
+                        <div class="card-subtitle">本周值得关注的AI工具</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">🤖</div>
+                                <div>
+                                    <div class="tool-name">Claude Code</div>
+                                    <span class="tool-category">编程助手</span>
+                                </div>
+                            </div>
+                            <div class="tool-desc">Anthropic推出的终端AI编程工具，深度理解代码库</div>
+                            <a href="#" class="tool-link">了解更多 →</a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">🎙️</div>
+                                <div>
+                                    <div class="tool-name">VibeVoice</div>
+                                    <span class="tool-category">语音AI</span>
+                                </div>
+                            </div>
+                            <div class="tool-desc">微软开源的前沿语音AI技术，支持多种语音交互场景</div>
+                            <a href="#" class="tool-link">了解更多 →</a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">📊</div>
+                                <div>
+                                    <div class="tool-name">TimesFM</div>
+                                    <span class="tool-category">时间序列</span>
+                                </div>
+                            </div>
+                            <div class="tool-desc">Google Research的预训练时间序列预测模型</div>
+                            <a href="#" class="tool-link">了解更多 →</a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-header">
+                                <div class="tool-icon" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">💬</div>
+                                <div>
+                                    <div class="tool-name">prompts.chat</div>
+                                    <span class="tool-category">提示词</span>
+                                </div>
+                            </div>
+                            <div class="tool-desc">分享、发现和收集社区优质AI提示词的平台</div>
+                            <a href="#" class="tool-link">了解更多 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">AI Daily 每日为您聚合最新AI资讯</p>
+            <p class="update-time">最后更新时间：2026年4月2日 11:30 | 数据来源：GitHub、X(Twitter)、新浪科技等</p>
+            <div class="social-links">
+                <a href="#" class="social-link" title="GitHub">⚡</a>
+                <a href="#" class="social-link" title="Twitter">𝕏</a>
+                <a href="#" class="social-link" title="RSS">📡</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 添加简单的交互效果
+        document.querySelectorAll('.repo-item, .topic-item, .news-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // 实时时间更新
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString('zh-CN', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            document.querySelector('.update-time').textContent = 
+                `最后更新时间：${timeString} | 数据来源：GitHub、X(Twitter)、新浪科技等`;
+        }
+        
+        setInterval(updateTime, 60000);
+    </script>
+</body>
+</html>
