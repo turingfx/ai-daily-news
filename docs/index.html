@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily 每日AI快讯 - 2026年4月2日</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>AI Daily News - 今日AI快讯 | 2026-04-03</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,477 +14,439 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --bg-card-hover: #222230;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --border-color: #2a2a3a;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
         body {
             font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
-            color: #e8e8e8;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 40px 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border-radius: 24px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            position: relative;
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
             overflow: hidden;
         }
 
-        .header::before {
+        .bg-animation::before {
             content: '';
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+            animation: bgFloat 20s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2%, 2%) rotate(1deg); }
+            66% { transform: translate(-1%, 1%) rotate(-1deg); }
         }
 
-        .header-content {
+        /* Header */
+        header {
+            padding: 2rem 0;
+            text-align: center;
             position: relative;
-            z-index: 1;
         }
 
         .logo {
-            font-size: 48px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-text {
+            font-size: 1.75rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #a0a0b0;
-            margin-bottom: 20px;
         }
 
         .date-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(99, 102, 241, 0.2);
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-size: 14px;
-            color: #818cf8;
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
         }
 
-        .live-indicator {
+        .pulse {
             width: 8px;
             height: 8px;
-            background: #10b981;
+            background: var(--accent-green);
             border-radius: 50%;
-            animation: blink 1.5s ease-in-out infinite;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
 
-        /* Grid Layout */
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        /* Cards */
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            overflow: hidden;
-            transition: all 0.3s ease;
+        /* Section styles */
+        section {
+            margin-bottom: 3rem;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-header {
-            padding: 24px 24px 0;
+        .section-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
 
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 1.25rem;
         }
 
-        .github-icon { background: linear-gradient(135deg, #333 0%, #24292e 100%); }
-        .twitter-icon { background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%); }
-        .news-icon { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
-        .ai-icon { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
-
-        .card-title {
-            font-size: 20px;
+        .section-title {
+            font-size: 1.5rem;
             font-weight: 600;
-            color: #fff;
         }
 
-        .card-subtitle {
-            font-size: 13px;
-            color: #888;
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-left: auto;
         }
 
-        .card-body {
-            padding: 0 24px 24px;
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.25rem;
         }
 
-        /* GitHub Trending */
-        .repo-item {
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card styles */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
             display: flex;
             align-items: flex-start;
-            gap: 16px;
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.2s ease;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
         }
 
-        .repo-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(99, 102, 241, 0.2);
-        }
-
-        .repo-rank {
-            font-size: 24px;
-            font-weight: 700;
-            color: rgba(99, 102, 241, 0.5);
-            min-width: 30px;
-        }
-
-        .repo-info {
-            flex: 1;
-        }
-
-        .repo-name {
-            font-size: 15px;
+        .card-title {
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #60a5fa;
-            margin-bottom: 4px;
-            cursor: pointer;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.2s ease;
         }
 
-        .repo-name:hover {
-            text-decoration: underline;
+        .card-title:hover {
+            color: var(--accent-blue);
         }
 
-        .repo-desc {
-            font-size: 13px;
-            color: #9ca3af;
-            margin-bottom: 8px;
+        .card-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .badge-trending {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-orange);
+        }
+
+        .badge-new {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+        }
+
+        .badge-hot {
+            background: rgba(236, 72, 153, 0.15);
+            color: var(--accent-pink);
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            margin-bottom: 1rem;
         }
 
-        .repo-meta {
-            display: flex;
-            gap: 16px;
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .repo-meta span {
+        .card-meta {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .meta-icon {
+            font-size: 0.9rem;
+        }
+
+        /* GitHub card specific */
+        .github-card .card-header {
+            align-items: center;
+        }
+
+        .repo-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .repo-icon {
+            font-size: 1.25rem;
         }
 
         .lang-dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-        }
-
-        .stars-gain {
-            color: #10b981;
-            font-weight: 500;
-        }
-
-        /* Twitter Topics */
-        .topic-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .topic-item:hover {
-            background: rgba(29, 161, 242, 0.1);
-            border-color: rgba(29, 161, 242, 0.3);
-        }
-
-        .topic-rank {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .rank-1 { background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%); color: #000; }
-        .rank-2 { background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%); color: #000; }
-        .rank-3 { background: linear-gradient(135deg, #cd7f32 0%, #b87333 100%); color: #fff; }
-        .rank-other { background: rgba(255, 255, 255, 0.1); color: #888; }
-
-        .topic-content {
-            flex: 1;
-        }
-
-        .topic-name {
-            font-size: 15px;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-
-        .topic-stats {
-            font-size: 12px;
-            color: #6b7280;
-        }
-
-        .trend-indicator {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 12px;
-            color: #10b981;
-        }
-
-        .trend-up::before {
-            content: '↗';
-        }
-
-        /* News Section */
-        .news-item {
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-left: 3px solid #f59e0b;
-            transition: all 0.2s ease;
-        }
-
-        .news-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateX(5px);
-        }
-
-        .news-tag {
             display: inline-block;
-            padding: 4px 10px;
-            background: rgba(245, 158, 11, 0.2);
-            color: #f59e0b;
-            font-size: 11px;
-            font-weight: 600;
-            border-radius: 20px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
         }
 
-        .news-tag.breaking { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
-        .news-tag.research { background: rgba(99, 102, 241, 0.2); color: #818cf8; }
-        .news-tag.product { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+        .lang-typescript { background: #3178c6; }
+        .lang-python { background: #3572A5; }
+        .lang-javascript { background: #f1e05a; }
+        .lang-go { background: #00ADD8; }
+        .lang-rust { background: #dea584; }
+        .lang-other { background: #8b949e; }
 
-        .news-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 8px;
-            line-height: 1.5;
+        /* News card specific */
+        .news-card .card-title {
+            -webkit-line-clamp: 2;
         }
 
         .news-source {
-            font-size: 12px;
-            color: #6b7280;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
         }
 
-        /* AI Tools Section */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        .source-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
         }
 
+        /* Tools card specific */
         .tool-card {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 16px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .tool-card:hover {
-            background: rgba(16, 185, 129, 0.05);
-            border-color: rgba(16, 185, 129, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .tool-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            text-align: center;
         }
 
         .tool-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 2rem;
+            background: var(--gradient-1);
         }
 
+        .tool-card:nth-child(2) .tool-icon { background: var(--gradient-2); }
+        .tool-card:nth-child(3) .tool-icon { background: var(--gradient-3); }
+        .tool-card:nth-child(4) .tool-icon { background: var(--gradient-4); }
+
         .tool-name {
-            font-size: 16px;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #fff;
+            margin-bottom: 0.5rem;
         }
 
         .tool-category {
-            font-size: 11px;
-            color: #10b981;
-            background: rgba(16, 185, 129, 0.1);
-            padding: 2px 8px;
-            border-radius: 10px;
+            font-size: 0.8rem;
+            color: var(--accent-purple);
+            margin-bottom: 0.75rem;
         }
 
         .tool-desc {
-            font-size: 13px;
-            color: #9ca3af;
-            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
-        .tool-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: #60a5fa;
-            text-decoration: none;
-            transition: gap 0.2s ease;
+        /* Topics section */
+        .topics-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
-        .tool-link:hover {
-            gap: 10px;
+        .topic-tag {
+            padding: 0.6rem 1.2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        /* Full Width Section */
-        .full-width {
-            grid-column: 1 / -1;
+        .topic-tag:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-purple);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .topic-tag.hot {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+            border-color: var(--accent-pink);
+            color: var(--accent-pink);
         }
 
         /* Footer */
-        .footer {
+        footer {
             text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
         }
 
         .footer-text {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
         }
 
-        .update-time {
-            font-size: 12px;
-            color: #4b5563;
-        }
-
-        .social-links {
+        .footer-links {
             display: flex;
             justify-content: center;
-            gap: 16px;
-            margin-top: 20px;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
+        .footer-link {
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: all 0.2s ease;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
         }
 
-        .social-link:hover {
-            background: rgba(99, 102, 241, 0.2);
-            color: #818cf8;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo {
-                font-size: 36px;
-            }
-            
-            .header {
-                padding: 30px 20px;
-            }
+        .footer-link:hover {
+            color: var(--accent-blue);
         }
 
         /* Scrollbar */
@@ -491,304 +455,415 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--bg-primary);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: rgba(99, 102, 241, 0.3);
+            background: var(--border-color);
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(99, 102, 241, 0.5);
+            background: var(--text-muted);
         }
+
+        /* Animation on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="logo">AI Daily</h1>
-                <p class="subtitle">每日AI快讯 · 聚合GitHub热榜、AI话题与前沿资讯</p>
-                <div class="date-badge">
-                    <span class="live-indicator"></span>
-                    <span>2026年4月2日 星期三</span>
-                </div>
-            </div>
-        </header>
+    <div class="bg-animation"></div>
 
-        <!-- Main Content Grid -->
-        <div class="content-grid">
-            <!-- GitHub Trending -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon github-icon">⚡</div>
-                    <div>
-                        <div class="card-title">GitHub 热榜</div>
-                        <div class="card-subtitle">今日最热门的开源项目</div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="repo-item">
-                        <span class="repo-rank">1</span>
-                        <div class="repo-info">
-                            <div class="repo-name">anthropics/claude-code</div>
-                            <div class="repo-desc">Agentic coding tool that lives in your terminal, understands your codebase</div>
-                            <div class="repo-meta">
-                                <span><span class="lang-dot" style="background:#89e051;"></span>Shell</span>
-                                <span>⭐ 102,198</span>
-                                <span class="stars-gain">+10,749 today</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="repo-item">
-                        <span class="repo-rank">2</span>
-                        <div class="repo-info">
-                            <div class="repo-name">microsoft/VibeVoice</div>
-                            <div class="repo-desc">Open-Source Frontier Voice AI</div>
-                            <div class="repo-meta">
-                                <span><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
-                                <span>⭐ 34,591</span>
-                                <span class="stars-gain">+1,685 today</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="repo-item">
-                        <span class="repo-rank">3</span>
-                        <div class="repo-info">
-                            <div class="repo-name">luongnv89/claude-howto</div>
-                            <div class="repo-desc">Visual, example-driven guide to Claude Code</div>
-                            <div class="repo-meta">
-                                <span><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
-                                <span>⭐ 15,905</span>
-                                <span class="stars-gain">+3,301 today</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="repo-item">
-                        <span class="repo-rank">4</span>
-                        <div class="repo-info">
-                            <div class="repo-name">openai/codex</div>
-                            <div class="repo-desc">Lightweight coding agent that runs in your terminal</div>
-                            <div class="repo-meta">
-                                <span><span class="lang-dot" style="background:#dea584;"></span>Rust</span>
-                                <span>⭐ 71,957</span>
-                                <span class="stars-gain">+2,390 today</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="repo-item">
-                        <span class="repo-rank">5</span>
-                        <div class="repo-info">
-                            <div class="repo-name">google-research/timesfm</div>
-                            <div class="repo-desc">Pretrained time-series foundation model developed by Google Research</div>
-                            <div class="repo-meta">
-                                <span><span class="lang-dot" style="background:#3572A5;"></span>Python</span>
-                                <span>⭐ 12,318</span>
-                                <span class="stars-gain">+380 today</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Twitter/X AI Topics -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon twitter-icon">𝕏</div>
-                    <div>
-                        <div class="card-title">X 热门话题</div>
-                        <div class="card-subtitle">AI相关讨论热度排行</div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="topic-item">
-                        <span class="topic-rank rank-1">1</span>
-                        <div class="topic-content">
-                            <div class="topic-name">#AgenticAI</div>
-                            <div class="topic-stats">智能体AI时代 · 125K 讨论</div>
-                        </div>
-                        <span class="trend-indicator trend-up">热门</span>
-                    </div>
-                    <div class="topic-item">
-                        <span class="topic-rank rank-2">2</span>
-                        <div class="topic-content">
-                            <div class="topic-name">#ClaudeCode</div>
-                            <div class="topic-stats">Anthropic终端AI工具 · 89K 讨论</div>
-                        </div>
-                        <span class="trend-indicator trend-up">飙升</span>
-                    </div>
-                    <div class="topic-item">
-                        <span class="topic-rank rank-3">3</span>
-                        <div class="topic-content">
-                            <div class="topic-name">#OpenAI</div>
-                            <div class="topic-stats">OpenAI新动态 · 76K 讨论</div>
-                        </div>
-                        <span class="trend-indicator trend-up">热议</span>
-                    </div>
-                    <div class="topic-item">
-                        <span class="topic-rank rank-other">4</span>
-                        <div class="topic-content">
-                            <div class="topic-name">#VoiceAI</div>
-                            <div class="topic-stats">语音AI技术 · 54K 讨论</div>
-                        </div>
-                        <span class="trend-indicator trend-up">上升</span>
-                    </div>
-                    <div class="topic-item">
-                        <span class="topic-rank rank-other">5</span>
-                        <div class="topic-content">
-                            <div class="topic-name">#AIRegulation</div>
-                            <div class="topic-stats">AI监管政策 · 43K 讨论</div>
-                        </div>
-                        <span class="trend-indicator trend-up">关注</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI News -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon news-icon">📰</div>
-                    <div>
-                        <div class="card-title">AI 前沿资讯</div>
-                        <div class="card-subtitle">最新行业动态与突破</div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="news-item">
-                        <span class="news-tag breaking">突发</span>
-                        <div class="news-title">算力热潮带动AI全产业链价值重估，资本市场对AI赛道关注度持续走高</div>
-                        <div class="news-source">
-                            <span>新浪科技</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-tag research">研究</span>
-                        <div class="news-title">2026十大AI趋势发布：英伟达、AMD和高通等算力巨头新品强调AI从虚拟训练向物理世界延伸</div>
-                        <div class="news-source">
-                            <span>知乎专栏</span>
-                            <span>5小时前</span>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-tag product">产品</span>
-                        <div class="news-title">Google Research发布TimesFM：预训练时间序列基础模型引发关注</div>
-                        <div class="news-source">
-                            <span>Google Research</span>
-                            <span>8小时前</span>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-tag">行业</span>
-                        <div class="news-title">OpenClaw火爆引发AI治理讨论：如何穿越"科林格里奇困境"</div>
-                        <div class="news-source">
-                            <span>AI新闻</span>
-                            <span>12小时前</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Tools Spotlight -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon ai-icon">🚀</div>
-                    <div>
-                        <div class="card-title">AI 工具推荐</div>
-                        <div class="card-subtitle">本周值得关注的AI工具</div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="tools-grid">
-                        <div class="tool-card">
-                            <div class="tool-header">
-                                <div class="tool-icon" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">🤖</div>
-                                <div>
-                                    <div class="tool-name">Claude Code</div>
-                                    <span class="tool-category">编程助手</span>
-                                </div>
-                            </div>
-                            <div class="tool-desc">Anthropic推出的终端AI编程工具，深度理解代码库</div>
-                            <a href="#" class="tool-link">了解更多 →</a>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-header">
-                                <div class="tool-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">🎙️</div>
-                                <div>
-                                    <div class="tool-name">VibeVoice</div>
-                                    <span class="tool-category">语音AI</span>
-                                </div>
-                            </div>
-                            <div class="tool-desc">微软开源的前沿语音AI技术，支持多种语音交互场景</div>
-                            <a href="#" class="tool-link">了解更多 →</a>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-header">
-                                <div class="tool-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">📊</div>
-                                <div>
-                                    <div class="tool-name">TimesFM</div>
-                                    <span class="tool-category">时间序列</span>
-                                </div>
-                            </div>
-                            <div class="tool-desc">Google Research的预训练时间序列预测模型</div>
-                            <a href="#" class="tool-link">了解更多 →</a>
-                        </div>
-                        <div class="tool-card">
-                            <div class="tool-header">
-                                <div class="tool-icon" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">💬</div>
-                                <div>
-                                    <div class="tool-name">prompts.chat</div>
-                                    <span class="tool-category">提示词</span>
-                                </div>
-                            </div>
-                            <div class="tool-desc">分享、发现和收集社区优质AI提示词的平台</div>
-                            <a href="#" class="tool-link">了解更多 →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <header>
+        <div class="logo">
+            <div class="logo-icon">🚀</div>
+            <span class="logo-text">AI Daily News</span>
         </div>
+        <div class="date-badge">
+            <span class="pulse"></span>
+            <span>2026年4月3日 星期五</span>
+        </div>
+    </header>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p class="footer-text">AI Daily 每日为您聚合最新AI资讯</p>
-            <p class="update-time">最后更新时间：2026年4月2日 11:30 | 数据来源：GitHub、X(Twitter)、新浪科技等</p>
-            <div class="social-links">
-                <a href="#" class="social-link" title="GitHub">⚡</a>
-                <a href="#" class="social-link" title="Twitter">𝕏</a>
-                <a href="#" class="social-link" title="RSS">📡</a>
+    <main class="container">
+        <!-- GitHub Trending -->
+        <section class="fade-in delay-1">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(139, 92, 246, 0.15); color: var(--accent-purple);">⭐</div>
+                <h2 class="section-title">GitHub 热门项目</h2>
+                <span class="section-subtitle">今日 Trending</span>
             </div>
-        </footer>
-    </div>
+            <div class="cards-grid">
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/siddharthvaddem/openscreen" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">📹</span>
+                                openscreen
+                            </span>
+                        </a>
+                        <span class="card-badge badge-trending">🔥 +2,573</span>
+                    </div>
+                    <p class="card-description">Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-typescript"></span> TypeScript</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 16,244</span>
+                    </div>
+                </div>
+
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/Yeachan-Heo/oh-my-codex" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">🤖</span>
+                                oh-my-codex
+                            </span>
+                        </a>
+                        <span class="card-badge badge-trending">🔥 +2,867</span>
+                    </div>
+                    <p class="card-description">OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-typescript"></span> TypeScript</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 12,077</span>
+                    </div>
+                </div>
+
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">🔓</span>
+                                system_prompts_leaks
+                            </span>
+                        </a>
+                        <span class="card-badge badge-hot">💥 +306</span>
+                    </div>
+                    <p class="card-description">Extracted system prompts from ChatGPT (GPT-5.4, GPT-5.3, Codex), Claude (Opus 4.6, Sonnet 4.6, Claude Code), Gemini (3.1 Pro, 3 Flash, CLI), Grok (4.2, 4), Perplexity, and more.</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-other"></span> Documentation</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 36,556</span>
+                    </div>
+                </div>
+
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/sherlock-project/sherlock" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">🕵️</span>
+                                sherlock
+                            </span>
+                        </a>
+                        <span class="card-badge badge-trending">🔥 +827</span>
+                    </div>
+                    <p class="card-description">Hunt down social media accounts by username across social networks - 强大的社交媒体账号追踪工具</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 77,410</span>
+                    </div>
+                </div>
+
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/google-research/timesfm" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">📊</span>
+                                timesfm
+                            </span>
+                        </a>
+                        <span class="card-badge badge-new">✨ +1,176</span>
+                    </div>
+                    <p class="card-description">TimesFM (Time Series Foundation Model) - Google Research开发的时间序列预测基础模型</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 13,495</span>
+                    </div>
+                </div>
+
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/yusufkaraaslan/Skill_Seekers" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">🎯</span>
+                                Skill_Seekers
+                            </span>
+                        </a>
+                        <span class="card-badge badge-new">✨ +264</span>
+                    </div>
+                    <p class="card-description">Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 12,171</span>
+                    </div>
+                </div>
+
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/roboflow/supervision" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">👁️</span>
+                                supervision
+                            </span>
+                        </a>
+                        <span class="card-badge badge-trending">🔥 +535</span>
+                    </div>
+                    <p class="card-description">We write your reusable computer vision tools. 可复用的计算机视觉工具库</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 37,458</span>
+                    </div>
+                </div>
+
+                <div class="card github-card">
+                    <div class="card-header">
+                        <a href="https://github.com/zai-org/GLM-OCR" target="_blank" class="card-title">
+                            <span class="repo-name">
+                                <span class="repo-icon">📄</span>
+                                GLM-OCR
+                            </span>
+                        </a>
+                        <span class="card-badge badge-new">✨ +237</span>
+                    </div>
+                    <p class="card-description">GLM-OCR: Accurate × Fast × Comprehensive - 智谱AI推出的OCR工具</p>
+                    <div class="card-meta">
+                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
+                        <span class="meta-item"><span class="meta-icon">⭐</span> 5,264</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Topics -->
+        <section class="fade-in delay-2">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(236, 72, 153, 0.15); color: var(--accent-pink);">🔥</div>
+                <h2 class="section-title">热门话题</h2>
+                <span class="section-subtitle">AI社区热议</span>
+            </div>
+            <div class="topics-list">
+                <span class="topic-tag hot">#OpenClaw AI智能体</span>
+                <span class="topic-tag hot">#GPT-5.4 系统提示词</span>
+                <span class="topic-tag hot">#Claude Code 泄漏</span>
+                <span class="topic-tag">#AI Agent 规模化应用</span>
+                <span class="topic-tag">#时间序列预测模型</span>
+                <span class="topic-tag">#计算机视觉工具</span>
+                <span class="topic-tag">#OCR技术革新</span>
+                <span class="topic-tag">#AI编程助手</span>
+                <span class="topic-tag">#多模态大模型</span>
+                <span class="topic-tag">#AI安全与治理</span>
+                <span class="topic-tag">#企业AI采用率</span>
+                <span class="topic-tag">#开源AI工具</span>
+            </div>
+        </section>
+
+        <!-- AI News -->
+        <section class="fade-in delay-3">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--accent-blue);">📰</div>
+                <h2 class="section-title">AI 新闻资讯</h2>
+                <span class="section-subtitle">最新动态</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card news-card">
+                    <div class="news-source">
+                        <span class="source-icon">📺</span>
+                        <span>BBC 中文</span>
+                    </div>
+                    <a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/simp" target="_blank" class="card-title">当AI智能体开始上岗：2026年春天里，三个中国人的兴奋与恐惧</a>
+                    <p class="card-description">"龙虾"是AI智能体OpenClaw在中国的绰号。2026年的春天，这个词被赋予新的意涵，然后频繁出现在各个工作场景中...</p>
+                    <div class="card-meta">
+                        <span class="meta-item">📅 2026-04-03</span>
+                        <span class="meta-item">👁️ 热门阅读</span>
+                    </div>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-source">
+                        <span class="source-icon">💼</span>
+                        <span>高盛研报</span>
+                    </div>
+                    <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vr1y.html" target="_blank" class="card-title">美国企业AI采用率达18.9%，企业级AI应用进入规模化阶段</a>
+                    <p class="card-description">高盛在其最新研报中称，美国企业的人工智能（AI）采用率为18.9%，AI产业进入规模化行业应用的关键阶段...</p>
+                    <div class="card-meta">
+                        <span class="meta-item">📅 2026-04-03</span>
+                        <span class="meta-item">📊 行业分析</span>
+                    </div>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-source">
+                        <span class="source-icon">🌐</span>
+                        <span>世界互联网大会</span>
+                    </div>
+                    <a href="https://cn.wicinternet.org/2026-02/04/content_38578741.htm" target="_blank" class="card-title">2026年首月全球AI产业动态报告发布</a>
+                    <p class="card-description">人工智能（AI）进一步展现出对生活、科研等多个领域的深刻影响，全球AI产业发展进入新阶段...</p>
+                    <div class="card-meta">
+                        <span class="meta-item">📅 2026-04-03</span>
+                        <span class="meta-item">🌍 全球视野</span>
+                    </div>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-source">
+                        <span class="source-icon">🎥</span>
+                        <span>YouTube AI News</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=EiC_wP-sFuU" target="_blank" class="card-title">AI 新闻汇总：OpenAI 宣布巨额融资与下一阶段AI发展路线图</a>
+                    <p class="card-description">OpenAI 博客宣布巨额融资与下一阶段AI；谷歌AI 博客Veo视频生成模型更新...</p>
+                    <div class="card-meta">
+                        <span class="meta-item">📅 2026-04-03</span>
+                        <span class="meta-item">🎬 视频</span>
+                    </div>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-source">
+                        <span class="source-icon">📱</span>
+                        <span>新浪财经</span>
+                    </div>
+                    <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vsm8.html" target="_blank" class="card-title">2026年人工智能产业进入规模化行业应用的关键阶段</a>
+                    <p class="card-description">AI Agent 迈入规模化应用时代，各行业开始大规模部署AI智能体解决方案...</p>
+                    <div class="card-meta">
+                        <span class="meta-item">📅 2026-04-03</span>
+                        <span class="meta-item">📈 产业趋势</span>
+                    </div>
+                </div>
+
+                <div class="card news-card">
+                    <div class="news-source">
+                        <span class="source-icon">🔒</span>
+                        <span>新浪科技</span>
+                    </div>
+                    <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vmy2.html" target="_blank" class="card-title">OpenClaw火爆，AI治理如何穿越"科林格里奇困境"</a>
+                    <p class="card-description">随着AI智能体的快速发展，AI治理面临新的挑战，如何在创新与监管之间找到平衡点...</p>
+                    <div class="card-meta">
+                        <span class="meta-item">📅 2026-04-03</span>
+                        <span class="meta-item">🛡️ AI治理</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tools -->
+        <section class="fade-in delay-4">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green);">🛠️</div>
+                <h2 class="section-title">AI 工具推荐</h2>
+                <span class="section-subtitle">精选工具</span>
+            </div>
+            <div class="cards-grid">
+                <div class="card tool-card">
+                    <div class="tool-icon">🤖</div>
+                    <h3 class="tool-name">ChatGPT</h3>
+                    <span class="tool-category">对话AI</span>
+                    <p class="tool-desc">OpenAI旗舰对话模型，支持多模态理解和代码生成，是日常办公和编程的得力助手</p>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3 class="tool-name">Claude</h3>
+                    <span class="tool-category">AI助手</span>
+                    <p class="tool-desc">Anthropic推出的AI助手，擅长长文本分析、代码审查和复杂任务处理</p>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h3 class="tool-name">Perplexity</h3>
+                    <span class="tool-category">AI搜索</span>
+                    <p class="tool-desc">AI驱动的搜索引擎，提供实时信息检索和智能答案总结，替代传统搜索</p>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="tool-icon">🎵</div>
+                    <h3 class="tool-name">Suno</h3>
+                    <span class="tool-category">AI音乐</span>
+                    <p class="tool-desc">AI音乐生成工具，可根据文本描述创作完整歌曲，支持多种音乐风格</p>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">🖼️</div>
+                    <h3 class="tool-name">Midjourney</h3>
+                    <span class="tool-category">AI绘画</span>
+                    <p class="tool-desc">顶级AI图像生成工具，创作高质量艺术图像和概念设计</p>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">✍️</div>
+                    <h3 class="tool-name">Gemini</h3>
+                    <span class="tool-category">多模态AI</span>
+                    <p class="tool-desc">Google DeepMind多模态AI模型，支持文本、图像、视频理解</p>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);">💻</div>
+                    <h3 class="tool-name">GitHub Copilot</h3>
+                    <span class="tool-category">编程助手</span>
+                    <p class="tool-desc">AI编程助手，实时代码补全和生成，支持多种编程语言</p>
+                </div>
+
+                <div class="card tool-card">
+                    <div class="tool-icon" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">📹</div>
+                    <h3 class="tool-name">OpusClip</h3>
+                    <span class="tool-category">视频剪辑</span>
+                    <p class="tool-desc">AI视频剪辑工具，自动将长视频转换为短视频片段</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">AI Daily News - 每日AI快讯</p>
+        <p class="footer-text" style="margin-top: 0.5rem;">Generated on 2026-04-03 | 数据来源：GitHub、X/Twitter、知乎、新浪财经等</p>
+        <div class="footer-links">
+            <a href="https://github.com/turingfx/ai-daily-news" target="_blank" class="footer-link">GitHub 仓库</a>
+            <a href="https://turingfx.github.io/ai-daily-news" target="_blank" class="footer-link">在线访问</a>
+        </div>
+    </footer>
 
     <script>
-        // 添加简单的交互效果
-        document.querySelectorAll('.repo-item, .topic-item, .news-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
+        // Add hover effects and interactions
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
             });
         });
 
-        // 实时时间更新
-        function updateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleString('zh-CN', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit'
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-            document.querySelector('.update-time').textContent = 
-                `最后更新时间：${timeString} | 数据来源：GitHub、X(Twitter)、新浪科技等`;
-        }
-        
-        setInterval(updateTime, 60000);
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
     </script>
 </body>
 </html>
