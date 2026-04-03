@@ -3,310 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News - 今日AI快讯 | 2026-04-03</title>
+    <title>AI Daily | 2026-04-03</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #fafafa;
+            --bg-elevated: #ffffff;
+            --bg-muted: #f5f5f5;
+            --border: #e5e5e5;
+            --border-strong: #d4d4d4;
+            --text: #171717;
+            --text-secondary: #525252;
+            --text-muted: #737373;
+            --accent: #2563eb;
+            --accent-light: #dbeafe;
+            --success: #16a34a;
+            --warning: #ca8a04;
+            --danger: #dc2626;
+            --code-bg: #f3f4f6;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a25;
-            --bg-card-hover: #222230;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --text-muted: #6b6b7b;
-            --accent-purple: #8b5cf6;
-            --accent-blue: #3b82f6;
-            --accent-cyan: #06b6d4;
-            --accent-pink: #ec4899;
-            --accent-green: #10b981;
-            --accent-orange: #f59e0b;
-            --border-color: #2a2a3a;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-
         body {
-            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        /* Animated background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
-            animation: bgFloat 20s ease-in-out infinite;
-        }
-
-        @keyframes bgFloat {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(2%, 2%) rotate(1deg); }
-            66% { transform: translate(-1%, 1%) rotate(-1deg); }
+            font-size: 14px;
         }
 
         /* Header */
         header {
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
-            display: inline-flex;
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 1rem;
         }
 
-        .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--gradient-1);
-            border-radius: 12px;
+        .brand-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
         }
 
-        .logo-text {
-            font-size: 1.75rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .brand-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
         }
 
-        .date-badge {
-            display: inline-flex;
+        .meta {
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
+            gap: 1rem;
+            font-size: 13px;
+            color: var(--text-muted);
         }
 
-        .pulse {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+        .badge {
+            padding: 0.25rem 0.5rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        /* Container */
+        /* Layout */
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 1.5rem;
         }
 
-        /* Section styles */
-        section {
-            margin-bottom: 3rem;
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 2rem;
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 13px;
             font-weight: 600;
-        }
-
-        .section-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             color: var(--text-secondary);
-            font-size: 0.875rem;
+        }
+
+        .section-count {
             margin-left: auto;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Cards grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.25rem;
-        }
-
-        @media (max-width: 768px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Card styles */
+        /* Cards */
         .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            transition: all 0.15s ease;
         }
 
         .card:hover {
-            background: var(--bg-card-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .card:hover::before {
-            opacity: 1;
+            border-color: var(--border-strong);
+            box-shadow: var(--shadow-md);
         }
 
         .card-header {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
-            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .card-title {
-            font-size: 1.1rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--text);
             text-decoration: none;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            transition: color 0.2s ease;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         .card-title:hover {
-            color: var(--accent-blue);
+            color: var(--accent);
+        }
+
+        .card-title code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--code-bg);
+            padding: 0.125rem 0.375rem;
+            border-radius: 4px;
+            font-size: 12px;
         }
 
         .card-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
+            padding: 0.125rem 0.375rem;
+            border-radius: 4px;
+            font-size: 11px;
             font-weight: 500;
             white-space: nowrap;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        .badge-trending {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-orange);
-        }
+        .badge-green { background: #dcfce7; color: var(--success); }
+        .badge-blue { background: var(--accent-light); color: var(--accent); }
+        .badge-yellow { background: #fef9c3; color: var(--warning); }
+        .badge-red { background: #fee2e2; color: var(--danger); }
+        .badge-gray { background: var(--bg-muted); color: var(--text-muted); }
 
-        .badge-new {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-green);
-        }
-
-        .badge-hot {
-            background: rgba(236, 72, 153, 0.15);
-            color: var(--accent-pink);
-        }
-
-        .card-description {
+        .card-body {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 13px;
             line-height: 1.6;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .card-meta {
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 0.8rem;
+            font-size: 12px;
             color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .meta-item {
             display: flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.375rem;
         }
 
-        .meta-icon {
-            font-size: 0.9rem;
+        /* Changelog specific */
+        .changelog-item {
+            border-left: 2px solid var(--border);
+            padding-left: 1rem;
+            margin-left: 0.5rem;
+            position: relative;
         }
 
-        /* GitHub card specific */
-        .github-card .card-header {
-            align-items: center;
+        .changelog-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0.375rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
         }
 
-        .repo-name {
+        .changelog-version {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .changelog-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .changelog-list {
+            list-style: none;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .changelog-list li {
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .changelog-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Tweet style */
+        .tweet-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tweet-header {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tweet-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .tweet-author {
+            flex: 1;
+        }
+
+        .tweet-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .tweet-handle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .tweet-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .tweet-content a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .tweet-stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .tweet-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        /* GitHub repo */
+        .repo-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
         }
 
         .repo-icon {
-            font-size: 1.25rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--bg-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .repo-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .repo-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .repo-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .repo-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .lang-dot {
@@ -316,554 +403,604 @@
             display: inline-block;
         }
 
-        .lang-typescript { background: #3178c6; }
-        .lang-python { background: #3572A5; }
-        .lang-javascript { background: #f1e05a; }
-        .lang-go { background: #00ADD8; }
-        .lang-rust { background: #dea584; }
-        .lang-other { background: #8b949e; }
-
-        /* News card specific */
-        .news-card .card-title {
-            -webkit-line-clamp: 2;
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 5rem;
+            height: fit-content;
         }
 
-        .news-source {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
+        .sidebar-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .source-icon {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            background: var(--bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-        }
-
-        /* Tools card specific */
-        .tool-card {
-            text-align: center;
-        }
-
-        .tool-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 1rem;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            background: var(--gradient-1);
-        }
-
-        .tool-card:nth-child(2) .tool-icon { background: var(--gradient-2); }
-        .tool-card:nth-child(3) .tool-icon { background: var(--gradient-3); }
-        .tool-card:nth-child(4) .tool-icon { background: var(--gradient-4); }
-
-        .tool-name {
-            font-size: 1.1rem;
+        .sidebar-title {
+            font-size: 12px;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .tool-category {
-            font-size: 0.8rem;
-            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
             margin-bottom: 0.75rem;
         }
 
-        .tool-desc {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* Topics section */
-        .topics-list {
+        .tag-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
-        .topic-tag {
-            padding: 0.6rem 1.2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 100px;
-            font-size: 0.9rem;
+        .tag {
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-muted);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 12px;
             color: var(--text-secondary);
-            transition: all 0.2s ease;
             cursor: pointer;
+            transition: all 0.15s ease;
         }
 
-        .topic-tag:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--accent-purple);
-            color: var(--text-primary);
-            transform: translateY(-2px);
+        .tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
-        .topic-tag.hot {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
-            border-color: var(--accent-pink);
-            color: var(--accent-pink);
+        .tag.active {
+            background: var(--accent-light);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Links */
+        .link-list {
+            list-style: none;
+        }
+
+        .link-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .link-list li:last-child {
+            border-bottom: none;
+        }
+
+        .link-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link-list a:hover {
+            color: var(--accent);
+        }
+
+        /* Code block */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--code-bg);
+            padding: 0.125rem 0.375rem;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 0.75rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 0.5rem 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
         }
 
         /* Footer */
         footer {
-            text-align: center;
-            padding: 3rem 0;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 0;
             margin-top: 2rem;
-        }
-
-        .footer-text {
+            text-align: center;
+            font-size: 12px;
             color: var(--text-muted);
-            font-size: 0.875rem;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 1rem;
+            margin-top: 0.5rem;
         }
 
-        .footer-link {
+        .footer-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.2s ease;
         }
 
-        .footer-link:hover {
-            color: var(--accent-blue);
+        .footer-links a:hover {
+            color: var(--accent);
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* Feature highlight */
+        .feature-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
         }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-primary);
+        .feature-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 4px;
+        .feature-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-muted);
-        }
-
-        /* Animation on scroll */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
-
     <header>
-        <div class="logo">
-            <div class="logo-icon">🚀</div>
-            <span class="logo-text">AI Daily News</span>
-        </div>
-        <div class="date-badge">
-            <span class="pulse"></span>
-            <span>2026年4月3日 星期五</span>
+        <div class="header-content">
+            <div class="brand">
+                <div class="brand-icon">AI</div>
+                <span class="brand-text">AI Daily</span>
+            </div>
+            <div class="meta">
+                <span class="badge">LIVE</span>
+                <span>2026-04-03</span>
+                <span style="font-family: 'JetBrains Mono', monospace;">v1.0.0</span>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <!-- GitHub Trending -->
-        <section class="fade-in delay-1">
-            <div class="section-header">
-                <div class="section-icon" style="background: rgba(139, 92, 246, 0.15); color: var(--accent-purple);">⭐</div>
-                <h2 class="section-title">GitHub 热门项目</h2>
-                <span class="section-subtitle">今日 Trending</span>
-            </div>
-            <div class="cards-grid">
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/siddharthvaddem/openscreen" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">📹</span>
-                                openscreen
-                            </span>
-                        </a>
-                        <span class="card-badge badge-trending">🔥 +2,573</span>
+    <div class="container">
+        <div class="grid">
+            <main>
+                <!-- Claude Code Updates -->
+                <section class="section">
+                    <div class="section-header">
+                        <span style="color: var(--accent);">●</span>
+                        <h2 class="section-title">Claude Code Updates</h2>
+                        <span class="section-count">v2.1.91</span>
                     </div>
-                    <p class="card-description">Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-typescript"></span> TypeScript</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 16,244</span>
+
+                    <div class="feature-box">
+                        <div class="feature-title">🚀 Q1 2026 Major Features</div>
+                        <div class="feature-desc">
+                            Anthropic shipped 6 meaningful features in Q1: <strong>Remote Control</strong> (server/CI deployment), 
+                            <strong>Dispatch</strong> (task-aware routing), <strong>Channels</strong> (pub/sub messaging), 
+                            <strong>Computer Use</strong> (GUI automation), <strong>Auto Mode</strong> (autonomous execution), 
+                            and <strong>AutoDream</strong> (planning loop).
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" class="card-title"><code>v2.1.91</code> Latest Release</a>
+                            <span class="card-badge badge-green">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="changelog-list">
+                                <li><strong>MCP tool result persistence override</strong> - Added <code>_meta["anthropic/maxResultSizeChars"]</code> annotation (up to 500K) for larger results like DB schemas</li>
+                                <li><strong>Multi-line deep link support</strong> - <code>claude-cli://open?q=</code> now supports encoded newlines (<code>%0A</code>)</li>
+                                <li><strong>Plugin executables</strong> - Plugins can ship executables under <code>bin/</code> and invoke as bare commands</li>
+                                <li><strong>Bug fixes</strong> - Fixed transcript chain breaks on <code>--resume</code>, cmd+delete on various terminals, plan mode in remote sessions</li>
+                            </ul>
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-04-02</span>
+                            <span class="meta-item">🔧 9 changes</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" class="card-title"><code>v2.1.90</code> Previous Release</a>
+                            <span class="card-badge badge-gray">RECENT</span>
+                        </div>
+                        <div class="card-body">
+                            <ul class="changelog-list">
+                                <li><strong>/powerup</strong> - Interactive lessons teaching Claude Code features with animated demos</li>
+                                <li><strong>Performance</strong> - Faster stripAnsi on Bun, SSE transport handles large streamed frames in linear time</li>
+                                <li><strong>Security</strong> - PowerShell tool permission hardening, removed DNS cache auto-allow</li>
+                                <li><strong>Bug fixes</strong> - Rate-limit dialog infinite loop, --resume prompt-cache miss</li>
+                            </ul>
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-03-28</span>
+                            <span class="meta-item">🔧 12 changes</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Computer Use Research Preview</span>
+                            <span class="card-badge badge-blue">FEATURE</span>
+                        </div>
+                        <div class="card-body">
+                            Pro and Max plans can now give Claude access to "open files, run dev tools, point, click, and navigate to what's on your screen". 
+                            Rolling visual context window reduces operation latency by ~50%, with improved UI exception recovery, drag-drop support, 
+                            multi-monitor awareness, and clipboard operations.
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">🗓️ Released: Mar 23, 2026</span>
+                            <span class="meta-item">📍 Cowork + Claude Code</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Auto Mode - Behavioral Setting</span>
+                            <span class="card-badge badge-yellow">BETA</span>
+                        </div>
+                        <div class="card-body">
+                            Three risk configurations: <strong>Conservative</strong> (asks before most actions), 
+                            <strong>Balanced</strong> (default, asks for destructive operations), 
+                            <strong>Aggressive</strong> (minimal interruptions). All decisions generate auditable logs.
+                            Combined with Computer Use enables "completely unattended development process".
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">⚙️ Configurable per-project</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- GitHub Trending -->
+                <section class="section">
+                    <div class="section-header">
+                        <span style="color: var(--success);">●</span>
+                        <h2 class="section-title">GitHub Trending</h2>
+                        <span class="section-count">8 repos</span>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">📹</div>
+                        <div class="repo-content">
+                            <div class="repo-name">siddharthvaddem/openscreen</div>
+                            <div class="repo-desc">Create stunning demos for free. Open-source alternative to Screen Studio, no subscriptions, no watermarks.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item"><span class="lang-dot" style="background: #3178c6;"></span> TypeScript</span>
+                                <span class="meta-item">⭐ 16,244</span>
+                                <span class="meta-item" style="color: var(--success);">+2,573 today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">🤖</div>
+                        <div class="repo-content">
+                            <div class="repo-name">Yeachan-Heo/oh-my-codex</div>
+                            <div class="repo-desc">OmX - Oh My codeX: Add hooks, agent teams, HUDs, and more to your codex.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item"><span class="lang-dot" style="background: #3178c6;"></span> TypeScript</span>
+                                <span class="meta-item">⭐ 12,077</span>
+                                <span class="meta-item" style="color: var(--success);">+2,867 today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">🔓</div>
+                        <div class="repo-content">
+                            <div class="repo-name">asgeirtj/system_prompts_leaks</div>
+                            <div class="repo-desc">Extracted system prompts from GPT-5.4, Claude Opus 4.6, Gemini 3.1 Pro, Grok 4.2, Perplexity, and more.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item">📄 Markdown</span>
+                                <span class="meta-item">⭐ 36,556</span>
+                                <span class="meta-item" style="color: var(--success);">+306 today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">🕵️</div>
+                        <div class="repo-content">
+                            <div class="repo-name">sherlock-project/sherlock</div>
+                            <div class="repo-desc">Hunt down social media accounts by username across social networks.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
+                                <span class="meta-item">⭐ 77,410</span>
+                                <span class="meta-item" style="color: var(--success);">+827 today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">📊</div>
+                        <div class="repo-content">
+                            <div class="repo-name">google-research/timesfm</div>
+                            <div class="repo-desc">TimesFM - Pretrained time-series foundation model by Google Research for forecasting.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
+                                <span class="meta-item">⭐ 13,495</span>
+                                <span class="meta-item" style="color: var(--success);">+1,176 today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">🎯</div>
+                        <div class="repo-content">
+                            <div class="repo-name">yusufkaraaslan/Skill_Seekers</div>
+                            <div class="repo-desc">Convert docs, GitHub repos, and PDFs into Claude AI skills with automatic conflict detection.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
+                                <span class="meta-item">⭐ 12,171</span>
+                                <span class="meta-item" style="color: var(--success);">+264 today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">👁️</div>
+                        <div class="repo-content">
+                            <div class="repo-name">roboflow/supervision</div>
+                            <div class="repo-desc">Reusable computer vision tools. We write your CV tools so you don't have to.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
+                                <span class="meta-item">⭐ 37,458</span>
+                                <span class="meta-item" style="color: var(--success);">+535 today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card repo-card">
+                        <div class="repo-icon">📄</div>
+                        <div class="repo-content">
+                            <div class="repo-name">zai-org/GLM-OCR</div>
+                            <div class="repo-desc">GLM-OCR: Accurate × Fast × Comprehensive - Zhipu AI OCR tool.</div>
+                            <div class="repo-meta">
+                                <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
+                                <span class="meta-item">⭐ 5,264</span>
+                                <span class="meta-item" style="color: var(--success);">+237 today</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI News -->
+                <section class="section">
+                    <div class="section-header">
+                        <span style="color: var(--warning);">●</span>
+                        <h2 class="section-title">AI News</h2>
+                        <span class="section-count">6 articles</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/simp" class="card-title">当AI智能体开始上岗：2026年春天里，三个中国人的兴奋与恐惧</a>
+                            <span class="card-badge badge-blue">BBC</span>
+                        </div>
+                        <div class="card-body">
+                            "龙虾"是AI智能体OpenClaw在中国的绰号。2026年的春天，这个词被赋予新的意涵，频繁出现在各个工作场景中...
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-04-03</span>
+                            <span class="meta-item">👁️ 热门阅读</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vr1y.html" class="card-title">美国企业AI采用率达18.9%，企业级AI应用进入规模化阶段</a>
+                            <span class="card-badge badge-yellow">高盛</span>
+                        </div>
+                        <div class="card-body">
+                            高盛最新研报显示，美国企业AI采用率为18.9%，AI产业进入规模化行业应用的关键阶段。AI Agent迈入规模化应用时代。
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-04-03</span>
+                            <span class="meta-item">📊 行业分析</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="https://www.latimes.com/business/story/2026-04-01/anthropic-accidentally-leaked-thousands-of-lines-of-code" class="card-title">Anthropic accidentally leaked thousands of lines of code</a>
+                            <span class="card-badge badge-red">LEAK</span>
+                        </div>
+                        <div class="card-body">
+                            A routine software update for Claude Code accidentally exposed 512,000 lines of source code. 
+                            The company has since removed 8,000 copies of the leaked code.
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-04-01</span>
+                            <span class="meta-item">🔒 Security</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="https://cn.wicinternet.org/2026-02/04/content_38578741.htm" class="card-title">2026年首月全球AI产业动态报告发布</a>
+                            <span class="card-badge badge-gray">WIC</span>
+                        </div>
+                        <div class="card-body">
+                            世界互联网大会发布报告：人工智能进一步展现出对生活、科研等多个领域的深刻影响，全球AI产业发展进入新阶段。
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-04-03</span>
+                            <span class="meta-item">🌍 Global</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Twitter/X Discussions -->
+                <section class="section">
+                    <div class="section-header">
+                        <span style="color: #1d9bf0;">●</span>
+                        <h2 class="section-title">X / Twitter Discussions</h2>
+                        <span class="section-count">Hot takes</span>
+                    </div>
+
+                    <div class="tweet-card">
+                        <div class="tweet-header">
+                            <div class="tweet-avatar">🧠</div>
+                            <div class="tweet-author">
+                                <div class="tweet-name">AI Trends Community</div>
+                                <div class="tweet-handle">@AITrends · 5h</div>
+                            </div>
+                        </div>
+                        <div class="tweet-content">
+                            "Stop using Meta AI. Whenever I ask people what AI they use and they say Meta, I know they don't actually work in tech." <br><br>
+                            The debate on consumer AI preferences continues. Gemini 3.1 Pro now leads the Artificial Analysis Intelligence Index.
+                        </div>
+                        <div class="tweet-stats">
+                            <span class="tweet-stat">💬 234</span>
+                            <span class="tweet-stat">🔄 1.2K</span>
+                            <span class="tweet-stat">❤️ 4.5K</span>
+                        </div>
+                    </div>
+
+                    <div class="tweet-card">
+                        <div class="tweet-header">
+                            <div class="tweet-avatar">⚡</div>
+                            <div class="tweet-author">
+                                <div class="tweet-name">Claude Code Log</div>
+                                <div class="tweet-handle">@ClaudeCodeLog · 2h</div>
+                            </div>
+                        </div>
+                        <div class="tweet-content">
+                            Claude Code CLI 2.1.91 changelog highlights:<br>
+                            • MCP tool result persistence override (500K chars)<br>
+                            • Multi-line deep link support<br>
+                            • Plugin executables in bin/<br>
+                            • Fixed transcript chain breaks on --resume<br><br>
+                            Full changelog: <a href="#">github.com/anthropics/claude-code</a>
+                        </div>
+                        <div class="tweet-stats">
+                            <span class="tweet-stat">💬 89</span>
+                            <span class="tweet-stat">🔄 456</span>
+                            <span class="tweet-stat">❤️ 2.1K</span>
+                        </div>
+                    </div>
+
+                    <div class="tweet-card">
+                        <div class="tweet-header">
+                            <div class="tweet-avatar">📊</div>
+                            <div class="tweet-author">
+                                <div class="tweet-name">Artificial Analysis</div>
+                                <div class="tweet-handle">@ArtificialAnlys · 8h</div>
+                            </div>
+                        </div>
+                        <div class="tweet-content">
+                            Gemini 3.1 Pro Preview leads the Artificial Analysis Intelligence Index. Google is once again the leader in AI quality benchmarks.<br><br>
+                            Comparison: GPT-4.1, Claude 3.7 Sonnet, Gemini 3.1 Pro, Grok 4.2 - all within 5% on composite scores.
+                        </div>
+                        <div class="tweet-stats">
+                            <span class="tweet-stat">💬 567</span>
+                            <span class="tweet-stat">🔄 3.4K</span>
+                            <span class="tweet-stat">❤️ 12K</span>
+                        </div>
+                    </div>
+
+                    <div class="tweet-card">
+                        <div class="tweet-header">
+                            <div class="tweet-avatar">🔥</div>
+                            <div class="tweet-author">
+                                <div class="tweet-name">Tech Commentary</div>
+                                <div class="tweet-handle">@TechCommentary · 12h</div>
+                            </div>
+                        </div>
+                        <div class="tweet-content">
+                            "The sudden massive increase in insane hyping of agentic LLMs on Twitter is concerning. Claude Code and Copilot are tools, not replacements. The gap between demo and production reality is still massive."<br><br>
+                            Are we in an AI agent bubble?
+                        </div>
+                        <div class="tweet-stats">
+                            <span class="tweet-stat">💬 1.2K</span>
+                            <span class="tweet-stat">🔄 5.6K</span>
+                            <span class="tweet-stat">❤️ 18K</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <div class="sidebar-title">Trending Tags</div>
+                    <div class="tag-list">
+                        <span class="tag active">#ClaudeCode</span>
+                        <span class="tag">#OpenAI</span>
+                        <span class="tag">#Gemini</span>
+                        <span class="tag">#AIAgents</span>
+                        <span class="tag">#ComputerUse</span>
+                        <span class="tag">#MCP</span>
+                        <span class="tag">#AutoMode</span>
+                        <span class="tag">#GitHub</span>
+                        <span class="tag">#SystemPrompts</span>
+                        <span class="tag">#AIRegulation</span>
                     </div>
                 </div>
 
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/Yeachan-Heo/oh-my-codex" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">🤖</span>
-                                oh-my-codex
-                            </span>
-                        </a>
-                        <span class="card-badge badge-trending">🔥 +2,867</span>
-                    </div>
-                    <p class="card-description">OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-typescript"></span> TypeScript</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 12,077</span>
+                <div class="sidebar-card">
+                    <div class="sidebar-title">Quick Links</div>
+                    <ul class="link-list">
+                        <li><a href="https://github.com/anthropics/claude-code">→ Claude Code Repo</a></li>
+                        <li><a href="https://support.claude.com/en/articles/12138966-release-notes">→ Release Notes</a></li>
+                        <li><a href="https://code.claude.com/docs">→ Documentation</a></li>
+                        <li><a href="https://github.com/trending">→ GitHub Trending</a></li>
+                        <li><a href="https://x.com/ClaudeCodeLog">→ @ClaudeCodeLog</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <div class="sidebar-title">Stats</div>
+                    <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.8;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>GitHub repos</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">8</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Claude updates</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">6</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>News articles</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">4</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Twitter posts</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">4</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">🔓</span>
-                                system_prompts_leaks
-                            </span>
-                        </a>
-                        <span class="card-badge badge-hot">💥 +306</span>
-                    </div>
-                    <p class="card-description">Extracted system prompts from ChatGPT (GPT-5.4, GPT-5.3, Codex), Claude (Opus 4.6, Sonnet 4.6, Claude Code), Gemini (3.1 Pro, 3 Flash, CLI), Grok (4.2, 4), Perplexity, and more.</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-other"></span> Documentation</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 36,556</span>
-                    </div>
+                <div class="sidebar-card">
+                    <div class="sidebar-title">About</div>
+                    <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6;">
+                        AI Daily aggregates the latest updates from Claude Code, GitHub trending, AI news, and Twitter discussions. 
+                        Updated daily at 09:00 UTC.
+                    </p>
                 </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/sherlock-project/sherlock" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">🕵️</span>
-                                sherlock
-                            </span>
-                        </a>
-                        <span class="card-badge badge-trending">🔥 +827</span>
-                    </div>
-                    <p class="card-description">Hunt down social media accounts by username across social networks - 强大的社交媒体账号追踪工具</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 77,410</span>
-                    </div>
-                </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/google-research/timesfm" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">📊</span>
-                                timesfm
-                            </span>
-                        </a>
-                        <span class="card-badge badge-new">✨ +1,176</span>
-                    </div>
-                    <p class="card-description">TimesFM (Time Series Foundation Model) - Google Research开发的时间序列预测基础模型</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 13,495</span>
-                    </div>
-                </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/yusufkaraaslan/Skill_Seekers" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">🎯</span>
-                                Skill_Seekers
-                            </span>
-                        </a>
-                        <span class="card-badge badge-new">✨ +264</span>
-                    </div>
-                    <p class="card-description">Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 12,171</span>
-                    </div>
-                </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/roboflow/supervision" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">👁️</span>
-                                supervision
-                            </span>
-                        </a>
-                        <span class="card-badge badge-trending">🔥 +535</span>
-                    </div>
-                    <p class="card-description">We write your reusable computer vision tools. 可复用的计算机视觉工具库</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 37,458</span>
-                    </div>
-                </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <a href="https://github.com/zai-org/GLM-OCR" target="_blank" class="card-title">
-                            <span class="repo-name">
-                                <span class="repo-icon">📄</span>
-                                GLM-OCR
-                            </span>
-                        </a>
-                        <span class="card-badge badge-new">✨ +237</span>
-                    </div>
-                    <p class="card-description">GLM-OCR: Accurate × Fast × Comprehensive - 智谱AI推出的OCR工具</p>
-                    <div class="card-meta">
-                        <span class="meta-item"><span class="lang-dot lang-python"></span> Python</span>
-                        <span class="meta-item"><span class="meta-icon">⭐</span> 5,264</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hot Topics -->
-        <section class="fade-in delay-2">
-            <div class="section-header">
-                <div class="section-icon" style="background: rgba(236, 72, 153, 0.15); color: var(--accent-pink);">🔥</div>
-                <h2 class="section-title">热门话题</h2>
-                <span class="section-subtitle">AI社区热议</span>
-            </div>
-            <div class="topics-list">
-                <span class="topic-tag hot">#OpenClaw AI智能体</span>
-                <span class="topic-tag hot">#GPT-5.4 系统提示词</span>
-                <span class="topic-tag hot">#Claude Code 泄漏</span>
-                <span class="topic-tag">#AI Agent 规模化应用</span>
-                <span class="topic-tag">#时间序列预测模型</span>
-                <span class="topic-tag">#计算机视觉工具</span>
-                <span class="topic-tag">#OCR技术革新</span>
-                <span class="topic-tag">#AI编程助手</span>
-                <span class="topic-tag">#多模态大模型</span>
-                <span class="topic-tag">#AI安全与治理</span>
-                <span class="topic-tag">#企业AI采用率</span>
-                <span class="topic-tag">#开源AI工具</span>
-            </div>
-        </section>
-
-        <!-- AI News -->
-        <section class="fade-in delay-3">
-            <div class="section-header">
-                <div class="section-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--accent-blue);">📰</div>
-                <h2 class="section-title">AI 新闻资讯</h2>
-                <span class="section-subtitle">最新动态</span>
-            </div>
-            <div class="cards-grid">
-                <div class="card news-card">
-                    <div class="news-source">
-                        <span class="source-icon">📺</span>
-                        <span>BBC 中文</span>
-                    </div>
-                    <a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/simp" target="_blank" class="card-title">当AI智能体开始上岗：2026年春天里，三个中国人的兴奋与恐惧</a>
-                    <p class="card-description">"龙虾"是AI智能体OpenClaw在中国的绰号。2026年的春天，这个词被赋予新的意涵，然后频繁出现在各个工作场景中...</p>
-                    <div class="card-meta">
-                        <span class="meta-item">📅 2026-04-03</span>
-                        <span class="meta-item">👁️ 热门阅读</span>
-                    </div>
-                </div>
-
-                <div class="card news-card">
-                    <div class="news-source">
-                        <span class="source-icon">💼</span>
-                        <span>高盛研报</span>
-                    </div>
-                    <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vr1y.html" target="_blank" class="card-title">美国企业AI采用率达18.9%，企业级AI应用进入规模化阶段</a>
-                    <p class="card-description">高盛在其最新研报中称，美国企业的人工智能（AI）采用率为18.9%，AI产业进入规模化行业应用的关键阶段...</p>
-                    <div class="card-meta">
-                        <span class="meta-item">📅 2026-04-03</span>
-                        <span class="meta-item">📊 行业分析</span>
-                    </div>
-                </div>
-
-                <div class="card news-card">
-                    <div class="news-source">
-                        <span class="source-icon">🌐</span>
-                        <span>世界互联网大会</span>
-                    </div>
-                    <a href="https://cn.wicinternet.org/2026-02/04/content_38578741.htm" target="_blank" class="card-title">2026年首月全球AI产业动态报告发布</a>
-                    <p class="card-description">人工智能（AI）进一步展现出对生活、科研等多个领域的深刻影响，全球AI产业发展进入新阶段...</p>
-                    <div class="card-meta">
-                        <span class="meta-item">📅 2026-04-03</span>
-                        <span class="meta-item">🌍 全球视野</span>
-                    </div>
-                </div>
-
-                <div class="card news-card">
-                    <div class="news-source">
-                        <span class="source-icon">🎥</span>
-                        <span>YouTube AI News</span>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=EiC_wP-sFuU" target="_blank" class="card-title">AI 新闻汇总：OpenAI 宣布巨额融资与下一阶段AI发展路线图</a>
-                    <p class="card-description">OpenAI 博客宣布巨额融资与下一阶段AI；谷歌AI 博客Veo视频生成模型更新...</p>
-                    <div class="card-meta">
-                        <span class="meta-item">📅 2026-04-03</span>
-                        <span class="meta-item">🎬 视频</span>
-                    </div>
-                </div>
-
-                <div class="card news-card">
-                    <div class="news-source">
-                        <span class="source-icon">📱</span>
-                        <span>新浪财经</span>
-                    </div>
-                    <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vsm8.html" target="_blank" class="card-title">2026年人工智能产业进入规模化行业应用的关键阶段</a>
-                    <p class="card-description">AI Agent 迈入规模化应用时代，各行业开始大规模部署AI智能体解决方案...</p>
-                    <div class="card-meta">
-                        <span class="meta-item">📅 2026-04-03</span>
-                        <span class="meta-item">📈 产业趋势</span>
-                    </div>
-                </div>
-
-                <div class="card news-card">
-                    <div class="news-source">
-                        <span class="source-icon">🔒</span>
-                        <span>新浪科技</span>
-                    </div>
-                    <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vmy2.html" target="_blank" class="card-title">OpenClaw火爆，AI治理如何穿越"科林格里奇困境"</a>
-                    <p class="card-description">随着AI智能体的快速发展，AI治理面临新的挑战，如何在创新与监管之间找到平衡点...</p>
-                    <div class="card-meta">
-                        <span class="meta-item">📅 2026-04-03</span>
-                        <span class="meta-item">🛡️ AI治理</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Tools -->
-        <section class="fade-in delay-4">
-            <div class="section-header">
-                <div class="section-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-green);">🛠️</div>
-                <h2 class="section-title">AI 工具推荐</h2>
-                <span class="section-subtitle">精选工具</span>
-            </div>
-            <div class="cards-grid">
-                <div class="card tool-card">
-                    <div class="tool-icon">🤖</div>
-                    <h3 class="tool-name">ChatGPT</h3>
-                    <span class="tool-category">对话AI</span>
-                    <p class="tool-desc">OpenAI旗舰对话模型，支持多模态理解和代码生成，是日常办公和编程的得力助手</p>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon">🎨</div>
-                    <h3 class="tool-name">Claude</h3>
-                    <span class="tool-category">AI助手</span>
-                    <p class="tool-desc">Anthropic推出的AI助手，擅长长文本分析、代码审查和复杂任务处理</p>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon">🔍</div>
-                    <h3 class="tool-name">Perplexity</h3>
-                    <span class="tool-category">AI搜索</span>
-                    <p class="tool-desc">AI驱动的搜索引擎，提供实时信息检索和智能答案总结，替代传统搜索</p>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon">🎵</div>
-                    <h3 class="tool-name">Suno</h3>
-                    <span class="tool-category">AI音乐</span>
-                    <p class="tool-desc">AI音乐生成工具，可根据文本描述创作完整歌曲，支持多种音乐风格</p>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">🖼️</div>
-                    <h3 class="tool-name">Midjourney</h3>
-                    <span class="tool-category">AI绘画</span>
-                    <p class="tool-desc">顶级AI图像生成工具，创作高质量艺术图像和概念设计</p>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">✍️</div>
-                    <h3 class="tool-name">Gemini</h3>
-                    <span class="tool-category">多模态AI</span>
-                    <p class="tool-desc">Google DeepMind多模态AI模型，支持文本、图像、视频理解</p>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);">💻</div>
-                    <h3 class="tool-name">GitHub Copilot</h3>
-                    <span class="tool-category">编程助手</span>
-                    <p class="tool-desc">AI编程助手，实时代码补全和生成，支持多种编程语言</p>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">📹</div>
-                    <h3 class="tool-name">OpusClip</h3>
-                    <span class="tool-category">视频剪辑</span>
-                    <p class="tool-desc">AI视频剪辑工具，自动将长视频转换为短视频片段</p>
-                </div>
-            </div>
-        </section>
-    </main>
+            </aside>
+        </div>
+    </div>
 
     <footer>
-        <p class="footer-text">AI Daily News - 每日AI快讯</p>
-        <p class="footer-text" style="margin-top: 0.5rem;">Generated on 2026-04-03 | 数据来源：GitHub、X/Twitter、知乎、新浪财经等</p>
+        <p>AI Daily · Generated on 2026-04-03</p>
         <div class="footer-links">
-            <a href="https://github.com/turingfx/ai-daily-news" target="_blank" class="footer-link">GitHub 仓库</a>
-            <a href="https://turingfx.github.io/ai-daily-news" target="_blank" class="footer-link">在线访问</a>
+            <a href="https://github.com/turingfx/ai-daily-news">GitHub</a>
+            <a href="https://turingfx.github.io/ai-daily-news">Live Site</a>
         </div>
     </footer>
-
-    <script>
-        // Add hover effects and interactions
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-4px)';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.card').forEach(card => {
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
