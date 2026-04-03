@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily | 2026-04-03</title>
+    <title>AI Daily - 今日AI快讯 | 2026-04-03</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #fafafa;
@@ -34,7 +34,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -231,38 +231,6 @@
         }
 
         /* Changelog specific */
-        .changelog-item {
-            border-left: 2px solid var(--border);
-            padding-left: 1rem;
-            margin-left: 0.5rem;
-            position: relative;
-        }
-
-        .changelog-item::before {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: 0.375rem;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .changelog-version {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 600;
-            font-size: 13px;
-            color: var(--text);
-            margin-bottom: 0.25rem;
-        }
-
-        .changelog-date {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-
         .changelog-list {
             list-style: none;
             font-size: 13px;
@@ -381,6 +349,15 @@
             margin-bottom: 0.25rem;
         }
 
+        .repo-name a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .repo-name a:hover {
+            color: var(--accent);
+        }
+
         .repo-desc {
             font-size: 13px;
             color: var(--text-secondary);
@@ -491,21 +468,6 @@
             font-size: 12px;
         }
 
-        pre {
-            background: var(--code-bg);
-            padding: 0.75rem;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-size: 12px;
-            line-height: 1.5;
-            margin: 0.5rem 0;
-        }
-
-        pre code {
-            background: none;
-            padding: 0;
-        }
-
         /* Footer */
         footer {
             border-top: 1px solid var(--border);
@@ -556,6 +518,12 @@
             color: var(--text-secondary);
             line-height: 1.6;
         }
+
+        /* News card */
+        .news-card .card-title {
+            font-size: 15px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -563,7 +531,7 @@
         <div class="header-content">
             <div class="brand">
                 <div class="brand-icon">AI</div>
-                <span class="brand-text">AI Daily</span>
+                <span class="brand-text">AI Daily - 今日AI快讯</span>
             </div>
             <div class="meta">
                 <span class="badge">LIVE</span>
@@ -580,87 +548,87 @@
                 <section class="section">
                     <div class="section-header">
                         <span style="color: var(--accent);">●</span>
-                        <h2 class="section-title">Claude Code Updates</h2>
+                        <h2 class="section-title">Claude Code 更新日志</h2>
                         <span class="section-count">v2.1.91</span>
                     </div>
 
                     <div class="feature-box">
-                        <div class="feature-title">🚀 Q1 2026 Major Features</div>
+                        <div class="feature-title">🚀 Q1 2026 六大新功能</div>
                         <div class="feature-desc">
-                            Anthropic shipped 6 meaningful features in Q1: <strong>Remote Control</strong> (server/CI deployment), 
-                            <strong>Dispatch</strong> (task-aware routing), <strong>Channels</strong> (pub/sub messaging), 
-                            <strong>Computer Use</strong> (GUI automation), <strong>Auto Mode</strong> (autonomous execution), 
-                            and <strong>AutoDream</strong> (planning loop).
+                            Anthropic 在 Q1 发布了六项重要功能：<strong>Remote Control</strong>（服务器/CI部署）、
+                            <strong>Dispatch</strong>（任务感知路由）、<strong>Channels</strong>（发布/订阅消息）、
+                            <strong>Computer Use</strong>（GUI自动化）、<strong>Auto Mode</strong>（自主执行）、
+                            以及 <strong>AutoDream</strong>（规划循环）。
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" class="card-title"><code>v2.1.91</code> Latest Release</a>
+                            <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" class="card-title"><code>v2.1.91</code> 最新版本</a>
                             <span class="card-badge badge-green">NEW</span>
                         </div>
                         <div class="card-body">
                             <ul class="changelog-list">
-                                <li><strong>MCP tool result persistence override</strong> - Added <code>_meta["anthropic/maxResultSizeChars"]</code> annotation (up to 500K) for larger results like DB schemas</li>
-                                <li><strong>Multi-line deep link support</strong> - <code>claude-cli://open?q=</code> now supports encoded newlines (<code>%0A</code>)</li>
-                                <li><strong>Plugin executables</strong> - Plugins can ship executables under <code>bin/</code> and invoke as bare commands</li>
-                                <li><strong>Bug fixes</strong> - Fixed transcript chain breaks on <code>--resume</code>, cmd+delete on various terminals, plan mode in remote sessions</li>
+                                <li><strong>MCP 工具结果持久化覆盖</strong> - 新增 <code>_meta["anthropic/maxResultSizeChars"]</code> 注解（最高500K），支持更大的结果如数据库schema</li>
+                                <li><strong>多行深度链接支持</strong> - <code>claude-cli://open?q=</code> 现在支持编码换行符（<code>%0A</code>）</li>
+                                <li><strong>插件可执行文件</strong> - 插件可在 <code>bin/</code> 目录下发布可执行文件，并作为裸命令调用</li>
+                                <li><strong>Bug 修复</strong> - 修复 <code>--resume</code> 时的转录链断裂、各终端的 cmd+delete、远程会话中的计划模式等问题</li>
                             </ul>
                         </div>
                         <div class="card-meta">
                             <span class="meta-item">📅 2026-04-02</span>
-                            <span class="meta-item">🔧 9 changes</span>
+                            <span class="meta-item">🔧 9 项变更</span>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" class="card-title"><code>v2.1.90</code> Previous Release</a>
+                            <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" class="card-title"><code>v2.1.90</code> 上一版本</a>
                             <span class="card-badge badge-gray">RECENT</span>
                         </div>
                         <div class="card-body">
                             <ul class="changelog-list">
-                                <li><strong>/powerup</strong> - Interactive lessons teaching Claude Code features with animated demos</li>
-                                <li><strong>Performance</strong> - Faster stripAnsi on Bun, SSE transport handles large streamed frames in linear time</li>
-                                <li><strong>Security</strong> - PowerShell tool permission hardening, removed DNS cache auto-allow</li>
-                                <li><strong>Bug fixes</strong> - Rate-limit dialog infinite loop, --resume prompt-cache miss</li>
+                                <li><strong>/powerup</strong> - 交互式教程，通过动画演示教授 Claude Code 功能</li>
+                                <li><strong>性能优化</strong> - Bun 上更快的 stripAnsi，SSE 传输以线性时间处理大流帧</li>
+                                <li><strong>安全加固</strong> - PowerShell 工具权限加固，移除 DNS 缓存自动允许</li>
+                                <li><strong>Bug 修复</strong> - 速率限制对话框无限循环、--resume 提示缓存未命中</li>
                             </ul>
                         </div>
                         <div class="card-meta">
                             <span class="meta-item">📅 2026-03-28</span>
-                            <span class="meta-item">🔧 12 changes</span>
+                            <span class="meta-item">🔧 12 项变更</span>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-title">Computer Use Research Preview</span>
+                            <span class="card-title">Computer Use 研究预览版</span>
                             <span class="card-badge badge-blue">FEATURE</span>
                         </div>
                         <div class="card-body">
-                            Pro and Max plans can now give Claude access to "open files, run dev tools, point, click, and navigate to what's on your screen". 
-                            Rolling visual context window reduces operation latency by ~50%, with improved UI exception recovery, drag-drop support, 
-                            multi-monitor awareness, and clipboard operations.
+                            Pro 和 Max 套餐用户现在可以让 Claude 访问"打开文件、运行开发工具、点击、导航屏幕内容"。
+                            滚动视觉上下文窗口将操作延迟降低约50%，改进了UI异常恢复能力，新增拖放支持、
+                            多显示器感知和剪贴板操作。
                         </div>
                         <div class="card-meta">
-                            <span class="meta-item">🗓️ Released: Mar 23, 2026</span>
+                            <span class="meta-item">🗓️ 发布日期：2026-03-23</span>
                             <span class="meta-item">📍 Cowork + Claude Code</span>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
-                            <span class="card-title">Auto Mode - Behavioral Setting</span>
+                            <span class="card-title">Auto Mode - 行为设置</span>
                             <span class="card-badge badge-yellow">BETA</span>
                         </div>
                         <div class="card-body">
-                            Three risk configurations: <strong>Conservative</strong> (asks before most actions), 
-                            <strong>Balanced</strong> (default, asks for destructive operations), 
-                            <strong>Aggressive</strong> (minimal interruptions). All decisions generate auditable logs.
-                            Combined with Computer Use enables "completely unattended development process".
+                            三档风险配置：<strong>Conservative</strong>（大多数操作前询问）、
+                            <strong>Balanced</strong>（默认，破坏性操作前询问）、
+                            <strong>Aggressive</strong>（最小中断）。所有决策生成可审计日志。
+                            与 Computer Use 结合可实现"完全无人值守的开发流程"。
                         </div>
                         <div class="card-meta">
-                            <span class="meta-item">⚙️ Configurable per-project</span>
+                            <span class="meta-item">⚙️ 可按项目配置</span>
                         </div>
                     </div>
                 </section>
@@ -669,15 +637,15 @@
                 <section class="section">
                     <div class="section-header">
                         <span style="color: var(--success);">●</span>
-                        <h2 class="section-title">GitHub Trending</h2>
+                        <h2 class="section-title">GitHub 热门项目</h2>
                         <span class="section-count">8 repos</span>
                     </div>
 
                     <div class="card repo-card">
                         <div class="repo-icon">📹</div>
                         <div class="repo-content">
-                            <div class="repo-name">siddharthvaddem/openscreen</div>
-                            <div class="repo-desc">Create stunning demos for free. Open-source alternative to Screen Studio, no subscriptions, no watermarks.</div>
+                            <div class="repo-name"><a href="https://github.com/siddharthvaddem/openscreen" target="_blank">siddharthvaddem/openscreen</a></div>
+                            <div class="repo-desc">Create stunning demos for free. 开源 Screen Studio 替代品，无需订阅，无水印。</div>
                             <div class="repo-meta">
                                 <span class="meta-item"><span class="lang-dot" style="background: #3178c6;"></span> TypeScript</span>
                                 <span class="meta-item">⭐ 16,244</span>
@@ -689,8 +657,8 @@
                     <div class="card repo-card">
                         <div class="repo-icon">🤖</div>
                         <div class="repo-content">
-                            <div class="repo-name">Yeachan-Heo/oh-my-codex</div>
-                            <div class="repo-desc">OmX - Oh My codeX: Add hooks, agent teams, HUDs, and more to your codex.</div>
+                            <div class="repo-name"><a href="https://github.com/Yeachan-Heo/oh-my-codex" target="_blank">Yeachan-Heo/oh-my-codex</a></div>
+                            <div class="repo-desc">OmX - Oh My codeX：为你的 codex 添加 hooks、agent 团队、HUD 等功能。</div>
                             <div class="repo-meta">
                                 <span class="meta-item"><span class="lang-dot" style="background: #3178c6;"></span> TypeScript</span>
                                 <span class="meta-item">⭐ 12,077</span>
@@ -702,8 +670,8 @@
                     <div class="card repo-card">
                         <div class="repo-icon">🔓</div>
                         <div class="repo-content">
-                            <div class="repo-name">asgeirtj/system_prompts_leaks</div>
-                            <div class="repo-desc">Extracted system prompts from GPT-5.4, Claude Opus 4.6, Gemini 3.1 Pro, Grok 4.2, Perplexity, and more.</div>
+                            <div class="repo-name"><a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank">asgeirtj/system_prompts_leaks</a></div>
+                            <div class="repo-desc">提取的系统提示词，包括 GPT-5.4、Claude Opus 4.6、Gemini 3.1 Pro、Grok 4.2、Perplexity 等。</div>
                             <div class="repo-meta">
                                 <span class="meta-item">📄 Markdown</span>
                                 <span class="meta-item">⭐ 36,556</span>
@@ -715,8 +683,8 @@
                     <div class="card repo-card">
                         <div class="repo-icon">🕵️</div>
                         <div class="repo-content">
-                            <div class="repo-name">sherlock-project/sherlock</div>
-                            <div class="repo-desc">Hunt down social media accounts by username across social networks.</div>
+                            <div class="repo-name"><a href="https://github.com/sherlock-project/sherlock" target="_blank">sherlock-project/sherlock</a></div>
+                            <div class="repo-desc">通过用户名追踪跨社交网络的社交媒体账号。</div>
                             <div class="repo-meta">
                                 <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
                                 <span class="meta-item">⭐ 77,410</span>
@@ -728,8 +696,8 @@
                     <div class="card repo-card">
                         <div class="repo-icon">📊</div>
                         <div class="repo-content">
-                            <div class="repo-name">google-research/timesfm</div>
-                            <div class="repo-desc">TimesFM - Pretrained time-series foundation model by Google Research for forecasting.</div>
+                            <div class="repo-name"><a href="https://github.com/google-research/timesfm" target="_blank">google-research/timesfm</a></div>
+                            <div class="repo-desc">TimesFM - Google Research 开发的预训练时间序列基础预测模型。</div>
                             <div class="repo-meta">
                                 <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
                                 <span class="meta-item">⭐ 13,495</span>
@@ -741,8 +709,8 @@
                     <div class="card repo-card">
                         <div class="repo-icon">🎯</div>
                         <div class="repo-content">
-                            <div class="repo-name">yusufkaraaslan/Skill_Seekers</div>
-                            <div class="repo-desc">Convert docs, GitHub repos, and PDFs into Claude AI skills with automatic conflict detection.</div>
+                            <div class="repo-name"><a href="https://github.com/yusufkaraaslan/Skill_Seekers" target="_blank">yusufkaraaslan/Skill_Seekers</a></div>
+                            <div class="repo-desc">将文档网站、GitHub 仓库和 PDF 转换为 Claude AI skills，支持自动冲突检测。</div>
                             <div class="repo-meta">
                                 <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
                                 <span class="meta-item">⭐ 12,171</span>
@@ -754,8 +722,8 @@
                     <div class="card repo-card">
                         <div class="repo-icon">👁️</div>
                         <div class="repo-content">
-                            <div class="repo-name">roboflow/supervision</div>
-                            <div class="repo-desc">Reusable computer vision tools. We write your CV tools so you don't have to.</div>
+                            <div class="repo-name"><a href="https://github.com/roboflow/supervision" target="_blank">roboflow/supervision</a></div>
+                            <div class="repo-desc">可复用的计算机视觉工具库。</div>
                             <div class="repo-meta">
                                 <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
                                 <span class="meta-item">⭐ 37,458</span>
@@ -767,8 +735,8 @@
                     <div class="card repo-card">
                         <div class="repo-icon">📄</div>
                         <div class="repo-content">
-                            <div class="repo-name">zai-org/GLM-OCR</div>
-                            <div class="repo-desc">GLM-OCR: Accurate × Fast × Comprehensive - Zhipu AI OCR tool.</div>
+                            <div class="repo-name"><a href="https://github.com/zai-org/GLM-OCR" target="_blank">zai-org/GLM-OCR</a></div>
+                            <div class="repo-desc">GLM-OCR：准确 × 快速 × 全面 - 智谱 AI OCR 工具。</div>
                             <div class="repo-meta">
                                 <span class="meta-item"><span class="lang-dot" style="background: #3572A5;"></span> Python</span>
                                 <span class="meta-item">⭐ 5,264</span>
@@ -782,13 +750,13 @@
                 <section class="section">
                     <div class="section-header">
                         <span style="color: var(--warning);">●</span>
-                        <h2 class="section-title">AI News</h2>
+                        <h2 class="section-title">AI 新闻资讯</h2>
                         <span class="section-count">6 articles</span>
                     </div>
 
-                    <div class="card">
+                    <div class="card news-card">
                         <div class="card-header">
-                            <a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/simp" class="card-title">当AI智能体开始上岗：2026年春天里，三个中国人的兴奋与恐惧</a>
+                            <a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/simp" target="_blank" class="card-title">当AI智能体开始上岗：2026年春天里，三个中国人的兴奋与恐惧</a>
                             <span class="card-badge badge-blue">BBC</span>
                         </div>
                         <div class="card-body">
@@ -800,9 +768,9 @@
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card news-card">
                         <div class="card-header">
-                            <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vr1y.html" class="card-title">美国企业AI采用率达18.9%，企业级AI应用进入规模化阶段</a>
+                            <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vr1y.html" target="_blank" class="card-title">美国企业AI采用率达18.9%，企业级AI应用进入规模化阶段</a>
                             <span class="card-badge badge-yellow">高盛</span>
                         </div>
                         <div class="card-body">
@@ -814,24 +782,23 @@
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card news-card">
                         <div class="card-header">
-                            <a href="https://www.latimes.com/business/story/2026-04-01/anthropic-accidentally-leaked-thousands-of-lines-of-code" class="card-title">Anthropic accidentally leaked thousands of lines of code</a>
+                            <a href="https://www.latimes.com/business/story/2026-04-01/anthropic-accidentally-leaked-thousands-of-lines-of-code" target="_blank" class="card-title">Anthropic 意外泄露数千行代码</a>
                             <span class="card-badge badge-red">LEAK</span>
                         </div>
                         <div class="card-body">
-                            A routine software update for Claude Code accidentally exposed 512,000 lines of source code. 
-                            The company has since removed 8,000 copies of the leaked code.
+                            Claude Code 的一次例行软件更新意外暴露了 512,000 行源代码。该公司随后已删除 8,000 份泄露的代码副本。
                         </div>
                         <div class="card-meta">
                             <span class="meta-item">📅 2026-04-01</span>
-                            <span class="meta-item">🔒 Security</span>
+                            <span class="meta-item">🔒 安全</span>
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card news-card">
                         <div class="card-header">
-                            <a href="https://cn.wicinternet.org/2026-02/04/content_38578741.htm" class="card-title">2026年首月全球AI产业动态报告发布</a>
+                            <a href="https://cn.wicinternet.org/2026-02/04/content_38578741.htm" target="_blank" class="card-title">2026年首月全球AI产业动态报告发布</a>
                             <span class="card-badge badge-gray">WIC</span>
                         </div>
                         <div class="card-body">
@@ -839,7 +806,35 @@
                         </div>
                         <div class="card-meta">
                             <span class="meta-item">📅 2026-04-03</span>
-                            <span class="meta-item">🌍 Global</span>
+                            <span class="meta-item">🌍 全球视野</span>
+                        </div>
+                    </div>
+
+                    <div class="card news-card">
+                        <div class="card-header">
+                            <a href="https://www.youtube.com/watch?v=EiC_wP-sFuU" target="_blank" class="card-title">AI 新闻汇总：OpenAI 宣布巨额融资与下一阶段AI发展路线图</a>
+                            <span class="card-badge badge-blue">YouTube</span>
+                        </div>
+                        <div class="card-body">
+                            OpenAI 博客宣布巨额融资与下一阶段AI；谷歌AI 博客Veo视频生成模型更新...
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-04-03</span>
+                            <span class="meta-item">🎬 视频</span>
+                        </div>
+                    </div>
+
+                    <div class="card news-card">
+                        <div class="card-header">
+                            <a href="https://k.sina.com.cn/article_7857201856_1d45362c001903vmy2.html" target="_blank" class="card-title">OpenClaw火爆，AI治理如何穿越"科林格里奇困境"</a>
+                            <span class="card-badge badge-gray">新浪科技</span>
+                        </div>
+                        <div class="card-body">
+                            随着AI智能体的快速发展，AI治理面临新的挑战，如何在创新与监管之间找到平衡点...
+                        </div>
+                        <div class="card-meta">
+                            <span class="meta-item">📅 2026-04-03</span>
+                            <span class="meta-item">🛡️ AI治理</span>
                         </div>
                     </div>
                 </section>
@@ -848,7 +843,7 @@
                 <section class="section">
                     <div class="section-header">
                         <span style="color: #1d9bf0;">●</span>
-                        <h2 class="section-title">X / Twitter Discussions</h2>
+                        <h2 class="section-title">X / Twitter 热议</h2>
                         <span class="section-count">Hot takes</span>
                     </div>
 
@@ -885,7 +880,7 @@
                             • Multi-line deep link support<br>
                             • Plugin executables in bin/<br>
                             • Fixed transcript chain breaks on --resume<br><br>
-                            Full changelog: <a href="#">github.com/anthropics/claude-code</a>
+                            Full changelog: <a href="https://github.com/anthropics/claude-code" target="_blank">github.com/anthropics/claude-code</a>
                         </div>
                         <div class="tweet-stats">
                             <span class="tweet-stat">💬 89</span>
@@ -936,7 +931,7 @@
 
             <aside class="sidebar">
                 <div class="sidebar-card">
-                    <div class="sidebar-title">Trending Tags</div>
+                    <div class="sidebar-title">热门标签</div>
                     <div class="tag-list">
                         <span class="tag active">#ClaudeCode</span>
                         <span class="tag">#OpenAI</span>
@@ -952,43 +947,43 @@
                 </div>
 
                 <div class="sidebar-card">
-                    <div class="sidebar-title">Quick Links</div>
+                    <div class="sidebar-title">快速链接</div>
                     <ul class="link-list">
-                        <li><a href="https://github.com/anthropics/claude-code">→ Claude Code Repo</a></li>
-                        <li><a href="https://support.claude.com/en/articles/12138966-release-notes">→ Release Notes</a></li>
-                        <li><a href="https://code.claude.com/docs">→ Documentation</a></li>
-                        <li><a href="https://github.com/trending">→ GitHub Trending</a></li>
-                        <li><a href="https://x.com/ClaudeCodeLog">→ @ClaudeCodeLog</a></li>
+                        <li><a href="https://github.com/anthropics/claude-code" target="_blank">→ Claude Code 仓库</a></li>
+                        <li><a href="https://support.claude.com/en/articles/12138966-release-notes" target="_blank">→ 发布说明</a></li>
+                        <li><a href="https://code.claude.com/docs" target="_blank">→ 官方文档</a></li>
+                        <li><a href="https://github.com/trending" target="_blank">→ GitHub Trending</a></li>
+                        <li><a href="https://x.com/ClaudeCodeLog" target="_blank">→ @ClaudeCodeLog</a></li>
                     </ul>
                 </div>
 
                 <div class="sidebar-card">
-                    <div class="sidebar-title">Stats</div>
+                    <div class="sidebar-title">数据统计</div>
                     <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.8;">
                         <div style="display: flex; justify-content: space-between;">
-                            <span>GitHub repos</span>
+                            <span>GitHub 项目</span>
                             <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">8</span>
                         </div>
                         <div style="display: flex; justify-content: space-between;">
-                            <span>Claude updates</span>
+                            <span>Claude 更新</span>
                             <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">6</span>
                         </div>
                         <div style="display: flex; justify-content: space-between;">
-                            <span>News articles</span>
-                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">4</span>
+                            <span>新闻文章</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">6</span>
                         </div>
                         <div style="display: flex; justify-content: space-between;">
-                            <span>Twitter posts</span>
+                            <span>Twitter 讨论</span>
                             <span style="font-family: 'JetBrains Mono', monospace; color: var(--text);">4</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="sidebar-card">
-                    <div class="sidebar-title">About</div>
+                    <div class="sidebar-title">关于</div>
                     <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6;">
-                        AI Daily aggregates the latest updates from Claude Code, GitHub trending, AI news, and Twitter discussions. 
-                        Updated daily at 09:00 UTC.
+                        AI Daily 聚合 Claude Code 最新更新、GitHub 热门项目、AI 新闻和 Twitter 讨论。
+                        每日 09:00 UTC 更新。
                     </p>
                 </div>
             </aside>
@@ -996,10 +991,10 @@
     </div>
 
     <footer>
-        <p>AI Daily · Generated on 2026-04-03</p>
+        <p>AI Daily - 每日AI快讯 · 生成于 2026-04-03</p>
         <div class="footer-links">
-            <a href="https://github.com/turingfx/ai-daily-news">GitHub</a>
-            <a href="https://turingfx.github.io/ai-daily-news">Live Site</a>
+            <a href="https://github.com/turingfx/ai-daily-news" target="_blank">GitHub</a>
+            <a href="https://turingfx.github.io/ai-daily-news" target="_blank">在线访问</a>
         </div>
     </footer>
 </body>
