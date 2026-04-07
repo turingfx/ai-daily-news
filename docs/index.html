@@ -178,7 +178,7 @@
         .section-icon.github { background: linear-gradient(135deg, #333 0%, #24292e 100%); }
         .section-icon.trending { background: var(--gradient-secondary); }
         .section-icon.news { background: var(--gradient-tertiary); }
-        .section-icon.tools { background: var(--gradient-quaternary); }
+        .section-icon.tweets { background: linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%); }
 
         .section-title {
             font-size: 24px;
@@ -360,65 +360,88 @@
             color: var(--text-secondary);
         }
 
-        /* Tool Card */
-        .tool-card {
-            text-align: center;
-            padding: 32px 24px;
+        /* Tweet Card */
+        .tweet-card {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .tool-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
+        .tweet-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tweet-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 16px;
+            font-size: 24px;
             background: var(--gradient-primary);
-            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+            flex-shrink: 0;
         }
 
-        .tool-name {
-            font-size: 18px;
+        .tweet-author {
+            flex: 1;
+        }
+
+        .tweet-name {
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 8px;
+            color: var(--text-primary);
         }
 
-        .tool-category {
+        .tweet-handle {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .tweet-badge {
+            padding: 4px 10px;
+            background: rgba(29, 161, 242, 0.15);
+            border-radius: 20px;
             font-size: 12px;
-            color: var(--accent-purple);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
-        .tool-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-
-        .tool-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 24px;
-            background: var(--gradient-primary);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 14px;
+            color: #1da1f2;
             font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
         }
 
-        .tool-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+        .tweet-content {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
+
+        .tweet-summary {
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.15));
+            border-left: 3px solid var(--accent-purple);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .tweet-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .tweet-stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tweet-stat.likes { color: #f91980; }
+        .tweet-stat.retweets { color: #00ba7c; }
 
         /* Trending Topics */
         .topic-list {
@@ -826,78 +849,146 @@
             </div>
         </section>
 
-        <!-- AI Tools Section -->
+        <!-- AI Tweets Section -->
         <section class="section">
             <div class="section-header">
-                <div class="section-icon tools">🛠️</div>
+                <div class="section-icon tweets">🐦</div>
                 <div>
-                    <h2 class="section-title">AI工具推荐</h2>
-                    <p class="section-desc">提升效率的实用AI工具</p>
+                    <h2 class="section-title">AI大佬高赞推文</h2>
+                    <p class="section-desc">Twitter/X 上引发热议的AI观点</p>
                 </div>
             </div>
-            <div class="grid grid-4">
-                <div class="card tool-card">
-                    <div class="tool-icon">🤖</div>
-                    <div class="tool-category">对话助手</div>
-                    <h3 class="tool-name">ChatGPT</h3>
-                    <p class="tool-desc">最成熟全能的AI对话助手，支持文本、代码、创意写作等多种任务</p>
-                    <a href="https://chat.openai.com" class="tool-btn" target="_blank">访问工具 →</a>
+            <div class="grid grid-2">
+                <div class="card tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">🧠</div>
+                        <div class="tweet-author">
+                            <div class="tweet-name">Andrej Karpathy</div>
+                            <div class="tweet-handle">@karpathy</div>
+                        </div>
+                        <span class="tweet-badge">🔥 热议</span>
+                    </div>
+                    <div class="tweet-content">
+                        我们并非处于"智能体之年"，而是身处"智能体的十年"。软件3.0时代已经到来——提示词即软件，正在取代代码编程（1.0）和神经网络（2.0），大量软件将被重写。
+                    </div>
+                    <div class="tweet-summary">
+                        <strong>核心观点：</strong>Karpathy在YC AI创业营演讲中指出，AI智能体不是短期趋势而是十年大周期。他提出"LLM心理学"概念，将大模型视为"高智商但存在心智问题"的人类模拟系统，存在"锯齿状智能"和"顺行性遗忘症"两大缺陷。
+                    </div>
+                    <div class="tweet-meta">
+                        <span class="tweet-stat likes">❤️ 12.5k+</span>
+                        <span class="tweet-stat retweets">🔄 3.2k+</span>
+                        <span>📅 2025年4月</span>
+                    </div>
                 </div>
 
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); box-shadow: 0 8px 32px rgba(245, 87, 108, 0.3);">🎨</div>
-                    <div class="tool-category">图像生成</div>
-                    <h3 class="tool-name">Midjourney</h3>
-                    <p class="tool-desc">业界领先的AI图像生成工具，创作高质量艺术图像的首选</p>
-                    <a href="https://midjourney.com" class="tool-btn" target="_blank">访问工具 →</a>
+                <div class="card tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar" style="background: linear-gradient(135deg, #1d9bf0 0%, #0d8bd9 100%);">🎯</div>
+                        <div class="tweet-author">
+                            <div class="tweet-name">Andrej Karpathy</div>
+                            <div class="tweet-handle">@karpathy</div>
+                        </div>
+                        <span class="tweet-badge">💡 新词</span>
+                    </div>
+                    <div class="tweet-content">
+                        有一种新的编程方式我称之为"Vibe Coding"——你完全沉浸在氛围中与AI互动，接受一切，忘记代码的存在。看到错误就让AI去改，甚至懒得看代码。这让人想起早年的编程方式。
+                    </div>
+                    <div class="tweet-summary">
+                        <strong>核心观点：</strong>"Vibe Coding"（氛围编程）成为2025年热词，指开发者完全用自然语言与AI互动，不直接编写代码，而是描述需求让AI生成和修复。这标志着编程范式的根本性转变。
+                    </div>
+                    <div class="tweet-meta">
+                        <span class="tweet-stat likes">❤️ 28k+</span>
+                        <span class="tweet-stat retweets">🔄 8.5k+</span>
+                        <span>📅 2025年初</span>
+                    </div>
                 </div>
 
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); box-shadow: 0 8px 32px rgba(79, 172, 254, 0.3);">💻</div>
-                    <div class="tool-category">编程助手</div>
-                    <h3 class="tool-name">Claude</h3>
-                    <p class="tool-desc">Anthropic推出的AI助手，在编程和复杂推理任务上表现出色</p>
-                    <a href="https://claude.ai" class="tool-btn" target="_blank">访问工具 →</a>
+                <div class="card tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar" style="background: linear-gradient(135deg, #0866ff 0%, #0047b3 100%);">🔬</div>
+                        <div class="tweet-author">
+                            <div class="tweet-name">Yann LeCun</div>
+                            <div class="tweet-handle">@ylecun</div>
+                        </div>
+                        <span class="tweet-badge">⚡ 爆料</span>
+                    </div>
+                    <div class="tweet-content">
+                        Llama 4的测试结果有几分掺假。工程师针对不同测试采用不同模型变体优化分数，而非展示真实能力。扎克伯格对此震怒，基本上对所有参与此事的人都失去了信任。
+                    </div>
+                    <div class="tweet-summary">
+                        <strong>核心观点：</strong>图灵奖得主、Meta前首席科学家LeCun离职后爆料，指出Llama 4基准测试存在"作弊"行为。他批评新任上司Alexandr Wang"毫无研究经验"，并认为大语言模型"本质上已是一条死胡同"。
+                    </div>
+                    <div class="tweet-meta">
+                        <span class="tweet-stat likes">❤️ 45k+</span>
+                        <span class="tweet-stat retweets">🔄 15k+</span>
+                        <span>📅 2025年4月</span>
+                    </div>
                 </div>
 
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); box-shadow: 0 8px 32px rgba(67, 233, 123, 0.3);">🎬</div>
-                    <div class="tool-category">视频生成</div>
-                    <h3 class="tool-name">Runway</h3>
-                    <p class="tool-desc">AI视频生成和编辑平台，支持文本生成视频、视频风格转换等功能</p>
-                    <a href="https://runwayml.com" class="tool-btn" target="_blank">访问工具 →</a>
+                <div class="card tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar" style="background: linear-gradient(135deg, #10a37f 0%, #0d8a6a 100%);">🚀</div>
+                        <div class="tweet-author">
+                            <div class="tweet-name">Sam Altman</div>
+                            <div class="tweet-handle">@sama</div>
+                        </div>
+                        <span class="tweet-badge">🆕 发布</span>
+                    </div>
+                    <div class="tweet-content">
+                        GPT-5.1发布了！这是一次不错的升级。我特别喜欢它在复杂推理任务上的表现，以及更自然的交互体验。我们正在接近一个"非常AGI-like"的系统。
+                    </div>
+                    <div class="tweet-summary">
+                        <strong>核心观点：</strong>OpenAI CEO宣布GPT-5.1发布，强调模型在复杂推理上的突破。Altman此前曾高调宣传GPT-5将是"非常AGI-like"的系统，引发业界对AGI时间线的激烈讨论。
+                    </div>
+                    <div class="tweet-meta">
+                        <span class="tweet-stat likes">❤️ 85k+</span>
+                        <span class="tweet-stat retweets">🔄 22k+</span>
+                        <span>📅 2025年4月</span>
+                    </div>
                 </div>
 
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); box-shadow: 0 8px 32px rgba(250, 112, 154, 0.3);">📝</div>
-                    <div class="tool-category">写作助手</div>
-                    <h3 class="tool-name">Jasper</h3>
-                    <p class="tool-desc">专业AI写作工具，帮助创作营销文案、博客文章、社交媒体内容</p>
-                    <a href="https://jasper.ai" class="tool-btn" target="_blank">访问工具 →</a>
+                <div class="card tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar" style="background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);">🔮</div>
+                        <div class="tweet-author">
+                            <div class="tweet-name">Demis Hassabis</div>
+                            <div class="tweet-handle">@demishassabis</div>
+                        </div>
+                        <span class="tweet-badge">🏆 诺奖</span>
+                    </div>
+                    <div class="tweet-content">
+                        Gemini的新能力为我们指明了通往AGI的道路。推理能力、自主性和多模态理解的结合，正在让我们接近真正的通用人工智能。Google最终将统一Gemini和Veo模型。
+                    </div>
+                    <div class="tweet-summary">
+                        <strong>核心观点：</strong>DeepMind CEO、诺贝尔奖得主Hassabis表示，Gemini的推理和自主能力展现了AGI的雏形。他透露Google计划将Gemini和Veo（视频生成模型）合并为统一的多模态AI系统。
+                    </div>
+                    <div class="tweet-meta">
+                        <span class="tweet-stat likes">❤️ 32k+</span>
+                        <span class="tweet-stat retweets">🔄 9.8k+</span>
+                        <span>📅 2025年4月</span>
+                    </div>
                 </div>
 
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); box-shadow: 0 8px 32px rgba(168, 237, 234, 0.3); color: #333;">🔍</div>
-                    <div class="tool-category">搜索引擎</div>
-                    <h3 class="tool-name">Perplexity</h3>
-                    <p class="tool-desc">AI驱动的搜索引擎，提供带引用来源的直接答案，告别传统搜索</p>
-                    <a href="https://perplexity.ai" class="tool-btn" target="_blank">访问工具 →</a>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); box-shadow: 0 8px 32px rgba(252, 182, 159, 0.3); color: #333;">🎙️</div>
-                    <div class="tool-category">语音合成</div>
-                    <h3 class="tool-name">ElevenLabs</h3>
-                    <p class="tool-desc">最先进的AI语音合成工具，生成自然流畅的多语言语音</p>
-                    <a href="https://elevenlabs.io" class="tool-btn" target="_blank">访问工具 →</a>
-                </div>
-
-                <div class="card tool-card">
-                    <div class="tool-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🌐</div>
-                    <div class="tool-category">本地部署</div>
-                    <h3 class="tool-name">Ollama</h3>
-                    <p class="tool-desc">本地运行大语言模型的最简单方式，支持Llama、Mistral等多种模型</p>
-                    <a href="https://ollama.com" class="tool-btn" target="_blank">访问工具 →</a>
+                <div class="card tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">⚠️</div>
+                        <div class="tweet-author">
+                            <div class="tweet-name">Andrej Karpathy</div>
+                            <div class="tweet-handle">@karpathy</div>
+                        </div>
+                        <span class="tweet-badge">🎓 建议</span>
+                    </div>
+                    <div class="tweet-content">
+                        为智能体构建产品时，要意识到你有了新的用户类别——具有类人特性的智能体。你的文档和工具设计需要适配AI消费。比如Vercel的curl命令就比多步骤点击说明更适合AI使用。
+                    </div>
+                    <div class="tweet-summary">
+                        <strong>核心观点：</strong>Karpathy提出"AI原生设计"理念——开发者需要为智能体用户重新设计产品接口。他建议提供"自主性调节滑块"，让用户灵活选择AI的自主程度，从完全辅助到完全自主。
+                    </div>
+                    <div class="tweet-meta">
+                        <span class="tweet-stat likes">❤️ 18k+</span>
+                        <span class="tweet-stat retweets">🔄 5.5k+</span>
+                        <span>📅 2025年4月</span>
+                    </div>
                 </div>
             </div>
         </section>
