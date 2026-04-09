@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News - 今日AI快讯</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>AI每日快讯 - 2026年4月9日</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f1f5f9;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --accent-purple: #8b5cf6;
-            --accent-blue: #3b82f6;
-            --accent-cyan: #06b6d4;
-            --accent-pink: #ec4899;
-            --accent-green: #10b981;
-            --accent-orange: #f59e0b;
-            --accent-red: #ef4444;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --bg-card-hover: #222230;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-pink: #ec4899;
+            --accent-orange: #f97316;
+            --accent-green: #10b981;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --border-color: rgba(255, 255, 255, 0.08);
         }
 
         body {
@@ -41,62 +39,64 @@
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
+            background-image: 
+                radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         /* Header */
         header {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
         }
 
         .logo {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 12px;
+            margin-bottom: 16px;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: white;
+            font-size: 24px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
         }
 
         .logo-text {
-            font-size: 1.5rem;
+            font-size: 32px;
             font-weight: 700;
-            color: var(--text-primary);
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .date-badge {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-primary);
+            gap: 8px;
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 0.875rem;
+            font-size: 14px;
             color: var(--text-secondary);
+            margin-bottom: 12px;
         }
 
         .date-badge::before {
@@ -105,151 +105,160 @@
             height: 8px;
             background: var(--accent-green);
             border-radius: 50%;
+            animation: pulse 2s infinite;
         }
 
-        /* Main container */
-        main {
-            max-width: 1400px;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 2rem;
         }
 
-        /* Quote Banner */
-        .quote-banner {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 24px;
             text-align: center;
-            color: white;
-            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
         }
 
-        .quote-text {
-            font-size: 1.5rem;
-            font-weight: 500;
-            font-style: italic;
-            margin-bottom: 0.75rem;
+        .stat-card:hover {
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            border-color: rgba(139, 92, 246, 0.3);
         }
 
-        .quote-author {
-            font-size: 1rem;
-            opacity: 0.9;
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        /* Section styles */
+        .stat-card:nth-child(1) .stat-number { color: var(--accent-purple); }
+        .stat-card:nth-child(2) .stat-number { color: var(--accent-blue); }
+        .stat-card:nth-child(3) .stat-number { color: var(--accent-cyan); }
+        .stat-card:nth-child(4) .stat-number { color: var(--accent-pink); }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Section Styles */
         .section {
-            margin-bottom: 2.5rem;
+            margin: 48px 0;
         }
 
         .section-header {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
         .section-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.125rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
+            font-size: 20px;
         }
 
         .section-title {
-            font-size: 1.375rem;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .github-section .section-icon { background: rgba(139, 92, 246, 0.2); }
+        .topics-section .section-icon { background: rgba(59, 130, 246, 0.2); }
+        .news-section .section-icon { background: rgba(6, 182, 212, 0.2); }
+        .tools-section .section-icon { background: rgba(236, 72, 153, 0.2); }
+
+        /* GitHub Cards */
+        .github-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .github-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .github-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .github-card:hover {
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .github-card:hover::before {
+            opacity: 1;
+        }
+
+        .github-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .github-title {
+            font-size: 16px;
             font-weight: 600;
             color: var(--text-primary);
         }
 
-        /* Grid layout */
-        .grid {
-            display: grid;
-            gap: 1.25rem;
-        }
-
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-        }
-
-        .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-
-        /* Card styles */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.25rem;
-            transition: all 0.2s ease;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-            border-color: #cbd5e1;
-        }
-
-        /* GitHub card specific */
-        .github-card .card-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.875rem;
-            margin-bottom: 0.875rem;
-        }
-
-        .repo-rank {
-            width: 32px;
-            height: 32px;
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
+        .github-rank {
+            width: 28px;
+            height: 28px;
+            background: var(--gradient-1);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            font-size: 0.875rem;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .github-desc {
+            font-size: 14px;
             color: var(--text-secondary);
-            flex-shrink: 0;
-        }
-
-        .repo-rank.top-3 {
-            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-            color: white;
-            border: none;
-        }
-
-        .repo-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .repo-name {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent-blue);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.25rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .repo-name:hover {
-            text-decoration: underline;
-        }
-
-        .repo-desc {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
+            margin-bottom: 16px;
             line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -257,287 +266,271 @@
             overflow: hidden;
         }
 
-        .repo-meta {
+        .github-meta {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-top: 0.875rem;
-            font-size: 0.8125rem;
-            color: var(--text-muted);
+            gap: 16px;
+            font-size: 13px;
         }
 
-        .repo-meta span {
+        .github-lang {
             display: flex;
             align-items: center;
-            gap: 0.375rem;
+            gap: 6px;
+            color: var(--text-secondary);
         }
 
         .lang-dot {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
         }
 
-        .lang-kotlin { background: #a97bff; }
-        .lang-python { background: #3572a5; }
+        .lang-python { background: #3572A5; }
         .lang-typescript { background: #3178c6; }
+        .lang-kotlin { background: #A97BFF; }
         .lang-cpp { background: #f34b7d; }
-        .lang-default { background: var(--accent-orange); }
+        .lang-shell { background: #89e051; }
+        .lang-other { background: #8b949e; }
 
-        .stars-badge {
-            background: #fef3c7;
-            color: #d97706;
-            padding: 0.125rem 0.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-        }
-
-        /* News card */
-        .news-card {
-            display: flex;
-            flex-direction: column;
-            gap: 0.625rem;
-        }
-
-        .news-source {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            padding: 0.25rem 0.625rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            width: fit-content;
-        }
-
-        .news-source.domestic {
-            background: #fee2e2;
-            color: #dc2626;
-        }
-
-        .news-source.foreign {
-            background: #dbeafe;
-            color: #2563eb;
-        }
-
-        .news-title {
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.4;
-            color: var(--text-primary);
-        }
-
-        .news-title a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .news-title a:hover {
-            color: var(--accent-blue);
-            text-decoration: underline;
-        }
-
-        .news-summary {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Tweet card */
-        .tweet-card {
-            display: flex;
-            flex-direction: column;
-            gap: 0.875rem;
-        }
-
-        .tweet-header {
+        .github-stars {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 4px;
+            color: var(--accent-orange);
         }
 
-        .tweet-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: white;
-            font-size: 0.875rem;
-        }
-
-        .tweet-author {
-            flex: 1;
-        }
-
-        .tweet-author-name {
-            font-weight: 600;
-            font-size: 0.9375rem;
-            color: var(--text-primary);
-        }
-
-        .tweet-author-handle {
-            font-size: 0.8125rem;
+        .github-total {
             color: var(--text-muted);
+            margin-left: auto;
         }
 
-        .tweet-content {
-            font-size: 0.9375rem;
-            color: var(--text-primary);
-            line-height: 1.6;
+        /* Topic Cards */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
         }
 
-        .tweet-content a {
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        .tweet-content a:hover {
-            text-decoration: underline;
-        }
-
-        .tweet-stats {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-        }
-
-        .tweet-stats span {
-            display: flex;
-            align-items: center;
-            gap: 0.375rem;
-        }
-
-        /* Trending topics */
-        .topic-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.625rem;
-        }
-
-        .topic-item {
-            display: flex;
-            align-items: center;
-            gap: 0.875rem;
-            padding: 0.875rem;
-            background: var(--bg-primary);
-            border-radius: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .topic-item:hover {
-            background: #e2e8f0;
-        }
-
-        .topic-rank {
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-secondary);
+        .topic-card {
+            background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
         }
 
-        .topic-content {
-            flex: 1;
+        .topic-card:hover {
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .topic-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 12px;
         }
 
         .topic-title {
-            font-weight: 500;
-            font-size: 0.9375rem;
-            margin-bottom: 0.125rem;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
         }
 
-        .topic-heat {
-            font-size: 0.75rem;
+        .topic-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* News Cards */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+
+        .news-source {
+            width: 48px;
+            height: 48px;
+            background: rgba(6, 182, 212, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .news-content {
+            flex: 1;
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .news-snippet {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .news-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
             color: var(--text-muted);
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+            border-color: rgba(236, 72, 153, 0.3);
+        }
+
+        .tool-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 16px;
+            box-shadow: 0 8px 24px rgba(236, 72, 153, 0.2);
+        }
+
+        .tool-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .tool-category {
+            font-size: 12px;
+            color: var(--accent-pink);
+            margin-bottom: 10px;
+        }
+
+        .tool-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.4;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2.5rem 2rem;
+            padding: 48px 0;
             border-top: 1px solid var(--border-color);
-            margin-top: 2rem;
+            margin-top: 48px;
         }
 
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 14px;
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
+            gap: 24px;
+            margin-top: 16px;
         }
 
-        .footer-links a {
+        .footer-link {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 14px;
+            transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        .footer-text {
-            color: var(--text-muted);
-            font-size: 0.8125rem;
-        }
-
-        /* Coverage note */
-        .coverage-note {
-            text-align: center;
-            padding: 0.75rem;
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-            color: #15803d;
+        .footer-link:hover {
+            color: var(--accent-purple);
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .quote-text {
-                font-size: 1.125rem;
+        @media (max-width: 1200px) {
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
+        }
 
-            .grid-2, .grid-3 {
+        @media (max-width: 992px) {
+            .github-grid {
                 grid-template-columns: 1fr;
             }
-
-            .header-content {
-                flex-direction: column;
-                gap: 0.75rem;
-                text-align: center;
+            .topics-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            main {
-                padding: 1rem;
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
             }
+        }
 
-            .quote-banner {
-                padding: 1.5rem;
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+            .logo-text {
+                font-size: 24px;
             }
         }
 
         /* Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
-            height: 8px;
         }
 
         ::-webkit-scrollbar-track {
@@ -545,319 +538,362 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
+            background: var(--bg-card);
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+            background: var(--bg-card-hover);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
+    <div class="container">
+        <!-- Header -->
+        <header>
             <div class="logo">
-                <div class="logo-icon">AI</div>
-                <div class="logo-text">Daily News</div>
+                <div class="logo-icon">🤖</div>
+                <h1 class="logo-text">AI每日快讯</h1>
             </div>
-            <div class="date-badge">
-                <span>2026年4月8日</span>
+            <div class="date-badge">2026年4月9日 星期三</div>
+            <p class="tagline">汇集全球AI最新动态，追踪技术前沿趋势，每日更新，助您掌握人工智能脉搏</p>
+        </header>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">GitHub热榜</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">热门话题</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">最新资讯</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">工具推荐</div>
             </div>
         </div>
-    </header>
 
-    <main>
-        <!-- Daily Quote -->
-        <div class="quote-banner">
-            <div class="quote-text">"The best way to predict the future is to invent it."</div>
-            <div class="quote-author">— Alan Kay</div>
-        </div>
-
-        <!-- Coverage Note -->
-        <div class="coverage-note">
-            📅 本期覆盖：4月7日 - 4月8日（近2天）
-        </div>
-
-        <!-- GitHub Trending -->
-        <section class="section">
+        <!-- GitHub Trending Section -->
+        <section class="section github-section">
             <div class="section-header">
-                <div class="section-icon">📊</div>
+                <div class="section-icon">⭐</div>
                 <h2 class="section-title">GitHub Trending 热榜</h2>
             </div>
-            <div class="grid grid-2">
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank top-3">1</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/google-ai-edge/gallery" class="repo-name" target="_blank">google-ai-edge/gallery</a>
-                            <p class="repo-desc">A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.</p>
-                        </div>
+            <div class="github-grid">
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">obra/superpowers</span>
+                        <span class="github-rank">1</span>
                     </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-kotlin"></span>Kotlin</span>
-                        <span class="stars-badge">⭐ 18,910</span>
-                    </div>
-                </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank top-3">2</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/abhigyanpatwari/GitNexus" class="repo-name" target="_blank">abhigyanpatwari/GitNexus</a>
-                            <p class="repo-desc">GitNexus: The Zero-Server Code Intelligence Engine - A client-side knowledge graph creator.</p>
-                        </div>
-                    </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="stars-badge">⭐ 24,651</span>
+                    <p class="github-desc">An agentic skills framework & software development methodology that works.</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-shell"></span>Shell</span>
+                        <span class="github-stars">🔥 +2,028</span>
+                        <span class="github-total">⭐ 141,833</span>
                     </div>
                 </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank top-3">3</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/tobi/qmd" class="repo-name" target="_blank">tobi/qmd</a>
-                            <p class="repo-desc">mini cli search engine for your docs, knowledge bases, meeting notes, whatever.</p>
-                        </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">abhigyanpatwari/GitNexus</span>
+                        <span class="github-rank">2</span>
                     </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="stars-badge">⭐ 19,660</span>
+                    <p class="github-desc">GitNexus: The Zero-Server Code Intelligence Engine - 客户端知识图谱创建器，完全在浏览器中运行</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
+                        <span class="github-stars">🔥 +980</span>
+                        <span class="github-total">⭐ 25,407</span>
                     </div>
                 </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank">4</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/NVIDIA/personaplex" class="repo-name" target="_blank">NVIDIA/personaplex</a>
-                            <p class="repo-desc">PersonaPlex code - NVIDIA's latest AI persona generation framework.</p>
-                        </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">google-ai-edge/gallery</span>
+                        <span class="github-rank">3</span>
                     </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="stars-badge">⭐ 8,023</span>
+                    <p class="github-desc">A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-kotlin"></span>Kotlin</span>
+                        <span class="github-stars">🔥 +853</span>
+                        <span class="github-total">⭐ 19,586</span>
                     </div>
                 </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank">5</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/HKUDS/DeepTutor" class="repo-name" target="_blank">HKUDS/DeepTutor</a>
-                            <p class="repo-desc">DeepTutor: Agent-Native Personalized Learning Assistant - AI-powered personalized education platform.</p>
-                        </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">forrestchang/andrej-karpathy-skills</span>
+                        <span class="github-rank">4</span>
                     </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="stars-badge">⭐ 12,373</span>
+                    <p class="github-desc">Andrej Karpathy技能合集 - AI/ML领域知名专家的资源汇总</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-other"></span>Other</span>
+                        <span class="github-stars">🔥 +702</span>
+                        <span class="github-total">⭐ 9,185</span>
                     </div>
                 </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank">6</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/elebumm/RedditVideoMakerBot" class="repo-name" target="_blank">elebumm/RedditVideoMakerBot</a>
-                            <p class="repo-desc">Create Reddit Videos with just one command - Automated video generation from Reddit content.</p>
-                        </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">TheCraigHewitt/seomachine</span>
+                        <span class="github-rank">5</span>
                     </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="stars-badge">⭐ 10,101</span>
+                    <p class="github-desc">A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business.</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 +649</span>
+                        <span class="github-total">⭐ 4,689</span>
                     </div>
                 </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank">7</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/google-ai-edge/LiteRT-LM" class="repo-name" target="_blank">google-ai-edge/LiteRT-LM</a>
-                            <p class="repo-desc">LiteRT Language Model - Google's lightweight runtime for on-device language models.</p>
-                        </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">elebumm/RedditVideoMakerBot</span>
+                        <span class="github-rank">6</span>
                     </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-cpp"></span>C++</span>
-                        <span class="stars-badge">⭐ 2,628</span>
+                    <p class="github-desc">Create Reddit Videos with just✨ one command ✨</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 +555</span>
+                        <span class="github-total">⭐ 10,548</span>
                     </div>
                 </div>
-
-                <div class="card github-card">
-                    <div class="card-header">
-                        <div class="repo-rank">8</div>
-                        <div class="repo-info">
-                            <a href="https://github.com/forrestchang/andrej-karpathy-skills" class="repo-name" target="_blank">forrestchang/andrej-karpathy-skills</a>
-                            <p class="repo-desc">Collection of Andrej Karpathy's skills and tutorials on AI/ML.</p>
-                        </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">NVIDIA/personaplex</span>
+                        <span class="github-rank">7</span>
                     </div>
-                    <div class="repo-meta">
-                        <span><span class="lang-dot lang-default"></span>Markdown</span>
-                        <span class="stars-badge">⭐ 8,160</span>
+                    <p class="github-desc">PersonaPlex code - NVIDIA推出的角色AI项目</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 +586</span>
+                        <span class="github-total">⭐ 8,500</span>
+                    </div>
+                </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">google-ai-edge/LiteRT-LM</span>
+                        <span class="github-rank">8</span>
+                    </div>
+                    <p class="github-desc">Google AI Edge轻量级运行时语言模型</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-cpp"></span>C++</span>
+                        <span class="github-stars">🔥 +501</span>
+                        <span class="github-total">⭐ 3,031</span>
+                    </div>
+                </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">newton-physics/newton</span>
+                        <span class="github-rank">9</span>
+                    </div>
+                    <p class="github-desc">An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 +91</span>
+                        <span class="github-total">⭐ 4,131</span>
+                    </div>
+                </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title">virattt/ai-hedge-fund</span>
+                        <span class="github-rank">10</span>
+                    </div>
+                    <p class="github-desc">An AI Hedge Fund Team - AI驱动的对冲基金团队模拟</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 +151</span>
+                        <span class="github-total">⭐ 50,762</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Hot Topics -->
-        <section class="section">
+        <!-- Hot Topics Section -->
+        <section class="section topics-section">
             <div class="section-header">
                 <div class="section-icon">🔥</div>
                 <h2 class="section-title">热门话题讨论</h2>
             </div>
-            <div class="card">
-                <div class="topic-list">
-                    <div class="topic-item">
-                        <div class="topic-rank">1</div>
-                        <div class="topic-content">
-                            <div class="topic-title">斯坦福AI报告：中美AI差距缩小</div>
-                            <div class="topic-heat">热度: 89.5K 讨论</div>
-                        </div>
-                    </div>
-                    <div class="topic-item">
-                        <div class="topic-rank">2</div>
-                        <div class="topic-content">
-                            <div class="topic-title">OpenAI GPT-4将于4月30日退役</div>
-                            <div class="topic-heat">热度: 76.2K 讨论</div>
-                        </div>
-                    </div>
-                    <div class="topic-item">
-                        <div class="topic-rank">3</div>
-                        <div class="topic-content">
-                            <div class="topic-title">中国大模型掀翻全球AI竞赛天花板</div>
-                            <div class="topic-heat">热度: 65.8K 讨论</div>
-                        </div>
-                    </div>
-                    <div class="topic-item">
-                        <div class="topic-rank">4</div>
-                        <div class="topic-content">
-                            <div class="topic-title">端侧大模型部署成为新趋势</div>
-                            <div class="topic-heat">热度: 54.3K 讨论</div>
-                        </div>
-                    </div>
-                    <div class="topic-item">
-                        <div class="topic-rank">5</div>
-                        <div class="topic-content">
-                            <div class="topic-title">AI Agent规模化应用元年到来</div>
-                            <div class="topic-heat">热度: 48.9K 讨论</div>
-                        </div>
-                    </div>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <span class="topic-tag">知乎热议</span>
+                    <h3 class="topic-title">DeepSeek为什么超越了OpenAI?</h3>
+                    <p class="topic-desc">探讨DeepSeek模型对美国股市及科技格局的冲击、与传统AI公司的对比、技术突破等热门讨论。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="topic-tag">开源热点</span>
+                    <h3 class="topic-title">GitHub爆火24K Star开源热点雷达</h3>
+                    <p class="topic-desc">TrendRadar国产开源项目，自动抓取11+国内外平台热搜榜单，通过AI智能摘要成为信息密度时代的降噪神器。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="topic-tag">AI Agent</span>
+                    <h3 class="topic-title">last30days-skill：跨平台趋势猎手</h3>
+                    <p class="topic-desc">开源AI研究工具，智能聚合Reddit、Twitter等平台热点，让AI Agent成为信息收集专家。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="topic-tag">产业合作</span>
+                    <h3 class="topic-title">Reddit与Google、OpenAI合作</h3>
+                    <p class="topic-desc">人工智能授权协议与变现势头强劲，利用Reddit数据训练AI模型成为行业新趋势。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="topic-tag">教育应用</span>
+                    <h3 class="topic-title">迈向未来的AI教学实验</h3>
+                    <p class="topic-desc">AI分析消费者对VR头盔和智能穿戴设备的接受度，探索AI在教育领域的创新应用场景。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="topic-tag">平台动态</span>
+                    <h3 class="topic-title">腾讯AI平台争议与讨论</h3>
+                    <p class="topic-desc">关于腾讯公司软件平台AI功能的相关争议和用户讨论持续发酵，引发行业关注。</p>
                 </div>
             </div>
         </section>
 
-        <!-- AI News -->
-        <section class="section">
+        <!-- News Section -->
+        <section class="section news-section">
             <div class="section-header">
                 <div class="section-icon">📰</div>
-                <h2 class="section-title">AI 新闻资讯</h2>
+                <h2 class="section-title">AI新闻资讯</h2>
             </div>
-            <div class="grid grid-2">
-                <!-- Domestic News -->
-                <div>
-                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">🇨🇳 国内媒体</h3>
-                    <div class="card news-card" style="margin-bottom: 1rem;">
-                        <span class="news-source domestic">🇨🇳 财新网</span>
-                        <h3 class="news-title"><a href="https://science.caixin.com/2025-04-08/102307242.html" target="_blank">斯坦福AI报告：头部模型性能相当 中美差距缩小</a></h3>
-                        <p class="news-summary">斯坦福大学HAI发布2025年度AI指数报告，指出中国AI模型正在快速缩小质量差距，在MMLU和HumanEval等核心基准测试中，中美模型性能差异从2023年的两位数百分比缩减至近乎持平。</p>
-                    </div>
-                    <div class="card news-card">
-                        <span class="news-source domestic">🇨🇳 科学网</span>
-                        <h3 class="news-title"><a href="https://news.sciencenet.cn/htmlnews/2025/4/541804.shtm" target="_blank">中国大模型正掀翻全球AI竞赛天花板</a></h3>
-                        <p class="news-summary">加拿大AI研究所报告显示，中国高性能AI模型（如DeepSeek）数量质量持续上升，排名首位与第十位模型性能差距从2024年初的12%缩小至2025年初的5%。</p>
+            <div class="news-list">
+                <div class="news-card">
+                    <div class="news-source">🌍</div>
+                    <div class="news-content">
+                        <h3 class="news-title">AI的4.8万亿美元未来：联合国警告数字鸿沟扩大</h3>
+                        <p class="news-snippet">人工智能预计将带来4.8万亿美元的经济价值，但联合国警告如果不采取行动，数字鸿沟将进一步扩大。</p>
+                        <div class="news-meta">
+                            <span>来源: UN News</span>
+                            <span>2025年4月</span>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Foreign News -->
-                <div>
-                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary);">🌍 国外媒体</h3>
-                    <div class="card news-card" style="margin-bottom: 1rem;">
-                        <span class="news-source foreign">🌍 UN News</span>
-                        <h3 class="news-title"><a href="https://news.un.org/en/story/2025/04/1161826" target="_blank">AI's $4.8 trillion future: UN warns of widening digital divide</a></h3>
-                        <p class="news-summary">联合国报告指出，人工智能预计将创造4.8万亿美元的经济价值，但警告称如果不采取行动，数字鸿沟将进一步扩大。</p>
+                <div class="news-card">
+                    <div class="news-source">🏛️</div>
+                    <div class="news-content">
+                        <h3 class="news-title">白宫发布全面AI发展行政命令</h3>
+                        <p class="news-snippet">特朗普总统签署行政命令，启动美国历史上最全面的AI发展计划，旨在保持美国在全球AI竞赛中的领导地位。</p>
+                        <div class="news-meta">
+                            <span>来源: AI Weekly</span>
+                            <span>2025年4月29日</span>
+                        </div>
                     </div>
-                    <div class="card news-card">
-                        <span class="news-source foreign">🌍 TechCrunch</span>
-                        <h3 class="news-title"><a href="https://techcrunch.com/2025/04/01/sam-altman-says-that-openais-capacity-issues-will-cause-product-delays/" target="_blank">Sam Altman says OpenAI's capacity issues will cause product delays</a></h3>
-                        <p class="news-summary">OpenAI CEO Sam Altman表示，由于GPU容量限制，部分产品发布将延迟。GPT-4将于4月30日正式退役，由GPT-4o全面替代。</p>
+                </div>
+                <div class="news-card">
+                    <div class="news-source">💼</div>
+                    <div class="news-content">
+                        <h3 class="news-title">AI行业融资动态：过去24小时要闻</h3>
+                        <p class="news-snippet">OpenAI CEO Sam Altman表示礼貌用语在AI交互中很重要，同时多家AI初创公司宣布新一轮融资。</p>
+                        <div class="news-meta">
+                            <span>来源: LinkedIn</span>
+                            <span>2025年4月20日</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-source">📊</div>
+                    <div class="news-content">
+                        <h3 class="news-title">2025年3-4月AI新兴技术综述</h3>
+                        <p class="news-snippet">回顾过去两个月AI领域的重大发展，包括大模型技术突破、多模态AI进展以及企业级AI应用落地。</p>
+                        <div class="news-meta">
+                            <span>来源: PTech Partners</span>
+                            <span>2025年4月29日</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-source">⚖️</div>
+                    <div class="news-content">
+                        <h3 class="news-title">AI法律与合规月度综述 - 2025年4月</h3>
+                        <p class="news-snippet">全球AI监管政策持续演进，欧盟AI法案实施细节、美国州级AI立法以及数据隐私保护新规成为焦点。</p>
+                        <div class="news-meta">
+                            <span>来源: Fladgate</span>
+                            <span>2025年4月</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-source">📈</div>
+                    <div class="news-content">
+                        <h3 class="news-title">AI营销应用周报 - 2025年4月25日</h3>
+                        <p class="news-snippet">AI在营销领域的最新应用趋势，包括个性化推荐、内容生成、客户洞察等方面的创新实践。</p>
+                        <div class="news-meta">
+                            <span>来源: MarketingProfs</span>
+                            <span>2025年4月25日</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- AI Expert Tweets -->
-        <section class="section">
+        <!-- Tools Section -->
+        <section class="section tools-section">
             <div class="section-header">
-                <div class="section-icon">🐦</div>
-                <h2 class="section-title">AI 大佬动态</h2>
+                <div class="section-icon">🛠️</div>
+                <h2 class="section-title">AI工具推荐</h2>
             </div>
-            <div class="grid grid-3">
-                <div class="card tweet-card">
-                    <div class="tweet-header">
-                        <div class="tweet-avatar">AK</div>
-                        <div class="tweet-author">
-                            <div class="tweet-author-name">Andrej Karpathy</div>
-                            <div class="tweet-author-handle">@karpathy</div>
-                        </div>
-                    </div>
-                    <div class="tweet-content">
-                        I've never felt this much behind as a programmer. The profession is changing so rapidly with AI. This is a new, distinct paradigm of interaction with computers.
-                    </div>
-                    <div class="tweet-stats">
-                        <span>❤️ 12.5K</span>
-                        <span>🔄 2.1K</span>
-                    </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🤖</div>
+                    <h3 class="tool-name">DeepSeek</h3>
+                    <span class="tool-category">通用对话</span>
+                    <p class="tool-desc">国产最强AI大模型，推理能力出众，代码生成和理解能力一流</p>
                 </div>
-
-                <div class="card tweet-card">
-                    <div class="tweet-header">
-                        <div class="tweet-avatar" style="background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);">SA</div>
-                        <div class="tweet-author">
-                            <div class="tweet-author-name">Sam Altman</div>
-                            <div class="tweet-author-handle">@sama</div>
-                        </div>
-                    </div>
-                    <div class="tweet-content">
-                        we have greatly improved memory in chatgpt – it can now reference all your past conversations. this is a big step towards more useful AI assistants.
-                    </div>
-                    <div class="tweet-stats">
-                        <span>❤️ 8.9K</span>
-                        <span>🔄 1.5K</span>
-                    </div>
+                <div class="tool-card">
+                    <div class="tool-icon">✨</div>
+                    <h3 class="tool-name">Gemini</h3>
+                    <span class="tool-category">多模态AI</span>
+                    <p class="tool-desc">Google最新多模态大模型，性能强悍，各类基准测试稳居第一梯队</p>
                 </div>
-
-                <div class="card tweet-card">
-                    <div class="tweet-header">
-                        <div class="tweet-avatar" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">YL</div>
-                        <div class="tweet-author">
-                            <div class="tweet-author-name">Yann LeCun</div>
-                            <div class="tweet-author-handle">@ylecun</div>
-                        </div>
-                    </div>
-                    <div class="tweet-content">
-                        To people who think "China is surpassing the US in AI" the correct response is: they are catching up in some areas, and the competition is good for everyone. Open research benefits the world.
-                    </div>
-                    <div class="tweet-stats">
-                        <span>❤️ 6.7K</span>
-                        <span>🔄 980</span>
-                    </div>
+                <div class="tool-card">
+                    <div class="tool-icon">📝</div>
+                    <h3 class="tool-name">Jasper</h3>
+                    <span class="tool-category">内容创作</span>
+                    <p class="tool-desc">专业AI写作助手，支持营销文案、博客文章、社交媒体内容生成</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🎬</div>
+                    <h3 class="tool-name">Pictory</h3>
+                    <span class="tool-category">视频生成</span>
+                    <p class="tool-desc">AI视频制作工具，可将文本内容自动转换为专业视频</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3 class="tool-name">AKOOL</h3>
+                    <span class="tool-category">创意工具</span>
+                    <p class="tool-desc">多功能AI创意平台，涵盖图像生成、视频编辑、内容创作等功能</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">💻</div>
+                    <h3 class="tool-name">Claude Code</h3>
+                    <span class="tool-category">编程助手</span>
+                    <p class="tool-desc">Anthropic推出的AI编程助手，代码理解和生成能力卓越</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h3 class="tool-name">BetterYeah AI</h3>
+                    <span class="tool-category">生产力</span>
+                    <p class="tool-desc">企业级AI生产力平台，提供智能办公、数据分析等解决方案</p>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">🌐</div>
+                    <h3 class="tool-name">ChatGPT</h3>
+                    <span class="tool-category">通用对话</span>
+                    <p class="tool-desc">OpenAI旗舰对话模型，多模态能力强，插件生态丰富</p>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="footer-content">
+        <!-- Footer -->
+        <footer>
+            <p class="footer-text">AI每日快讯 - 每日更新，追踪人工智能前沿动态</p>
             <div class="footer-links">
-                <a href="https://github.com/turingfx/ai-daily-news" target="_blank">GitHub</a>
-                <a href="https://github.com/turingfx/ai-daily-news/issues" target="_blank">反馈建议</a>
-                <a href="https://github.com/turingfx/ai-daily-news/blob/main/README.md" target="_blank">关于我们</a>
+                <a href="https://github.com/turingfx/ai-daily-news" class="footer-link" target="_blank">GitHub仓库</a>
+                <a href="#" class="footer-link">关于我们</a>
+                <a href="#" class="footer-link">提交反馈</a>
+                <a href="#" class="footer-link">订阅更新</a>
             </div>
-            <p class="footer-text">
-                AI Daily News &copy; 2026 | 每日更新，汇聚全球AI动态
-            </p>
-        </div>
-    </footer>
+            <p class="footer-text" style="margin-top: 24px; font-size: 12px;">© 2026 AI Daily News. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
