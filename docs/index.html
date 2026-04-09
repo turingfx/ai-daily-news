@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI每日快讯 - 2026年4月9日</title>
+    <title>AI Daily News - 2026年4月9日</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -13,24 +13,29 @@
         }
 
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a25;
-            --bg-card-hover: #222230;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --text-muted: #6b6b7b;
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
             --accent-purple: #8b5cf6;
             --accent-blue: #3b82f6;
             --accent-cyan: #06b6d4;
             --accent-pink: #ec4899;
             --accent-orange: #f97316;
             --accent-green: #10b981;
+            --accent-red: #ef4444;
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --border-color: rgba(255, 255, 255, 0.08);
+            --gradient-4: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            --gradient-5: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
 
         body {
@@ -39,10 +44,6 @@
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
-            background-image: 
-                radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
         }
 
         .container {
@@ -53,9 +54,8 @@
 
         /* Header */
         header {
-            padding: 40px 0;
+            padding: 40px 0 20px;
             text-align: center;
-            position: relative;
         }
 
         .logo {
@@ -74,13 +74,13 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+            box-shadow: var(--shadow-lg);
         }
 
         .logo-text {
             font-size: 32px;
             font-weight: 700;
-            background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+            background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -97,6 +97,7 @@
             font-size: 14px;
             color: var(--text-secondary);
             margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
         }
 
         .date-badge::before {
@@ -120,42 +121,63 @@
             margin: 0 auto;
         }
 
-        /* Stats Bar */
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        /* Daily Quote Banner */
+        .quote-banner {
+            background: var(--gradient-1);
+            border-radius: 20px;
+            padding: 32px 40px;
             margin: 32px 0;
+            color: white;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
         }
 
-        .stat-card {
+        .quote-banner::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 120px;
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            font-size: 14px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Date Coverage */
+        .date-coverage {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .coverage-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-4px);
-            background: var(--bg-card-hover);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .stat-card:nth-child(1) .stat-number { color: var(--accent-purple); }
-        .stat-card:nth-child(2) .stat-number { color: var(--accent-blue); }
-        .stat-card:nth-child(3) .stat-number { color: var(--accent-cyan); }
-        .stat-card:nth-child(4) .stat-number { color: var(--accent-pink); }
-
-        .stat-label {
-            font-size: 14px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
             color: var(--text-secondary);
         }
 
@@ -179,17 +201,21 @@
             align-items: center;
             justify-content: center;
             font-size: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
         }
 
         .section-title {
             font-size: 24px;
             font-weight: 600;
+            color: var(--text-primary);
         }
 
-        .github-section .section-icon { background: rgba(139, 92, 246, 0.2); }
-        .topics-section .section-icon { background: rgba(59, 130, 246, 0.2); }
-        .news-section .section-icon { background: rgba(6, 182, 212, 0.2); }
-        .tools-section .section-icon { background: rgba(236, 72, 153, 0.2); }
+        .github-section .section-icon { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+        .topics-section .section-icon { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); }
+        .news-section .section-icon { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
+        .tweets-section .section-icon { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); }
 
         /* GitHub Cards */
         .github-grid {
@@ -206,28 +232,23 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-        }
-
-        .github-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .github-card:hover {
             transform: translateY(-4px);
-            background: var(--bg-card-hover);
-            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-purple);
         }
 
-        .github-card:hover::before {
-            opacity: 1;
+        .github-card.top-3 {
+            border: 2px solid transparent;
+            background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+                        var(--gradient-4) border-box;
+        }
+
+        .github-card.top-3 .github-rank {
+            background: var(--gradient-4);
         }
 
         .github-header {
@@ -246,13 +267,14 @@
         .github-rank {
             width: 28px;
             height: 28px;
-            background: var(--gradient-1);
+            background: var(--text-muted);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
             font-weight: 700;
+            color: white;
         }
 
         .github-desc {
@@ -288,6 +310,9 @@
 
         .lang-python { background: #3572A5; }
         .lang-typescript { background: #3178c6; }
+        .lang-javascript { background: #f1e05a; }
+        .lang-rust { background: #dea584; }
+        .lang-go { background: #00ADD8; }
         .lang-kotlin { background: #A97BFF; }
         .lang-cpp { background: #f34b7d; }
         .lang-shell { background: #89e051; }
@@ -298,6 +323,7 @@
             align-items: center;
             gap: 4px;
             color: var(--accent-orange);
+            font-weight: 500;
         }
 
         .github-total {
@@ -318,17 +344,18 @@
             border-radius: 16px;
             padding: 20px;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .topic-card:hover {
             transform: translateY(-4px);
-            background: var(--bg-card-hover);
-            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-blue);
         }
 
         .topic-tag {
             display: inline-block;
-            background: rgba(59, 130, 246, 0.15);
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
             color: var(--accent-blue);
             padding: 4px 12px;
             border-radius: 20px;
@@ -342,6 +369,7 @@
             font-weight: 600;
             margin-bottom: 8px;
             line-height: 1.4;
+            color: var(--text-primary);
         }
 
         .topic-desc {
@@ -350,53 +378,120 @@
             line-height: 1.5;
         }
 
-        /* News Cards */
+        .topic-heat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--accent-orange);
+            font-weight: 500;
+        }
+
+        /* News Section Layout */
+        .news-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .news-column {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .news-column-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .news-column-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .news-column-domestic .news-column-icon {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+        }
+
+        .news-column-international .news-column-icon {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+        }
+
+        .news-column-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .source-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .source-domestic {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            color: var(--accent-red);
+        }
+
+        .source-international {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: var(--accent-blue);
+        }
+
         .news-list {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
-        .news-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 20px;
-            display: flex;
-            gap: 16px;
-            transition: all 0.3s ease;
+        .news-item {
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .news-card:hover {
-            background: var(--bg-card-hover);
-            border-color: rgba(6, 182, 212, 0.3);
-        }
-
-        .news-source {
-            width: 48px;
-            height: 48px;
-            background: rgba(6, 182, 212, 0.15);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .news-content {
-            flex: 1;
+        .news-item:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .news-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             margin-bottom: 6px;
             line-height: 1.4;
+            color: var(--text-primary);
+        }
+
+        .news-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .news-title a:hover {
+            color: var(--accent-blue);
         }
 
         .news-snippet {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
             line-height: 1.5;
             margin-bottom: 8px;
@@ -410,57 +505,81 @@
             color: var(--text-muted);
         }
 
-        /* Tools Grid */
-        .tools-grid {
+        /* Tweets Section */
+        .tweets-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 16px;
         }
 
-        .tool-card {
+        .tweet-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 20px;
-            text-align: center;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
-        .tool-card:hover {
+        .tweet-card:hover {
             transform: translateY(-4px);
-            background: var(--bg-card-hover);
-            border-color: rgba(236, 72, 153, 0.3);
+            box-shadow: var(--shadow-lg);
         }
 
-        .tool-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--gradient-2);
-            border-radius: 16px;
+        .tweet-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .tweet-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            margin: 0 auto 16px;
-            box-shadow: 0 8px 24px rgba(236, 72, 153, 0.2);
-        }
-
-        .tool-name {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 6px;
+            color: white;
         }
 
-        .tool-category {
-            font-size: 12px;
-            color: var(--accent-pink);
-            margin-bottom: 10px;
+        .tweet-author-info {
+            flex: 1;
         }
 
-        .tool-desc {
+        .tweet-author {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .tweet-handle {
             font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .tweet-content {
+            font-size: 14px;
             color: var(--text-secondary);
-            line-height: 1.4;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .tweet-stats {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .tweet-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
         /* Footer */
@@ -496,8 +615,8 @@
 
         /* Responsive */
         @media (max-width: 1200px) {
-            .tools-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .tweets-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -508,23 +627,26 @@
             .topics-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .stats-bar {
-                grid-template-columns: repeat(2, 1fr);
+            .news-columns {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .tools-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .tweets-grid {
+                grid-template-columns: 1fr;
             }
             .topics-grid {
                 grid-template-columns: 1fr;
             }
-            .stats-bar {
-                grid-template-columns: 1fr;
-            }
             .logo-text {
                 font-size: 24px;
+            }
+            .quote-banner {
+                padding: 24px;
+            }
+            .quote-text {
+                font-size: 16px;
             }
         }
 
@@ -538,12 +660,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--bg-card);
+            background: var(--border-color);
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--bg-card-hover);
+            background: var(--text-muted);
         }
     </style>
 </head>
@@ -553,30 +675,23 @@
         <header>
             <div class="logo">
                 <div class="logo-icon">🤖</div>
-                <h1 class="logo-text">AI每日快讯</h1>
+                <h1 class="logo-text">AI Daily News</h1>
             </div>
             <div class="date-badge">2026年4月9日 星期三</div>
-            <p class="tagline">汇集全球AI最新动态，追踪技术前沿趋势，每日更新，助您掌握人工智能脉搏</p>
+            <p class="tagline">汇集全球AI最新动态，追踪技术前沿趋势</p>
         </header>
 
-        <!-- Stats Bar -->
-        <div class="stats-bar">
-            <div class="stat-card">
-                <div class="stat-number">10</div>
-                <div class="stat-label">GitHub热榜</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label">热门话题</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label">最新资讯</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">8</div>
-                <div class="stat-label">工具推荐</div>
-            </div>
+        <!-- Daily Quote -->
+        <div class="quote-banner">
+            <p class="quote-text">"Talk is cheap. Show me the code."</p>
+            <p class="quote-author">— Linus Torvalds</p>
+        </div>
+
+        <!-- Date Coverage -->
+        <div class="date-coverage">
+            <span class="coverage-tag">📅 数据覆盖：2026年4月8日 - 4月9日</span>
+            <span class="coverage-tag">🔄 每日更新</span>
+            <span class="coverage-tag">🌐 全球视野</span>
         </div>
 
         <!-- GitHub Trending Section -->
@@ -586,7 +701,7 @@
                 <h2 class="section-title">GitHub Trending 热榜</h2>
             </div>
             <div class="github-grid">
-                <div class="github-card">
+                <div class="github-card top-3">
                     <div class="github-header">
                         <span class="github-title">obra/superpowers</span>
                         <span class="github-rank">1</span>
@@ -594,116 +709,92 @@
                     <p class="github-desc">An agentic skills framework & software development methodology that works.</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-shell"></span>Shell</span>
-                        <span class="github-stars">🔥 +2,028</span>
-                        <span class="github-total">⭐ 141,833</span>
+                        <span class="github-stars">🔥 +18,021</span>
+                        <span class="github-total">⭐ 141,881</span>
                     </div>
                 </div>
-                <div class="github-card">
+                <div class="github-card top-3">
                     <div class="github-header">
-                        <span class="github-title">abhigyanpatwari/GitNexus</span>
+                        <span class="github-title">affaan-m/everything-claude-code</span>
                         <span class="github-rank">2</span>
                     </div>
-                    <p class="github-desc">GitNexus: The Zero-Server Code Intelligence Engine - 客户端知识图谱创建器，完全在浏览器中运行</p>
+                    <p class="github-desc">The agent harness performance optimization system</p>
                     <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="github-stars">🔥 +980</span>
-                        <span class="github-total">⭐ 25,407</span>
+                        <span class="github-lang"><span class="lang-dot lang-javascript"></span>JavaScript</span>
+                        <span class="github-stars">🔥 +19,869</span>
+                        <span class="github-total">⭐ 129,198</span>
                     </div>
                 </div>
-                <div class="github-card">
+                <div class="github-card top-3">
                     <div class="github-header">
-                        <span class="github-title">google-ai-edge/gallery</span>
+                        <span class="github-title">bytedance/deer-flow</span>
                         <span class="github-rank">3</span>
                     </div>
-                    <p class="github-desc">A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.</p>
+                    <p class="github-desc">Open-source long-horizon SuperAgent harness</p>
                     <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-kotlin"></span>Kotlin</span>
-                        <span class="github-stars">🔥 +853</span>
-                        <span class="github-total">⭐ 19,586</span>
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 +13,560</span>
+                        <span class="github-total">⭐ 55,736</span>
                     </div>
                 </div>
                 <div class="github-card">
                     <div class="github-header">
-                        <span class="github-title">forrestchang/andrej-karpathy-skills</span>
+                        <span class="github-title">mvanhorn/last30days-skill</span>
                         <span class="github-rank">4</span>
                     </div>
-                    <p class="github-desc">Andrej Karpathy技能合集 - AI/ML领域知名专家的资源汇总</p>
+                    <p class="github-desc">AI agent skill that researches across Reddit, X, YouTube, HN, Polymarket</p>
                     <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-other"></span>Other</span>
-                        <span class="github-stars">🔥 +702</span>
-                        <span class="github-total">⭐ 9,185</span>
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 +11,933</span>
+                        <span class="github-total">⭐ 17,096</span>
                     </div>
                 </div>
                 <div class="github-card">
                     <div class="github-header">
-                        <span class="github-title">TheCraigHewitt/seomachine</span>
+                        <span class="github-title">microsoft/VibeVoice</span>
                         <span class="github-rank">5</span>
                     </div>
-                    <p class="github-desc">A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business.</p>
+                    <p class="github-desc">Open-Source Frontier Voice AI</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 +649</span>
-                        <span class="github-total">⭐ 4,689</span>
+                        <span class="github-stars">🔥 +8,327</span>
+                        <span class="github-total">⭐ 33,817</span>
                     </div>
                 </div>
                 <div class="github-card">
                     <div class="github-header">
-                        <span class="github-title">elebumm/RedditVideoMakerBot</span>
+                        <span class="github-title">NousResearch/hermes-agent</span>
                         <span class="github-rank">6</span>
                     </div>
-                    <p class="github-desc">Create Reddit Videos with just✨ one command ✨</p>
+                    <p class="github-desc">The agent that grows with you</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 +555</span>
-                        <span class="github-total">⭐ 10,548</span>
+                        <span class="github-stars">🔥 +7,539</span>
+                        <span class="github-total">⭐ 20,977</span>
                     </div>
                 </div>
                 <div class="github-card">
                     <div class="github-header">
-                        <span class="github-title">NVIDIA/personaplex</span>
+                        <span class="github-title">Yeachan-Heo/oh-my-claudecode</span>
                         <span class="github-rank">7</span>
                     </div>
-                    <p class="github-desc">PersonaPlex code - NVIDIA推出的角色AI项目</p>
+                    <p class="github-desc">Teams-first Multi-agent orchestration for Claude Code</p>
                     <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 +586</span>
-                        <span class="github-total">⭐ 8,500</span>
+                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
+                        <span class="github-stars">🔥 +6,933</span>
+                        <span class="github-total">⭐ 20,142</span>
                     </div>
                 </div>
                 <div class="github-card">
                     <div class="github-header">
-                        <span class="github-title">google-ai-edge/LiteRT-LM</span>
+                        <span class="github-title">hacksider/Deep-Live-Cam</span>
                         <span class="github-rank">8</span>
                     </div>
-                    <p class="github-desc">Google AI Edge轻量级运行时语言模型</p>
-                    <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-cpp"></span>C++</span>
-                        <span class="github-stars">🔥 +501</span>
-                        <span class="github-total">⭐ 3,031</span>
-                    </div>
-                </div>
-                <div class="github-card">
-                    <div class="github-header">
-                        <span class="github-title">newton-physics/newton</span>
-                        <span class="github-rank">9</span>
-                    </div>
-                    <p class="github-desc">An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp</p>
+                    <p class="github-desc">Real time face swap and one-click video deepfake</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 +91</span>
-                        <span class="github-total">⭐ 4,131</span>
-                    </div>
-                </div>
-                <div class="github-card">
-                    <div class="github-header">
-                        <span class="github-title">virattt/ai-hedge-fund</span>
-                        <span class="github-rank">10</span>
-                    </div>
-                    <p class="github-desc">An AI Hedge Fund Team - AI驱动的对冲基金团队模拟</p>
-                    <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 +151</span>
-                        <span class="github-total">⭐ 50,762</span>
+                        <span class="github-stars">🔥 +6,693</span>
+                        <span class="github-total">⭐ 87,182</span>
                     </div>
                 </div>
             </div>
@@ -717,34 +808,34 @@
             </div>
             <div class="topics-grid">
                 <div class="topic-card">
-                    <span class="topic-tag">知乎热议</span>
-                    <h3 class="topic-title">DeepSeek为什么超越了OpenAI?</h3>
-                    <p class="topic-desc">探讨DeepSeek模型对美国股市及科技格局的冲击、与传统AI公司的对比、技术突破等热门讨论。</p>
+                    <span class="topic-tag">AI编程</span>
+                    <h3 class="topic-title">Vibe Coding革命</h3>
+                    <p class="topic-desc">Andrej Karpathy提出的"氛围编程"概念引发热议，80%代码由AI生成成为新常态。</p>
+                    <div class="topic-heat">🔥 热度：98.5K讨论</div>
                 </div>
                 <div class="topic-card">
                     <span class="topic-tag">开源热点</span>
-                    <h3 class="topic-title">GitHub爆火24K Star开源热点雷达</h3>
-                    <p class="topic-desc">TrendRadar国产开源项目，自动抓取11+国内外平台热搜榜单，通过AI智能摘要成为信息密度时代的降噪神器。</p>
+                    <h3 class="topic-title">Claude Code生态爆发</h3>
+                    <p class="topic-desc">GitHub上Claude Code相关项目激增，superpowers框架登顶Trending榜首。</p>
+                    <div class="topic-heat">🔥 热度：85.2K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">AI Agent</span>
-                    <h3 class="topic-title">last30days-skill：跨平台趋势猎手</h3>
-                    <p class="topic-desc">开源AI研究工具，智能聚合Reddit、Twitter等平台热点，让AI Agent成为信息收集专家。</p>
+                    <span class="topic-tag">产业动态</span>
+                    <h3 class="topic-title">Meta千亿AI投资</h3>
+                    <p class="topic-desc">扎克伯格宣布超千亿AI投入，发布首款AI模型Muse Spark，股价涨超6%。</p>
+                    <div class="topic-heat">🔥 热度：72.8K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">产业合作</span>
-                    <h3 class="topic-title">Reddit与Google、OpenAI合作</h3>
-                    <p class="topic-desc">人工智能授权协议与变现势头强劲，利用Reddit数据训练AI模型成为行业新趋势。</p>
+                    <span class="topic-tag">AGI讨论</span>
+                    <h3 class="topic-title">LeCun质疑AGI炒作</h3>
+                    <p class="topic-desc">Yann LeCun警告AGI仍需要数年时间，LLM存在根本性局限，无法真正推理。</p>
+                    <div class="topic-heat">🔥 热度：65.4K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">教育应用</span>
-                    <h3 class="topic-title">迈向未来的AI教学实验</h3>
-                    <p class="topic-desc">AI分析消费者对VR头盔和智能穿戴设备的接受度，探索AI在教育领域的创新应用场景。</p>
-                </div>
-                <div class="topic-card">
-                    <span class="topic-tag">平台动态</span>
-                    <h3 class="topic-title">腾讯AI平台争议与讨论</h3>
-                    <p class="topic-desc">关于腾讯公司软件平台AI功能的相关争议和用户讨论持续发酵，引发行业关注。</p>
+                    <span class="topic-tag">技术突破</span>
+                    <h3 class="topic-title">中国机器人新进展</h3>
+                    <p class="topic-desc">中国人形机器人实现长程动态网球对抗，时速10公里环境下完成多回合对拉。</p>
+                    <div class="topic-heat">🔥 热度：58.1K讨论</div>
                 </div>
             </div>
         </section>
@@ -755,142 +846,135 @@
                 <div class="section-icon">📰</div>
                 <h2 class="section-title">AI新闻资讯</h2>
             </div>
-            <div class="news-list">
-                <div class="news-card">
-                    <div class="news-source">🌍</div>
-                    <div class="news-content">
-                        <h3 class="news-title">AI的4.8万亿美元未来：联合国警告数字鸿沟扩大</h3>
-                        <p class="news-snippet">人工智能预计将带来4.8万亿美元的经济价值，但联合国警告如果不采取行动，数字鸿沟将进一步扩大。</p>
-                        <div class="news-meta">
-                            <span>来源: UN News</span>
-                            <span>2025年4月</span>
+            <div class="news-columns">
+                <!-- Domestic News -->
+                <div class="news-column news-column-domestic">
+                    <div class="news-column-header">
+                        <div class="news-column-icon">🇨🇳</div>
+                        <h3 class="news-column-title">国内动态</h3>
+                    </div>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <span class="source-tag source-domestic">🇨🇳 新浪网</span>
+                            <h4 class="news-title"><a href="https://k.sina.com.cn/article_7857201856_1d45362c0019044hls.html" target="_blank">Meta发布首款AI模型Muse Spark，扎克伯格押注超千亿AI投入</a></h4>
+                            <p class="news-snippet">Meta发布首款AI模型"Muse Spark"，扎克伯格押注超千亿AI投入，股价涨超6%。同时云知声发布"山海·知音"大模型2.0。</p>
+                            <div class="news-meta">
+                                <span>2026年4月9日</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="source-tag source-domestic">🇨🇳 工信部</span>
+                            <h4 class="news-title">我国将加快太空算力产业生态培育</h4>
+                            <p class="news-snippet">工信部指出太空算力产业的战略价值和产业前景，将加快相关产业生态培育。</p>
+                            <div class="news-meta">
+                                <span>2026年4月9日</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="source-tag source-domestic">🇨🇳 科技日报</span>
+                            <h4 class="news-title">中国研发人形机器人实现长程动态网球对抗</h4>
+                            <p class="news-snippet">中国研发的人形机器人在时速10公里环境下完成多回合对拉，展现出色的运动控制能力。</p>
+                            <div class="news-meta">
+                                <span>2026年4月9日</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="news-card">
-                    <div class="news-source">🏛️</div>
-                    <div class="news-content">
-                        <h3 class="news-title">白宫发布全面AI发展行政命令</h3>
-                        <p class="news-snippet">特朗普总统签署行政命令，启动美国历史上最全面的AI发展计划，旨在保持美国在全球AI竞赛中的领导地位。</p>
-                        <div class="news-meta">
-                            <span>来源: AI Weekly</span>
-                            <span>2025年4月29日</span>
-                        </div>
+
+                <!-- International News -->
+                <div class="news-column news-column-international">
+                    <div class="news-column-header">
+                        <div class="news-column-icon">🌍</div>
+                        <h3 class="news-column-title">国际动态</h3>
                     </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-source">💼</div>
-                    <div class="news-content">
-                        <h3 class="news-title">AI行业融资动态：过去24小时要闻</h3>
-                        <p class="news-snippet">OpenAI CEO Sam Altman表示礼貌用语在AI交互中很重要，同时多家AI初创公司宣布新一轮融资。</p>
-                        <div class="news-meta">
-                            <span>来源: LinkedIn</span>
-                            <span>2025年4月20日</span>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <span class="source-tag source-international">🌍 Futurum Group</span>
+                            <h4 class="news-title"><a href="https://futurumgroup.com/insights/karpathys-thread-signals-ai-driven-development-breakpoint/" target="_blank">Karpathy：AI将接管80%的编程工作</a></h4>
+                            <p class="news-snippet">Andrej Karpathy表示开发者可以"10倍强大"，编程正经历根本性范式转变，最热门的新编程语言是英语。</p>
+                            <div class="news-meta">
+                                <span>2026年4月</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-source">📊</div>
-                    <div class="news-content">
-                        <h3 class="news-title">2025年3-4月AI新兴技术综述</h3>
-                        <p class="news-snippet">回顾过去两个月AI领域的重大发展，包括大模型技术突破、多模态AI进展以及企业级AI应用落地。</p>
-                        <div class="news-meta">
-                            <span>来源: PTech Partners</span>
-                            <span>2025年4月29日</span>
+                        <div class="news-item">
+                            <span class="source-tag source-international">🌍 Capacity Global</span>
+                            <h4 class="news-title"><a href="https://capacityglobal.com/news/yann-lecun-agi-overhyped-gates-nvidia-pullout/" target="_blank">Yann LeCun：AGI炒作过度，人类级AI仍需数年</a></h4>
+                            <p class="news-snippet">Meta首席AI科学家警告AGI仍需要数年时间，LLM无法真正推理或预测，需要世界模型才能实现真正的智能体。</p>
+                            <div class="news-meta">
+                                <span>2026年4月</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-source">⚖️</div>
-                    <div class="news-content">
-                        <h3 class="news-title">AI法律与合规月度综述 - 2025年4月</h3>
-                        <p class="news-snippet">全球AI监管政策持续演进，欧盟AI法案实施细节、美国州级AI立法以及数据隐私保护新规成为焦点。</p>
-                        <div class="news-meta">
-                            <span>来源: Fladgate</span>
-                            <span>2025年4月</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-source">📈</div>
-                    <div class="news-content">
-                        <h3 class="news-title">AI营销应用周报 - 2025年4月25日</h3>
-                        <p class="news-snippet">AI在营销领域的最新应用趋势，包括个性化推荐、内容生成、客户洞察等方面的创新实践。</p>
-                        <div class="news-meta">
-                            <span>来源: MarketingProfs</span>
-                            <span>2025年4月25日</span>
+                        <div class="news-item">
+                            <span class="source-tag source-international">🌍 Yahoo Finance</span>
+                            <h4 class="news-title">Sam Altman：2026年将是企业AI转折点</h4>
+                            <p class="news-snippet">OpenAI CEO表示2026年将是AI在商业领域的重要转折年，企业级AI应用将迎来爆发式增长。</p>
+                            <div class="news-meta">
+                                <span>2026年4月</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tools Section -->
-        <section class="section tools-section">
+        <!-- AI Leaders Tweets Section -->
+        <section class="section tweets-section">
             <div class="section-header">
-                <div class="section-icon">🛠️</div>
-                <h2 class="section-title">AI工具推荐</h2>
+                <div class="section-icon">💬</div>
+                <h2 class="section-title">AI大佬观点</h2>
             </div>
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">🤖</div>
-                    <h3 class="tool-name">DeepSeek</h3>
-                    <span class="tool-category">通用对话</span>
-                    <p class="tool-desc">国产最强AI大模型，推理能力出众，代码生成和理解能力一流</p>
+            <div class="tweets-grid">
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">AK</div>
+                        <div class="tweet-author-info">
+                            <div class="tweet-author">Andrej Karpathy</div>
+                            <div class="tweet-handle">@karpathy</div>
+                        </div>
+                    </div>
+                    <p class="tweet-content">"I've never felt this much behind as a programmer. The profession is being dramatically refactored as the bits contributed by the programmer are increasingly sparse and between."</p>
+                    <div class="tweet-stats">
+                        <span class="tweet-stat">❤️ 12.5K</span>
+                        <span class="tweet-stat">🔄 3.2K</span>
+                    </div>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">✨</div>
-                    <h3 class="tool-name">Gemini</h3>
-                    <span class="tool-category">多模态AI</span>
-                    <p class="tool-desc">Google最新多模态大模型，性能强悍，各类基准测试稳居第一梯队</p>
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">YL</div>
+                        <div class="tweet-author-info">
+                            <div class="tweet-author">Yann LeCun</div>
+                            <div class="tweet-handle">@ylecun</div>
+                        </div>
+                    </div>
+                    <p class="tweet-content">"The real revolution is not AI replacing humans, but AI helping humans think better, plan better, and understand the real world. LLMs are fundamentally limited."</p>
+                    <div class="tweet-stats">
+                        <span class="tweet-stat">❤️ 8.7K</span>
+                        <span class="tweet-stat">🔄 2.1K</span>
+                    </div>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">📝</div>
-                    <h3 class="tool-name">Jasper</h3>
-                    <span class="tool-category">内容创作</span>
-                    <p class="tool-desc">专业AI写作助手，支持营销文案、博客文章、社交媒体内容生成</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🎬</div>
-                    <h3 class="tool-name">Pictory</h3>
-                    <span class="tool-category">视频生成</span>
-                    <p class="tool-desc">AI视频制作工具，可将文本内容自动转换为专业视频</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🎨</div>
-                    <h3 class="tool-name">AKOOL</h3>
-                    <span class="tool-category">创意工具</span>
-                    <p class="tool-desc">多功能AI创意平台，涵盖图像生成、视频编辑、内容创作等功能</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">💻</div>
-                    <h3 class="tool-name">Claude Code</h3>
-                    <span class="tool-category">编程助手</span>
-                    <p class="tool-desc">Anthropic推出的AI编程助手，代码理解和生成能力卓越</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🔍</div>
-                    <h3 class="tool-name">BetterYeah AI</h3>
-                    <span class="tool-category">生产力</span>
-                    <p class="tool-desc">企业级AI生产力平台，提供智能办公、数据分析等解决方案</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🌐</div>
-                    <h3 class="tool-name">ChatGPT</h3>
-                    <span class="tool-category">通用对话</span>
-                    <p class="tool-desc">OpenAI旗舰对话模型，多模态能力强，插件生态丰富</p>
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">SA</div>
+                        <div class="tweet-author-info">
+                            <div class="tweet-author">Sam Altman</div>
+                            <div class="tweet-handle">@sama</div>
+                        </div>
+                    </div>
+                    <p class="tweet-content">"OpenAI should not decide the fate of the world; no private company should. We need to work with governments to ensure AI benefits all of humanity."</p>
+                    <div class="tweet-stats">
+                        <span class="tweet-stat">❤️ 15.3K</span>
+                        <span class="tweet-stat">🔄 4.8K</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p class="footer-text">AI每日快讯 - 每日更新，追踪人工智能前沿动态</p>
+            <p class="footer-text">AI Daily News - 每日更新，追踪人工智能前沿动态</p>
             <div class="footer-links">
                 <a href="https://github.com/turingfx/ai-daily-news" class="footer-link" target="_blank">GitHub仓库</a>
-                <a href="#" class="footer-link">关于我们</a>
-                <a href="#" class="footer-link">提交反馈</a>
-                <a href="#" class="footer-link">订阅更新</a>
+                <a href="https://turingfx.github.io/ai-daily-news/" class="footer-link" target="_blank">在线访问</a>
             </div>
             <p class="footer-text" style="margin-top: 24px; font-size: 12px;">© 2026 AI Daily News. All rights reserved.</p>
         </footer>
