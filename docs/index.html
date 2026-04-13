@@ -123,7 +123,7 @@
 
         /* Daily Quote Banner */
         .quote-banner {
-            background: var(--gradient-1);
+            background: var(--gradient-3);
             border-radius: 20px;
             padding: 32px 40px;
             margin: 32px 0;
@@ -213,6 +213,7 @@
         }
 
         .github-section .section-icon { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+        .star-history-section .section-icon { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); }
         .topics-section .section-icon { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); }
         .news-section .section-icon { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
         .tweets-section .section-icon { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); }
@@ -262,6 +263,15 @@
             font-size: 16px;
             font-weight: 600;
             color: var(--text-primary);
+        }
+
+        .github-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .github-title a:hover {
+            color: var(--accent-blue);
         }
 
         .github-rank {
@@ -330,6 +340,83 @@
         .github-total {
             color: var(--text-muted);
             margin-left: auto;
+        }
+
+        /* Star History Chart */
+        .star-history-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .star-history-chart {
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        .star-history-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .star-history-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .star-history-rank {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .star-history-rank.top-3 {
+            background: var(--gradient-4);
+        }
+
+        .star-history-rank.other {
+            background: var(--text-muted);
+        }
+
+        .star-history-info {
+            flex: 1;
+        }
+
+        .star-history-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .star-history-name a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .star-history-name a:hover {
+            color: var(--accent-blue);
+        }
+
+        .star-history-stars {
+            font-size: 13px;
+            color: var(--accent-orange);
+            font-weight: 500;
         }
 
         /* Topic Cards */
@@ -631,6 +718,9 @@
             .news-columns {
                 grid-template-columns: 1fr;
             }
+            .star-history-list {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -684,8 +774,8 @@
 
         <!-- Daily Quote -->
         <div class="quote-banner">
-            <p class="quote-text">"Talk is cheap. Show me the code."</p>
-            <p class="quote-author">— Linus Torvalds</p>
+            <p class="quote-text">"The most dangerous phrase in the language is, 'We've always done it this way.'"</p>
+            <p class="quote-author">— Grace Hopper</p>
         </div>
 
         <!-- Date Coverage -->
@@ -704,98 +794,180 @@
             <div class="github-grid">
                 <div class="github-card top-3">
                     <div class="github-header">
-                        <span class="github-title">NousResearch/hermes-agent</span>
+                        <span class="github-title"><a href="https://github.com/forrestchang/andrej-karpathy-skills" target="_blank">forrestchang/andrej-karpathy-skills</a></span>
                         <span class="github-rank">1</span>
                     </div>
-                    <p class="github-desc">The agent that grows with you - 自我进化的AI智能体框架</p>
-                    <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 68,888</span>
-                    </div>
-                </div>
-                <div class="github-card top-3">
-                    <div class="github-header">
-                        <span class="github-title">shiyu-coder/Kronos</span>
-                        <span class="github-rank">2</span>
-                    </div>
-                    <p class="github-desc">Kronos: A Foundation Model for the Language of Financial Markets</p>
-                    <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 16,008</span>
-                    </div>
-                </div>
-                <div class="github-card top-3">
-                    <div class="github-header">
-                        <span class="github-title">forrestchang/andrej-karpathy-skills</span>
-                        <span class="github-rank">3</span>
-                    </div>
-                    <p class="github-desc">A single CLAUDE.md file to improve Claude Code behavior</p>
+                    <p class="github-desc">基于Andrej Karpathy对LLM编程陷阱观察的CLAUDE.md文件，用于改善Claude Code行为</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-other"></span>—</span>
                         <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 17,424</span>
+                        <span class="github-total">⭐ 20,209</span>
+                    </div>
+                </div>
+                <div class="github-card top-3">
+                    <div class="github-header">
+                        <span class="github-title"><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></span>
+                        <span class="github-rank">2</span>
+                    </div>
+                    <p class="github-desc">与你共同成长的AI智能体 - 自我进化的AI Agent框架</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 Trending</span>
+                        <span class="github-total">⭐ 74,021</span>
+                    </div>
+                </div>
+                <div class="github-card top-3">
+                    <div class="github-header">
+                        <span class="github-title"><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></span>
+                        <span class="github-rank">3</span>
+                    </div>
+                    <p class="github-desc">Kronos: 金融市场语言的基础模型 - 专为金融时序数据设计的预训练模型</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-stars">🔥 Trending</span>
+                        <span class="github-total">⭐ 16,577</span>
                     </div>
                 </div>
                 <div class="github-card">
                     <div class="github-header">
-                        <span class="github-title">microsoft/markitdown</span>
+                        <span class="github-title"><a href="https://github.com/thedotmack/claude-mem" target="_blank">thedotmack/claude-mem</a></span>
                         <span class="github-rank">4</span>
                     </div>
-                    <p class="github-desc">Python tool for converting files and office documents to Markdown</p>
+                    <p class="github-desc">Claude Code插件，自动捕获编码会话中的所有操作，用AI压缩并注入相关上下文到未来会话</p>
                     <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
                         <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 105,207</span>
+                        <span class="github-total">⭐ 51,631</span>
                     </div>
                 </div>
                 <div class="github-card">
                     <div class="github-header">
-                        <span class="github-title">multica-ai/multica</span>
+                        <span class="github-title"><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></span>
                         <span class="github-rank">5</span>
                     </div>
-                    <p class="github-desc">The open-source managed agents platform</p>
-                    <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 9,656</span>
-                    </div>
-                </div>
-                <div class="github-card">
-                    <div class="github-header">
-                        <span class="github-title">coleam00/Archon</span>
-                        <span class="github-rank">6</span>
-                    </div>
-                    <p class="github-desc">The first open-source harness builder for AI coding</p>
-                    <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 17,155</span>
-                    </div>
-                </div>
-                <div class="github-card">
-                    <div class="github-header">
-                        <span class="github-title">shanraisshan/claude-code-best-practice</span>
-                        <span class="github-rank">7</span>
-                    </div>
-                    <p class="github-desc">practice made claude perfect - Claude Code最佳实践</p>
-                    <div class="github-meta">
-                        <span class="github-lang"><span class="lang-dot lang-html"></span>HTML</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 39,367</span>
-                    </div>
-                </div>
-                <div class="github-card">
-                    <div class="github-header">
-                        <span class="github-title">OpenBMB/VoxCPM</span>
-                        <span class="github-rank">8</span>
-                    </div>
-                    <p class="github-desc">VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation</p>
+                    <p class="github-desc">Python工具，将文件和Office文档转换为Markdown格式</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
                         <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 11,493</span>
+                        <span class="github-total">⭐ 106,190</span>
+                    </div>
+                </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title"><a href="https://github.com/multica-ai/multica" target="_blank">multica-ai/multica</a></span>
+                        <span class="github-rank">6</span>
+                    </div>
+                    <p class="github-desc">开源托管智能体平台 - 将编码智能体变成真正的团队成员</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
+                        <span class="github-stars">🔥 Trending</span>
+                        <span class="github-total">⭐ 10,362</span>
+                    </div>
+                </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title"><a href="https://github.com/coleam00/Archon" target="_blank">coleam00/Archon</a></span>
+                        <span class="github-rank">7</span>
+                    </div>
+                    <p class="github-desc">首个开源AI编码Harness构建器 - 让AI编码变得确定性和可重复</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
+                        <span class="github-stars">🔥 Trending</span>
+                        <span class="github-total">⭐ 17,393</span>
+                    </div>
+                </div>
+                <div class="github-card">
+                    <div class="github-header">
+                        <span class="github-title"><a href="https://github.com/snarktank/ralph" target="_blank">snarktank/ralph</a></span>
+                        <span class="github-rank">8</span>
+                    </div>
+                    <p class="github-desc">Ralph是一个自主AI智能体循环，持续运行直到完成所有PRD项目</p>
+                    <div class="github-meta">
+                        <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
+                        <span class="github-stars">🔥 Trending</span>
+                        <span class="github-total">⭐ 16,306</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Star History Section -->
+        <section class="section star-history-section">
+            <div class="section-header">
+                <div class="section-icon">📈</div>
+                <h2 class="section-title">GitHub Star History 本周增长榜</h2>
+            </div>
+            <div class="star-history-container">
+                <div class="star-history-list">
+                    <div class="star-history-item">
+                        <span class="star-history-rank top-3">1</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></div>
+                            <div class="star-history-stars">+8,154 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank top-3">2</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/MemPalace/mempalace" target="_blank">MemPalace/mempalace</a></div>
+                            <div class="star-history-stars">+7,081 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank top-3">3</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/VoltAgent/awesome-design-md" target="_blank">VoltAgent/awesome-design-md</a></div>
+                            <div class="star-history-stars">+4,310 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank other">4</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/safishamsi/graphify" target="_blank">safishamsi/graphify</a></div>
+                            <div class="star-history-stars">+3,899 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank other">5</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/santifer/career-ops" target="_blank">santifer/career-ops</a></div>
+                            <div class="star-history-stars">+3,578 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank other">6</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/JuliusBrussee/caveman" target="_blank">JuliusBrussee/caveman</a></div>
+                            <div class="star-history-stars">+3,493 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank other">7</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></div>
+                            <div class="star-history-stars">+2,454 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank other">8</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/affaan-m/everything-claude-code" target="_blank">affaan-m/everything-claude-code</a></div>
+                            <div class="star-history-stars">+2,437 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank other">9</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/ultraworkers/claw-code" target="_blank">ultraworkers/claw-code</a></div>
+                            <div class="star-history-stars">+2,392 ⭐ 本周新增</div>
+                        </div>
+                    </div>
+                    <div class="star-history-item">
+                        <span class="star-history-rank other">10</span>
+                        <div class="star-history-info">
+                            <div class="star-history-name"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></div>
+                            <div class="star-history-stars">+2,384 ⭐ 本周新增</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -809,34 +981,34 @@
             </div>
             <div class="topics-grid">
                 <div class="topic-card">
-                    <span class="topic-tag">智能体</span>
-                    <h3 class="topic-title">Grok Computer智能体即将上线</h3>
-                    <p class="topic-desc">马斯克确认Grok Computer智能体私人测试已启动，广泛测试版三日后发布，AI智能体竞争白热化。</p>
-                    <div class="topic-heat">🔥 热度：125.6K讨论</div>
+                    <span class="topic-tag">大模型</span>
+                    <h3 class="topic-title">DeepSeek V4即将发布</h3>
+                    <p class="topic-desc">DeepSeek预计4月下旬发布V4版本，同时MiniMax M2.7已正式开源，国产大模型竞争加剧。</p>
+                    <div class="topic-heat">🔥 热度：156.3K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">融资动态</span>
-                    <h3 class="topic-title">OpenAI完成400亿美元融资</h3>
-                    <p class="topic-desc">OpenAI完成史上最大私募融资，估值达3000亿美元，AI产业资本热潮持续升温。</p>
-                    <div class="topic-heat">🔥 热度：98.3K讨论</div>
+                    <span class="topic-tag">基础设施</span>
+                    <h3 class="topic-title">Anthropic与Google/Broadcom达成算力协议</h3>
+                    <p class="topic-desc">Anthropic签署多千兆瓦TPU容量协议，年收入运行率突破300亿美元，AI算力军备竞赛升级。</p>
+                    <div class="topic-heat">🔥 热度：132.8K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">产业应用</span>
-                    <h3 class="topic-title">AI智能体大规模进入职场</h3>
-                    <p class="topic-desc">2026年春天，AI智能体开始在中国职场大规模上岗，引发从业者兴奋与担忧并存。</p>
-                    <div class="topic-heat">🔥 热度：87.5K讨论</div>
+                    <span class="topic-tag">政策经济</span>
+                    <h3 class="topic-title">OpenAI提出AI经济愿景</h3>
+                    <p class="topic-desc">OpenAI发布政策提案，建议从劳动税转向资本税、建立公共财富基金、补贴四天工作制。</p>
+                    <div class="topic-heat">🔥 热度：98.5K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">政策利好</span>
-                    <h3 class="topic-title">"人工智能+教育"行动计划发布</h3>
-                    <p class="topic-desc">教育部等五部门联合印发行动计划，到2030年构建AI全学段教育体系，概念股应声上涨。</p>
-                    <div class="topic-heat">🔥 热度：72.1K讨论</div>
+                    <span class="topic-tag">编程变革</span>
+                    <h3 class="topic-title">Andrej Karpathy：编程已面目全非</h3>
+                    <p class="topic-desc">Karpathy表示AI智能体现已可靠，编程方式正在发生根本性变革，从写代码转向用英语指挥AI。</p>
+                    <div class="topic-heat">🔥 热度：87.2K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">技术趋势</span>
-                    <h3 class="topic-title">AI Agent框架选型指南</h3>
-                    <p class="topic-desc">2026年8大主流AI Agent框架对比分析，帮助开发者选择最适合的技术方案。</p>
-                    <div class="topic-heat">🔥 热度：65.8K讨论</div>
+                    <span class="topic-tag">出口管制</span>
+                    <h3 class="topic-title">美国AI芯片出口审批放缓</h3>
+                    <p class="topic-desc">美国AI芯片出口审批放缓，白宫召集科技巨头讨论AI风险，全球AI供应链面临新挑战。</p>
+                    <div class="topic-heat">🔥 热度：76.4K讨论</div>
                 </div>
             </div>
         </section>
@@ -856,27 +1028,27 @@
                     </div>
                     <div class="news-list">
                         <div class="news-item">
-                            <span class="source-tag source-domestic">🇨🇳 新浪财经</span>
-                            <h4 class="news-title"><a href="http://finance.sina.com.cn/stock/zqgd/2026-04-13/doc-inhuiatm9862848.shtml" target="_blank">"人工智能+教育"迎重磅利好</a></h4>
-                            <p class="news-snippet">教育部等五部门联合印发《"人工智能+教育"行动计划》，提出到2030年构建AI全学段教育体系，A股AI教育概念股业绩有望稳健增长。</p>
+                            <span class="source-tag source-domestic">🇨🇳 财新网</span>
+                            <h4 class="news-title"><a href="https://companies.caixin.com/2026-04-13/102433296.html" target="_blank">DeepSeek V4预计4月下旬发布；美国AI芯片出口审批放缓</a></h4>
+                            <p class="news-snippet">DeepSeek预计4月下旬发布V4版本；MiniMax M2.7正式开源，拥有2290亿参数量；美国AI芯片出口审批放缓，白宫召集科技巨头讨论AI风险。</p>
                             <div class="news-meta">
                                 <span>2026年4月13日</span>
                             </div>
                         </div>
                         <div class="news-item">
-                            <span class="source-tag source-domestic">🇨🇳 BBC中文网</span>
-                            <h4 class="news-title"><a href="https://www.bbc.com/zhongwen/articles/crm8mmg0y3eo/simp" target="_blank">当AI智能体开始上岗</a></h4>
-                            <p class="news-snippet">2026年春天里，三个中国人遭遇AI大举进入职场：极客、创业者、程序员的情绪各不相同，兴奋、恐惧，或者两者同时发生。</p>
+                            <span class="source-tag source-domestic">🇨🇳 财新网</span>
+                            <h4 class="news-title"><a href="https://m.caixin.com/m/2026-04-10/102432457.html" target="_blank">科尔尼：中国升至外国直接投资信心榜第四</a></h4>
+                            <p class="news-snippet">科尔尼管理咨询公司发布《2026年外商直接投资信心指数》，中国排名升至第四，人工智能成为重要吸引力因素。</p>
                             <div class="news-meta">
-                                <span>2026年4月13日</span>
+                                <span>2026年4月10日</span>
                             </div>
                         </div>
                         <div class="news-item">
-                            <span class="source-tag source-domestic">🇨🇳 掘金社区</span>
-                            <h4 class="news-title"><a href="https://juejin.cn/post/7627327134639390760" target="_blank">2026年AI Agent框架选型指南</a></h4>
-                            <p class="news-snippet">8大主流AI Agent框架深度对比，从功能特性、性能表现、社区生态等多维度分析，助你选型最适合的框架。</p>
+                            <span class="source-tag source-domestic">🇨🇳 财新周刊</span>
+                            <h4 class="news-title"><a href="https://weekly.caixin.com/2026-04-11/102432854.html" target="_blank">国风｜AI生成的课堂怎么教学？</a></h4>
+                            <p class="news-snippet">探讨AI生成内容进入教育领域后的教学变革，以及教师如何适应这一新技术趋势。</p>
                             <div class="news-meta">
-                                <span>2026年4月13日</span>
+                                <span>2026年4月11日</span>
                             </div>
                         </div>
                     </div>
@@ -890,27 +1062,27 @@
                     </div>
                     <div class="news-list">
                         <div class="news-item">
-                            <span class="source-tag source-international">🌍 CNBC</span>
-                            <h4 class="news-title"><a href="https://www.cnbc.com/2025/03/31/openai-closes-40-billion-in-funding-the-largest-private-fundraise-in-history-softbank-chatgpt.html" target="_blank">OpenAI完成400亿美元融资创纪录</a></h4>
-                            <p class="news-snippet">OpenAI宣布完成史上最大私募融资，由软银领投，估值达3000亿美元，资金将用于AI研究和计算基础设施。</p>
+                            <span class="source-tag source-international">🌍 TechCrunch</span>
+                            <h4 class="news-title"><a href="https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/" target="_blank">OpenAI's vision for the AI economy</a></h4>
+                            <p class="news-snippet">OpenAI发布AI经济政策提案，包括将税收从劳动转向资本、创建公共财富基金、补贴四天工作制，旨在广泛分配AI繁荣成果。</p>
                             <div class="news-meta">
-                                <span>2026年4月</span>
+                                <span>2026年4月6日</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="source-tag source-international">🌍 The Verge</span>
+                            <h4 class="news-title"><a href="https://www.theverge.com/ai-artificial-intelligence/907810/anthropic-has-signed-a-big-ai-infrastructure-deal-with-google-and-broadcom" target="_blank">Anthropic signs big AI infrastructure deal</a></h4>
+                            <p class="news-snippet">Anthropic与Google和Broadcom签署协议，获得多千兆瓦下一代TPU容量，预计2027年开始上线，年收入运行率已超300亿美元。</p>
+                            <div class="news-meta">
+                                <span>2026年4月7日</span>
                             </div>
                         </div>
                         <div class="news-item">
                             <span class="source-tag source-international">🌍 TechCrunch</span>
-                            <h4 class="news-title"><a href="https://techcrunch.com/2025/03/31/openai-raises-40b-at-300b-post-money-valuation/" target="_blank">OpenAI融资后估值达3000亿美元</a></h4>
-                            <p class="news-snippet">OpenAI在400亿美元融资轮后估值达到3000亿美元，成为世界上最有价值的私营科技公司之一。</p>
+                            <h4 class="news-title"><a href="https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/" target="_blank">AI companies building natural gas plants for data centers</a></h4>
+                            <p class="news-snippet">AI公司正在建设大型天然气发电厂为数据中心供电，引发对环境影响的担忧，能源消耗成为AI发展的重要制约因素。</p>
                             <div class="news-meta">
-                                <span>2026年4月</span>
-                            </div>
-                        </div>
-                        <div class="news-item">
-                            <span class="source-tag source-international">🌍 DoNews</span>
-                            <h4 class="news-title"><a href="https://www.donews.com/news/detail/8/6508565.html" target="_blank">马斯克确认Grok Computer智能体三日后上线</a></h4>
-                            <p class="news-snippet">马斯克在X平台确认Grok Computer智能体私人测试已启动，广泛测试版将于三日后发布，对标微软Copilot。</p>
-                            <div class="news-meta">
-                                <span>2026年4月13日</span>
+                                <span>2026年4月3日</span>
                             </div>
                         </div>
                     </div>
@@ -933,10 +1105,24 @@
                             <div class="tweet-handle">@karpathy</div>
                         </div>
                     </div>
-                    <p class="tweet-content">"LLM Knowledge Bases - Something I'm finding very useful recently is maintaining a knowledge base of LLM quirks, failure modes, and capabilities. It's like building a mental model of a very capable but somewhat unpredictable colleague."</p>
+                    <p class="tweet-content">"Programming is becoming unrecognizable... that era is over. Now you spin up AI agents, giving them tasks *in English* and managing and reviewing their work in parallel."</p>
                     <div class="tweet-stats">
-                        <span class="tweet-stat">❤️ 14.2K</span>
-                        <span class="tweet-stat">🔄 3.8K</span>
+                        <span class="tweet-stat">❤️ 24.5K</span>
+                        <span class="tweet-stat">🔄 8.2K</span>
+                    </div>
+                </div>
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">AK</div>
+                        <div class="tweet-author-info">
+                            <div class="tweet-author">Andrej Karpathy</div>
+                            <div class="tweet-handle">@karpathy</div>
+                        </div>
+                    </div>
+                    <p class="tweet-content">"AI agents barely worked before Dec 2025 but became reliable due to better models and longer task persistence. An agent built a video analysis dashboard in 30 minutes—work that took a full weekend three months prior."</p>
+                    <div class="tweet-stats">
+                        <span class="tweet-stat">❤️ 18.7K</span>
+                        <span class="tweet-stat">🔄 5.4K</span>
                     </div>
                 </div>
                 <div class="tweet-card">
@@ -947,24 +1133,10 @@
                             <div class="tweet-handle">@ylecun</div>
                         </div>
                     </div>
-                    <p class="tweet-content">"I said that reaching Human-Level AI will take several years if not a decade. The AI industry is completely LLM-pilled, but text training is insufficient for human-like intelligence. We need world models."</p>
+                    <p class="tweet-content">"The AI industry is completely LLM-pilled, but text training is insufficient for human-like intelligence. We need world models that can learn from observation and interaction with the world."</p>
                     <div class="tweet-stats">
-                        <span class="tweet-stat">❤️ 9.5K</span>
-                        <span class="tweet-stat">🔄 2.6K</span>
-                    </div>
-                </div>
-                <div class="tweet-card">
-                    <div class="tweet-header">
-                        <div class="tweet-avatar">SA</div>
-                        <div class="tweet-author-info">
-                            <div class="tweet-author">Sam Altman</div>
-                            <div class="tweet-handle">@sama</div>
-                        </div>
-                    </div>
-                    <p class="tweet-content">"Thank you for getting us to this point. AI is transforming the world faster than anyone anticipated. We have a responsibility to ensure this technology benefits all of humanity, not just a select few."</p>
-                    <div class="tweet-stats">
-                        <span class="tweet-stat">❤️ 18.7K</span>
-                        <span class="tweet-stat">🔄 5.9K</span>
+                        <span class="tweet-stat">❤️ 12.3K</span>
+                        <span class="tweet-stat">🔄 3.1K</span>
                     </div>
                 </div>
             </div>
