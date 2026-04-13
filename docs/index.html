@@ -13,29 +13,25 @@
         }
 
         :root {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #f1f5f9;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f8fafc;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --text-muted: #94a3b8;
-            --accent-purple: #8b5cf6;
-            --accent-blue: #3b82f6;
-            --accent-cyan: #06b6d4;
-            --accent-pink: #ec4899;
-            --accent-orange: #f97316;
-            --accent-green: #10b981;
-            --accent-red: #ef4444;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-4: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-            --gradient-5: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            /* Gruvbox Dark Theme Colors */
+            --bg-primary: #1d2021;
+            --bg-secondary: #282828;
+            --bg-card: #32302f;
+            --bg-card-hover: #3c3836;
+            --text-primary: #ebdbb2;
+            --text-secondary: #a89984;
+            --text-muted: #928374;
+            --accent-red: #cc241d;
+            --accent-green: #98971a;
+            --accent-yellow: #d79921;
+            --accent-blue: #458588;
+            --accent-purple: #b16286;
+            --accent-aqua: #689d6a;
+            --accent-orange: #d65d0e;
+            --border-color: #504945;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
         }
 
         body {
@@ -68,7 +64,7 @@
         .logo-icon {
             width: 48px;
             height: 48px;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-orange) 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -80,7 +76,7 @@
         .logo-text {
             font-size: 32px;
             font-weight: 700;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-orange) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -123,11 +119,11 @@
 
         /* Daily Quote Banner */
         .quote-banner {
-            background: var(--gradient-3);
+            background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
             border-radius: 20px;
             padding: 32px 40px;
             margin: 32px 0;
-            color: white;
+            color: var(--text-primary);
             text-align: center;
             box-shadow: var(--shadow-lg);
             position: relative;
@@ -140,8 +136,9 @@
             top: -20px;
             left: 20px;
             font-size: 120px;
-            opacity: 0.1;
+            opacity: 0.15;
             font-family: Georgia, serif;
+            color: var(--text-primary);
         }
 
         .quote-text {
@@ -155,7 +152,7 @@
 
         .quote-author {
             font-size: 14px;
-            opacity: 0.9;
+            opacity: 0.85;
             position: relative;
             z-index: 1;
         }
@@ -212,11 +209,11 @@
             color: var(--text-primary);
         }
 
-        .github-section .section-icon { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
-        .star-history-section .section-icon { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); }
-        .topics-section .section-icon { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); }
-        .news-section .section-icon { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
-        .tweets-section .section-icon { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); }
+        .github-section .section-icon { background: linear-gradient(135deg, #3c3836 0%, #504945 100%); }
+        .star-history-section .section-icon { background: linear-gradient(135deg, #3c3836 0%, #504945 100%); }
+        .topics-section .section-icon { background: linear-gradient(135deg, #3c3836 0%, #504945 100%); }
+        .news-section .section-icon { background: linear-gradient(135deg, #3c3836 0%, #504945 100%); }
+        .tweets-section .section-icon { background: linear-gradient(135deg, #3c3836 0%, #504945 100%); }
 
         /* GitHub Cards */
         .github-grid {
@@ -239,17 +236,16 @@
         .github-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
-            border-color: var(--accent-purple);
+            border-color: var(--accent-yellow);
+            background: var(--bg-card-hover);
         }
 
         .github-card.top-3 {
-            border: 2px solid transparent;
-            background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
-                        var(--gradient-4) border-box;
+            border: 2px solid var(--accent-orange);
         }
 
         .github-card.top-3 .github-rank {
-            background: var(--gradient-4);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-yellow) 100%);
         }
 
         .github-header {
@@ -271,7 +267,7 @@
         }
 
         .github-title a:hover {
-            color: var(--accent-blue);
+            color: var(--accent-yellow);
         }
 
         .github-rank {
@@ -284,7 +280,7 @@
             justify-content: center;
             font-size: 12px;
             font-weight: 700;
-            color: white;
+            color: var(--bg-primary);
         }
 
         .github-desc {
@@ -333,7 +329,7 @@
             display: flex;
             align-items: center;
             gap: 4px;
-            color: var(--accent-orange);
+            color: var(--accent-yellow);
             font-weight: 500;
         }
 
@@ -376,7 +372,7 @@
             align-items: center;
             gap: 12px;
             padding: 12px 16px;
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
             border-radius: 12px;
             border: 1px solid var(--border-color);
         }
@@ -390,11 +386,11 @@
             justify-content: center;
             font-size: 12px;
             font-weight: 700;
-            color: white;
+            color: var(--bg-primary);
         }
 
         .star-history-rank.top-3 {
-            background: var(--gradient-4);
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-yellow) 100%);
         }
 
         .star-history-rank.other {
@@ -417,12 +413,12 @@
         }
 
         .star-history-name a:hover {
-            color: var(--accent-blue);
+            color: var(--accent-yellow);
         }
 
         .star-history-stars {
             font-size: 13px;
-            color: var(--accent-orange);
+            color: var(--accent-yellow);
             font-weight: 500;
         }
 
@@ -446,17 +442,19 @@
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
             border-color: var(--accent-blue);
+            background: var(--bg-card-hover);
         }
 
         .topic-tag {
             display: inline-block;
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            color: var(--accent-blue);
+            background: var(--bg-secondary);
+            color: var(--accent-aqua);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: 500;
             margin-bottom: 12px;
+            border: 1px solid var(--border-color);
         }
 
         .topic-title {
@@ -518,11 +516,11 @@
         }
 
         .news-column-domestic .news-column-icon {
-            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            background: linear-gradient(135deg, var(--accent-red) 0%, #9d0006 100%);
         }
 
         .news-column-international .news-column-icon {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #076678 100%);
         }
 
         .news-column-title {
@@ -543,13 +541,13 @@
         }
 
         .source-domestic {
-            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-            color: var(--accent-red);
+            background: linear-gradient(135deg, var(--accent-red) 0%, #9d0006 100%);
+            color: var(--text-primary);
         }
 
         .source-international {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            color: var(--accent-blue);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #076678 100%);
+            color: var(--text-primary);
         }
 
         .news-list {
@@ -582,7 +580,7 @@
         }
 
         .news-title a:hover {
-            color: var(--accent-blue);
+            color: var(--accent-yellow);
         }
 
         .news-snippet {
@@ -619,6 +617,7 @@
         .tweet-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
+            background: var(--bg-card-hover);
         }
 
         .tweet-header {
@@ -632,13 +631,13 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 18px;
             font-weight: 600;
-            color: white;
+            color: var(--text-primary);
         }
 
         .tweet-author-info {
@@ -705,7 +704,7 @@
         }
 
         .footer-link:hover {
-            color: var(--accent-purple);
+            color: var(--accent-yellow);
         }
 
         /* Responsive */
@@ -781,8 +780,8 @@
 
         <!-- Daily Quote -->
         <div class="quote-banner">
-            <p class="quote-text">"The most dangerous phrase in the language is, 'We've always done it this way.'"</p>
-            <p class="quote-author">— Grace Hopper</p>
+            <p class="quote-text">"Talk is cheap. Show me the code."</p>
+            <p class="quote-author">— Linus Torvalds</p>
         </div>
 
         <!-- Date Coverage -->
@@ -804,11 +803,10 @@
                         <span class="github-title"><a href="https://github.com/forrestchang/andrej-karpathy-skills" target="_blank">forrestchang/andrej-karpathy-skills</a></span>
                         <span class="github-rank">1</span>
                     </div>
-                    <p class="github-desc">基于Andrej Karpathy对LLM编程陷阱观察的CLAUDE.md文件，用于改善Claude Code行为</p>
+                    <p class="github-desc">基于Andrej Karpathy对LLM编程陷阱观察的CLAUDE.md文件，用于改善Claude Code行为。一句话总结：帮助开发者避免常见LLM编程错误的实用指南。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-other"></span>—</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 20,209</span>
+                        <span class="github-stars">🔥 +5,828 today</span>
                     </div>
                 </div>
                 <div class="github-card top-3">
@@ -816,11 +814,10 @@
                         <span class="github-title"><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></span>
                         <span class="github-rank">2</span>
                     </div>
-                    <p class="github-desc">与你共同成长的AI智能体 - 自我进化的AI Agent框架</p>
+                    <p class="github-desc">与你共同成长的AI智能体 - 自我进化的AI Agent框架。一句话总结：具备持续学习能力的下一代AI代理平台。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 74,021</span>
+                        <span class="github-stars">🔥 +11,297 today</span>
                     </div>
                 </div>
                 <div class="github-card top-3">
@@ -828,11 +825,10 @@
                         <span class="github-title"><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></span>
                         <span class="github-rank">3</span>
                     </div>
-                    <p class="github-desc">Kronos: 金融市场语言的基础模型 - 专为金融时序数据设计的预训练模型</p>
+                    <p class="github-desc">Kronos: 金融市场语言的基础模型 - 专为金融时序数据设计的预训练模型。一句话总结：用AI理解金融市场语言的专业模型。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 16,577</span>
+                        <span class="github-stars">🔥 +1,552 today</span>
                     </div>
                 </div>
                 <div class="github-card">
@@ -840,11 +836,10 @@
                         <span class="github-title"><a href="https://github.com/thedotmack/claude-mem" target="_blank">thedotmack/claude-mem</a></span>
                         <span class="github-rank">4</span>
                     </div>
-                    <p class="github-desc">Claude Code插件，自动捕获编码会话中的所有操作，用AI压缩并注入相关上下文到未来会话</p>
+                    <p class="github-desc">Claude Code插件，自动捕获编码会话中的所有操作，用AI压缩并注入相关上下文到未来会话。一句话总结：让Claude记住你所有编码历史的记忆增强插件。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 51,631</span>
+                        <span class="github-stars">🔥 +3,185 today</span>
                     </div>
                 </div>
                 <div class="github-card">
@@ -852,11 +847,10 @@
                         <span class="github-title"><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></span>
                         <span class="github-rank">5</span>
                     </div>
-                    <p class="github-desc">Python工具，将文件和Office文档转换为Markdown格式</p>
+                    <p class="github-desc">Python工具，将文件和Office文档转换为Markdown格式。一句话总结：微软出品的万能文档转Markdown神器。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-python"></span>Python</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 106,190</span>
+                        <span class="github-stars">🔥 +2,811 today</span>
                     </div>
                 </div>
                 <div class="github-card">
@@ -864,11 +858,10 @@
                         <span class="github-title"><a href="https://github.com/multica-ai/multica" target="_blank">multica-ai/multica</a></span>
                         <span class="github-rank">6</span>
                     </div>
-                    <p class="github-desc">开源托管智能体平台 - 将编码智能体变成真正的团队成员</p>
+                    <p class="github-desc">开源托管智能体平台 - 将编码智能体变成真正的团队成员。一句话总结：把AI编程助手升级为可协作的团队成员。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 10,362</span>
+                        <span class="github-stars">🔥 +1,724 today</span>
                     </div>
                 </div>
                 <div class="github-card">
@@ -876,11 +869,10 @@
                         <span class="github-title"><a href="https://github.com/coleam00/Archon" target="_blank">coleam00/Archon</a></span>
                         <span class="github-rank">7</span>
                     </div>
-                    <p class="github-desc">首个开源AI编码Harness构建器 - 让AI编码变得确定性和可重复</p>
+                    <p class="github-desc">首个开源AI编码Harness构建器 - 让AI编码变得确定性和可重复。一句话总结：为AI编程打造标准化测试框架。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 17,393</span>
+                        <span class="github-stars">🔥 +679 today</span>
                     </div>
                 </div>
                 <div class="github-card">
@@ -888,11 +880,10 @@
                         <span class="github-title"><a href="https://github.com/snarktank/ralph" target="_blank">snarktank/ralph</a></span>
                         <span class="github-rank">8</span>
                     </div>
-                    <p class="github-desc">Ralph是一个自主AI智能体循环，持续运行直到完成所有PRD项目</p>
+                    <p class="github-desc">Ralph是一个自主AI智能体循环，持续运行直到完成所有PRD项目。一句话总结：自动执行产品需求文档的AI项目经理。</p>
                     <div class="github-meta">
                         <span class="github-lang"><span class="lang-dot lang-typescript"></span>TypeScript</span>
-                        <span class="github-stars">🔥 Trending</span>
-                        <span class="github-total">⭐ 16,306</span>
+                        <span class="github-stars">🔥 +683 today</span>
                     </div>
                 </div>
             </div>
@@ -905,9 +896,6 @@
                 <h2 class="section-title">GitHub Star History 本周增长趋势</h2>
             </div>
             <div class="star-history-container">
-                <div class="star-history-chart">
-                    <img src="images/star-trends-aggregate.png" alt="GitHub Star History - Top 10 Projects Weekly Trends">
-                </div>
                 <div class="star-history-list">
                     <div class="star-history-item">
                         <span class="star-history-rank top-3">1</span>
@@ -997,28 +985,28 @@
                     <div class="topic-heat">🔥 热度：156.3K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">基础设施</span>
-                    <h3 class="topic-title">Anthropic与Google/Broadcom达成算力协议</h3>
-                    <p class="topic-desc">Anthropic签署多千兆瓦TPU容量协议，年收入运行率突破300亿美元，AI算力军备竞赛升级。</p>
-                    <div class="topic-heat">🔥 热度：132.8K讨论</div>
+                    <span class="topic-tag">模型发布</span>
+                    <h3 class="topic-title">Google Gemma 4开源</h3>
+                    <p class="topic-desc">Google发布Gemma 4系列开源模型，采用Apache 2.0许可证，支持140+语言和256K上下文。</p>
+                    <div class="topic-heat">🔥 热度：142.1K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">政策经济</span>
-                    <h3 class="topic-title">OpenAI提出AI经济愿景</h3>
-                    <p class="topic-desc">OpenAI发布政策提案，建议从劳动税转向资本税、建立公共财富基金、补贴四天工作制。</p>
-                    <div class="topic-heat">🔥 热度：98.5K讨论</div>
+                    <span class="topic-tag">基础设施</span>
+                    <h3 class="topic-title">Microsoft发布三款基础模型</h3>
+                    <p class="topic-desc">Microsoft AI发布MAI-Transcribe-1、MAI-Voice-1和MAI-Image-2三款基础模型。</p>
+                    <div class="topic-heat">🔥 热度：128.5K讨论</div>
                 </div>
                 <div class="topic-card">
                     <span class="topic-tag">编程变革</span>
                     <h3 class="topic-title">Andrej Karpathy：编程已面目全非</h3>
                     <p class="topic-desc">Karpathy表示AI智能体现已可靠，编程方式正在发生根本性变革，从写代码转向用英语指挥AI。</p>
-                    <div class="topic-heat">🔥 热度：87.2K讨论</div>
+                    <div class="topic-heat">🔥 热度：98.7K讨论</div>
                 </div>
                 <div class="topic-card">
-                    <span class="topic-tag">出口管制</span>
+                    <span class="topic-tag">政策经济</span>
                     <h3 class="topic-title">美国AI芯片出口审批放缓</h3>
                     <p class="topic-desc">美国AI芯片出口审批放缓，白宫召集科技巨头讨论AI风险，全球AI供应链面临新挑战。</p>
-                    <div class="topic-heat">🔥 热度：76.4K讨论</div>
+                    <div class="topic-heat">🔥 热度：87.4K讨论</div>
                 </div>
             </div>
         </section>
@@ -1040,7 +1028,7 @@
                         <div class="news-item">
                             <span class="source-tag source-domestic">🇨🇳 财新网</span>
                             <h4 class="news-title"><a href="https://companies.caixin.com/2026-04-13/102433296.html" target="_blank">DeepSeek V4预计4月下旬发布；美国AI芯片出口审批放缓</a></h4>
-                            <p class="news-snippet">DeepSeek预计4月下旬发布V4版本；MiniMax M2.7正式开源，拥有2290亿参数量；美国AI芯片出口审批放缓，白宫召集科技巨头讨论AI风险。</p>
+                            <p class="news-snippet">DeepSeek预计4月下旬发布V4版本；MiniMax M2.7正式开源，拥有2290亿参数量，已在多种国产AI芯片上实现零代码修改适配；美国AI芯片出口审批放缓，白宫召集科技巨头讨论AI风险。</p>
                             <div class="news-meta">
                                 <span>2026年4月13日</span>
                             </div>
@@ -1048,17 +1036,17 @@
                         <div class="news-item">
                             <span class="source-tag source-domestic">🇨🇳 财新网</span>
                             <h4 class="news-title"><a href="https://m.caixin.com/m/2026-04-10/102432457.html" target="_blank">科尔尼：中国升至外国直接投资信心榜第四</a></h4>
-                            <p class="news-snippet">科尔尼管理咨询公司发布《2026年外商直接投资信心指数》，中国排名升至第四，人工智能成为重要吸引力因素。</p>
+                            <p class="news-snippet">科尔尼管理咨询公司发布《2026年外商直接投资信心指数》，中国排名升至第四，人工智能成为吸引外资的重要因素。</p>
                             <div class="news-meta">
                                 <span>2026年4月10日</span>
                             </div>
                         </div>
                         <div class="news-item">
-                            <span class="source-tag source-domestic">🇨🇳 财新周刊</span>
-                            <h4 class="news-title"><a href="https://weekly.caixin.com/2026-04-11/102432854.html" target="_blank">国风｜AI生成的课堂怎么教学？</a></h4>
-                            <p class="news-snippet">探讨AI生成内容进入教育领域后的教学变革，以及教师如何适应这一新技术趋势。</p>
+                            <span class="source-tag source-domestic">🇨🇳 MiniMax官方</span>
+                            <h4 class="news-title"><a href="https://www.minimaxi.com/models/text/m27" target="_blank">MiniMax M2.7正式开源，开启模型自我进化</a></h4>
+                            <p class="news-snippet">MiniMax发布M2.7模型，首次实现模型深度参与自身迭代。该模型能构建复杂Agent Harness，基于Agent Teams和强化学习完成自我进化。在SWE-Pro基准测试中得分56.22%。</p>
                             <div class="news-meta">
-                                <span>2026年4月11日</span>
+                                <span>2026年4月12日</span>
                             </div>
                         </div>
                     </div>
@@ -1073,26 +1061,26 @@
                     <div class="news-list">
                         <div class="news-item">
                             <span class="source-tag source-international">🌍 TechCrunch</span>
-                            <h4 class="news-title"><a href="https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/" target="_blank">OpenAI's vision for the AI economy</a></h4>
-                            <p class="news-snippet">OpenAI发布AI经济政策提案，包括将税收从劳动转向资本、创建公共财富基金、补贴四天工作制，旨在广泛分配AI繁荣成果。</p>
+                            <h4 class="news-title"><a href="https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/" target="_blank">Microsoft发布三款基础模型挑战AI竞争对手</a></h4>
+                            <p class="news-snippet">Microsoft AI发布三款基础模型：MAI-Transcribe-1（语音转文本，支持25种语言）、MAI-Voice-1（音频生成，可定制声音）和MAI-Image-2（图像/视频生成）。这些模型由Mustafa Suleyman领导的MAI Superintelligence团队开发，定价低于Google和OpenAI竞品。</p>
                             <div class="news-meta">
-                                <span>2026年4月6日</span>
+                                <span>2026年4月2日</span>
                             </div>
                         </div>
                         <div class="news-item">
-                            <span class="source-tag source-international">🌍 The Verge</span>
-                            <h4 class="news-title"><a href="https://www.theverge.com/ai-artificial-intelligence/907810/anthropic-has-signed-a-big-ai-infrastructure-deal-with-google-and-broadcom" target="_blank">Anthropic signs big AI infrastructure deal</a></h4>
-                            <p class="news-snippet">Anthropic与Google和Broadcom签署协议，获得多千兆瓦下一代TPU容量，预计2027年开始上线，年收入运行率已超300亿美元。</p>
+                            <span class="source-tag source-international">🌍 Ars Technica</span>
+                            <h4 class="news-title"><a href="https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/" target="_blank">Google发布Gemma 4开源模型，改用Apache 2.0许可证</a></h4>
+                            <p class="news-snippet">Google发布Gemma 4系列开源AI模型，包含四种规格：26B MoE、31B Dense针对高端GPU优化，E2B和E4B面向移动设备。最重大变化是许可证从自定义Gemma许可转为Apache 2.0，消除此前开发者担忧的限制性条款。</p>
                             <div class="news-meta">
-                                <span>2026年4月7日</span>
+                                <span>2026年4月2日</span>
                             </div>
                         </div>
                         <div class="news-item">
-                            <span class="source-tag source-international">🌍 TechCrunch</span>
-                            <h4 class="news-title"><a href="https://techcrunch.com/2026/04/03/ai-companies-are-building-huge-natural-gas-plants-to-power-data-centers-what-could-go-wrong/" target="_blank">AI companies building natural gas plants for data centers</a></h4>
-                            <p class="news-snippet">AI公司正在建设大型天然气发电厂为数据中心供电，引发对环境影响的担忧，能源消耗成为AI发展的重要制约因素。</p>
+                            <span class="source-tag source-international">🌍 Google Blog</span>
+                            <h4 class="news-title"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank">Gemma 4：字节级最强大的开源模型</a></h4>
+                            <p class="news-snippet">Google发布Gemma 4系列开源模型，31B模型在Arena AI文本排行榜位列开源模型第三，26B排名第六。模型支持多模态处理、长上下文（最高256K）、140+语言。边缘模型可在手机等设备离线运行。</p>
                             <div class="news-meta">
-                                <span>2026年4月3日</span>
+                                <span>2026年4月2日</span>
                             </div>
                         </div>
                     </div>
@@ -1115,10 +1103,10 @@
                             <div class="tweet-handle">@karpathy</div>
                         </div>
                     </div>
-                    <p class="tweet-content">"Programming is becoming unrecognizable... that era is over. Now you spin up AI agents, giving them tasks *in English* and managing and reviewing their work in parallel."</p>
+                    <p class="tweet-content">"Judging by my tl there is a growing gap in understanding of AI between those who use it intensively for work and those who don't. The former are dramatically ahead in understanding where this is going."</p>
                     <div class="tweet-stats">
-                        <span class="tweet-stat">❤️ 24.5K</span>
-                        <span class="tweet-stat">🔄 8.2K</span>
+                        <span class="tweet-stat">❤️ 15.2K</span>
+                        <span class="tweet-stat">🔄 4.8K</span>
                     </div>
                 </div>
                 <div class="tweet-card">
@@ -1129,10 +1117,24 @@
                             <div class="tweet-handle">@karpathy</div>
                         </div>
                     </div>
-                    <p class="tweet-content">"AI agents barely worked before Dec 2025 but became reliable due to better models and longer task persistence. An agent built a video analysis dashboard in 30 minutes—work that took a full weekend three months prior."</p>
+                    <p class="tweet-content">"LLM Knowledge Bases: Something I'm finding very useful recently is maintaining a personal knowledge base of LLM quirks, failure modes, and best practices. It compounds over time and significantly improves productivity."</p>
                     <div class="tweet-stats">
-                        <span class="tweet-stat">❤️ 18.7K</span>
-                        <span class="tweet-stat">🔄 5.4K</span>
+                        <span class="tweet-stat">❤️ 12.8K</span>
+                        <span class="tweet-stat">🔄 3.2K</span>
+                    </div>
+                </div>
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">SA</div>
+                        <div class="tweet-author-info">
+                            <div class="tweet-author">Sam Altman</div>
+                            <div class="tweet-handle">@sama</div>
+                        </div>
+                    </div>
+                    <p class="tweet-content">"OpenAI should not decide the fate of the world; no private company should. We need to work with governments, but the ultimate decisions about AGI should be made democratically, not by a tech company."</p>
+                    <div class="tweet-stats">
+                        <span class="tweet-stat">❤️ 28.5K</span>
+                        <span class="tweet-stat">🔄 9.1K</span>
                     </div>
                 </div>
                 <div class="tweet-card">
@@ -1143,10 +1145,38 @@
                             <div class="tweet-handle">@ylecun</div>
                         </div>
                     </div>
-                    <p class="tweet-content">"The AI industry is completely LLM-pilled, but text training is insufficient for human-like intelligence. We need world models that can learn from observation and interaction with the world."</p>
+                    <p class="tweet-content">"A conventional narrative you might come across is that AI is too far from human-level intelligence. This is incorrect. The gap is closing faster than most people realize, but not through scaling LLMs alone."</p>
                     <div class="tweet-stats">
-                        <span class="tweet-stat">❤️ 12.3K</span>
-                        <span class="tweet-stat">🔄 3.1K</span>
+                        <span class="tweet-stat">❤️ 9.7K</span>
+                        <span class="tweet-stat">🔄 2.4K</span>
+                    </div>
+                </div>
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">AK</div>
+                        <div class="tweet-author-info">
+                            <div class="tweet-author">Andrej Karpathy</div>
+                            <div class="tweet-handle">@karpathy</div>
+                        </div>
+                    </div>
+                    <p class="tweet-content">"The future of new languages – Will AI agents face the same fragmentation challenges as human developers? Or will natural language become the universal programming interface?"</p>
+                    <div class="tweet-stats">
+                        <span class="tweet-stat">❤️ 8.3K</span>
+                        <span class="tweet-stat">🔄 1.9K</span>
+                    </div>
+                </div>
+                <div class="tweet-card">
+                    <div class="tweet-header">
+                        <div class="tweet-avatar">AK</div>
+                        <div class="tweet-author-info">
+                            <div class="tweet-author">Andrej Karpathy</div>
+                            <div class="tweet-handle">@karpathy</div>
+                        </div>
+                    </div>
+                    <p class="tweet-content">"Very interested in what the coming era of highly bespoke software will look like. The future are services of AI-native sensors & actuators, composed together by AI agents on demand."</p>
+                    <div class="tweet-stats">
+                        <span class="tweet-stat">❤️ 11.4K</span>
+                        <span class="tweet-stat">🔄 2.8K</span>
                     </div>
                 </div>
             </div>
