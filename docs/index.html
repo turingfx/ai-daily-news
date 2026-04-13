@@ -353,8 +353,15 @@
 
         .star-history-chart {
             width: 100%;
-            height: 400px;
-            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .star-history-chart img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .star-history-list {
@@ -898,6 +905,9 @@
                 <h2 class="section-title">GitHub Star History 本周增长榜</h2>
             </div>
             <div class="star-history-container">
+                <div class="star-history-chart">
+                    <img src="images/star-history-chart.png" alt="GitHub Star History - 本周增长榜 Top 10">
+                </div>
                 <div class="star-history-list">
                     <div class="star-history-item">
                         <span class="star-history-rank top-3">1</span>
