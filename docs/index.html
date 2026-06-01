@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Daily News - 2026年5月25日 — 5月26日</title>
+  <title>AI Daily News - 2026年6月1日</title>
   <style>
     :root {
       /* Gruvbox Dark Theme Colors */
@@ -70,7 +70,6 @@
       --max-width: 1200px;
     }
 
-    /* Reset & Base */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -249,6 +248,16 @@
       color: var(--gb-fg0);
     }
 
+    .tag-feature {
+      background: var(--gb-purple);
+      color: var(--gb-fg0);
+    }
+
+    .tag-new {
+      background: var(--gb-green);
+      color: var(--gb-bg0);
+    }
+
     /* Link */
     .link {
       color: var(--color-accent);
@@ -260,6 +269,15 @@
     .link:hover {
       color: var(--color-accent-hover);
       text-decoration: underline;
+    }
+
+    /* Code */
+    code {
+      font-family: var(--font-mono);
+      background: var(--gb-bg3);
+      padding: 0.125rem 0.375rem;
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs);
     }
 
     /* Grid */
@@ -502,6 +520,26 @@
       color: var(--gb-fg3);
     }
 
+    /* Changelog list */
+    .changelog-list {
+      list-style: none;
+      font-size: var(--text-sm);
+      color: var(--gb-fg2);
+    }
+
+    .changelog-list li {
+      padding: var(--space-xs) 0;
+      padding-left: var(--space-md);
+      position: relative;
+    }
+
+    .changelog-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+    }
+
     /* Footer */
     .footer {
       text-align: center;
@@ -551,7 +589,7 @@
   <header class="header">
     <div class="container header-content">
       <h1 class="header-title"><span>AI</span> Daily News</h1>
-      <p class="header-date">2026年5月25日 — 5月26日 · 周一—周二</p>
+      <p class="header-date">2026年6月1日 · 周日</p>
     </div>
   </header>
 
@@ -559,8 +597,94 @@
     <!-- Daily Quote -->
     <section class="section">
       <div class="quote-banner">
-        <p class="quote-text">"The best way to predict the future is to invent it."</p>
-        <p class="quote-author">— Alan Kay, 计算机科学家</p>
+        <p class="quote-text">"The sudden massive increase in insane hyping of agentic LLMs is concerning. The gap between demo and production reality is still massive."</p>
+        <p class="quote-author">— Tech Commentary, X/Twitter</p>
+      </div>
+    </section>
+
+    <!-- Claude Code Updates -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-icon">●</span>
+        <h2 class="section-title">Claude Code 更新日志</h2>
+        <span class="section-subtitle">Latest Changelog</span>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">🚀 Q2 2026 重大功能更新</span>
+          <span class="tag tag-new">NEW</span>
+        </div>
+        <div class="card-desc">
+          Anthropic 近期发布了多项重大功能，将 Claude Code 推向全新的 agentic engineering 阶段。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Dynamic Workflows - 动态工作流编排</span>
+          <span class="tag tag-feature">FEATURE</span>
+        </div>
+        <div class="card-desc">
+          Claude 现在可以跨数十到数百个后台 agent 编排工作，处理复杂任务。运行 <code>/workflows</code> 查看运行状态。使用 <code>!</code> 前缀在 <code>claude agents</code> 中将 shell 命令作为后台会话运行。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Agent View (Research Preview) - Agent 仪表板</span>
+          <span class="tag tag-feature">FEATURE</span>
+        </div>
+        <div class="card-desc">
+          集中管理所有会话（运行中、阻塞或已完成）的仪表板。命令 <code>claude agents</code> 支持 JSON 输出、按目录筛选、重命名后台会话、固定会话保持活跃。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Claude Opus 4.8 支持</span>
+          <span class="tag tag-new">NEW</span>
+        </div>
+        <div class="card-desc">
+          默认 High Effort (<code>/effort xhigh</code>)，Fast Mode 以 2 倍速率获得 2.5 倍速度。Auto Mode 现已在 Bedrock、Vertex 和 Foundry 上线（Opus 4.7/4.8）。设置 <code>CLAUDE_CODE_ENABLE_AUTO_MODE=1</code> 启用。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">增强 Skills & Plugins</span>
+          <span class="tag tag-feature">FEATURE</span>
+        </div>
+        <div class="card-desc">
+          <code>.claude/skills</code> 目录中的插件自动加载（无需 marketplace）。<code>claude plugin init</code> 快速创建插件，<code>claude plugin prune</code> 清理孤立依赖，<code>claude plugin validate</code> 验证清单。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Goal-Oriented Agents - 目标导向 Agent</span>
+          <span class="tag tag-feature">FEATURE</span>
+        </div>
+        <div class="card-desc">
+          <code>/goal [完成条件]</code> 让 Claude 跨多轮工作直到目标达成，实时显示已用时间、轮数和 token 消耗。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">🛠️ 改进与修复</span>
+          <span class="tag tag-lang">Improvements</span>
+        </div>
+        <ul class="changelog-list">
+          <li><strong>全屏模式</strong>：改进渲染、鼠标支持、自动复制选中内容</li>
+          <li><strong>Vim Mode</strong>：新增 visual mode (<code>v</code>) 和 visual-line mode (<code>V</code>)</li>
+          <li><strong>Diff 渲染</strong>：大文件编辑性能提升，支持 <code>j/k</code>、<code>PgUp/PgDn</code> 键盘导航</li>
+          <li><strong>MCP</strong>：远程 MCP 服务器自动重试瞬态故障，修复 OAuth 并发刷新问题</li>
+          <li><strong>安全</strong>：<code>--dangerously-skip-permissions</code> 绕过 <code>.claude/</code>、<code>.git/</code> 等写入提示</li>
+          <li><strong>WSL</strong>：修复图片粘贴、截图粘贴、拖拽图片等问题</li>
+          <li><strong>CJK</strong>：修复 Windows Terminal 幽灵字符和宽字符布局问题</li>
+          <li><strong>API</strong>：修复 Opus 4.8 thinking blocks 错误、不支持 effort 参数的模型 400 错误</li>
+        </ul>
       </div>
     </section>
 
@@ -575,11 +699,12 @@
       <div class="trending-item">
         <div class="trending-rank rank-top">1</div>
         <div class="trending-content">
-          <a href="https://github.com/affaan-m/ECC" class="trending-name link" target="_blank">affaan-m/ECC</a>
-          <p class="trending-desc">Agent harness性能优化系统：为Claude Code、Codex、Cursor等AI编码助手提供技能、本能、记忆、安全及研究优先的开发框架</p>
+          <a href="https://github.com/microsoft/markitdown" class="trending-name link" target="_blank">microsoft/markitdown</a>
+          <p class="trending-desc">微软开源：将任意文件转换为 Markdown 格式，支持 PDF、Word、PPT、Excel、图片等多种格式</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">JavaScript</span>
-            <span>★ 192,701</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 135,381</span>
+            <span style="color: var(--gb-green);">+2,798 today</span>
           </div>
         </div>
       </div>
@@ -587,11 +712,12 @@
       <div class="trending-item">
         <div class="trending-rank rank-top">2</div>
         <div class="trending-content">
-          <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" class="trending-name link" target="_blank">x1xhlol/system-prompts-and-models-of-ai-tools</a>
-          <p class="trending-desc">全网最全AI工具系统提示词与内部模型合集：涵盖Claude Code、Cursor、Devin、Copilot等30+工具的system prompts</p>
+          <a href="https://github.com/harry0703/MoneyPrinterTurbo" class="trending-name link" target="_blank">harry0703/MoneyPrinterTurbo</a>
+          <p class="trending-desc">AI 视频生成工具：一键生成短视频，支持自动配音、字幕、背景音乐</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">Documentation</span>
-            <span>★ 138,255</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 74,840</span>
+            <span style="color: var(--gb-green);">+1,937 today</span>
           </div>
         </div>
       </div>
@@ -599,11 +725,12 @@
       <div class="trending-item">
         <div class="trending-rank rank-top">3</div>
         <div class="trending-content">
-          <a href="https://github.com/anthropics/claude-code" class="trending-name link" target="_blank">anthropics/claude-code</a>
-          <p class="trending-desc">Anthropic官方开源的Claude Code：终端中的agentic编码工具，理解代码库并通过自然语言命令执行开发任务</p>
+          <a href="https://github.com/D4Vinci/Scrapling" class="trending-name link" target="_blank">D4Vinci/Scrapling</a>
+          <p class="trending-desc">新一代 Web 爬虫框架：高性能、抗检测、支持动态渲染</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">Shell</span>
-            <span>★ 126,552</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 56,832</span>
+            <span style="color: var(--gb-green);">+606 today</span>
           </div>
         </div>
       </div>
@@ -611,11 +738,12 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">4</div>
         <div class="trending-content">
-          <a href="https://github.com/garrytan/gstack" class="trending-name link" target="_blank">garrytan/gstack</a>
-          <p class="trending-desc">Garry Tan的Claude Code完整配置方案：23个 Opinionated 工具，覆盖CEO、设计师、工程经理、发布经理等角色</p>
+          <a href="https://github.com/OpenBMB/VoxCPM" class="trending-name link" target="_blank">OpenBMB/VoxCPM</a>
+          <p class="trending-desc">多语言文本转语音（TTS）模型，支持中英日韩等 20+ 语言</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">TypeScript</span>
-            <span>★ 102,628</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 23,664</span>
+            <span style="color: var(--gb-green);">+635 today</span>
           </div>
         </div>
       </div>
@@ -623,11 +751,12 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">5</div>
         <div class="trending-content">
-          <a href="https://github.com/thedotmack/claude-mem" class="trending-name link" target="_blank">thedotmack/claude-mem</a>
-          <p class="trending-desc">AI代理跨会话持久化记忆系统：捕获会话中的一切行为，用AI压缩后注入未来会话，支持Claude Code、Codex等20+工具</p>
+          <a href="https://github.com/supermemoryai/supermemory" class="trending-name link" target="_blank">supermemoryai/supermemory</a>
+          <p class="trending-desc">快速记忆引擎：为 AI Agent 提供持久化记忆能力</p>
           <div class="trending-stats">
             <span class="tag tag-lang">TypeScript</span>
-            <span>★ 78,177</span>
+            <span>★ 23,444</span>
+            <span style="color: var(--gb-green);">+264 today</span>
           </div>
         </div>
       </div>
@@ -635,11 +764,12 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">6</div>
         <div class="trending-content">
-          <a href="https://github.com/bytedance/deer-flow" class="trending-name link" target="_blank">bytedance/deer-flow</a>
-          <p class="trending-desc">字节跳动开源长程SuperAgent：通过沙箱、记忆、工具、技能、子代理和消息网关，处理从分钟到小时的复杂任务</p>
+          <a href="https://github.com/EveryInc/compound-engineering-plugin" class="trending-name link" target="_blank">EveryInc/compound-engineering-plugin</a>
+          <p class="trending-desc">Compound 工程插件：AI 驱动的工程团队协作工具</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">Python</span>
-            <span>★ 69,556</span>
+            <span class="tag tag-lang">TypeScript</span>
+            <span>★ 18,765</span>
+            <span style="color: var(--gb-green);">+251 today</span>
           </div>
         </div>
       </div>
@@ -647,11 +777,12 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">7</div>
         <div class="trending-content">
-          <a href="https://github.com/ruvnet/ruflo" class="trending-name link" target="_blank">ruvnet/ruflo</a>
-          <p class="trending-desc">Claude智能体编排平台：部署多代理集群、协调自主工作流，具备企业级架构、自学习集群智能和RAG集成</p>
+          <a href="https://github.com/nesquena/hermes-webui" class="trending-name link" target="_blank">nesquena/hermes-webui</a>
+          <p class="trending-desc">Hermes Agent UI：开源 AI Agent 管理界面</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">TypeScript</span>
-            <span>★ 55,130</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 10,122</span>
+            <span style="color: var(--gb-green);">+357 today</span>
           </div>
         </div>
       </div>
@@ -659,112 +790,172 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">8</div>
         <div class="trending-content">
-          <a href="https://github.com/addyosmani/agent-skills" class="trending-name link" target="_blank">addyosmani/agent-skills</a>
-          <p class="trending-desc">Google工程师出品的生产级AI编码代理工程技能库：为Claude Code、Codex等工具提供经过实战验证的最佳实践</p>
+          <a href="https://github.com/revfactory/harness" class="trending-name link" target="_blank">revfactory/harness</a>
+          <p class="trending-desc">领域特定 Agent 团队编排框架</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">Shell</span>
-            <span>★ 45,747</span>
+            <span class="tag tag-lang">HTML</span>
+            <span>★ 4,686</span>
+            <span style="color: var(--gb-green);">+323 today</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Star History -->
+    <!-- AI News -->
     <section class="section">
       <div class="section-header">
-        <span class="section-icon">📈</span>
-        <h2 class="section-title">Star History</h2>
-        <span class="section-subtitle">本周星数增长TOP 10</span>
+        <span class="section-icon">📰</span>
+        <h2 class="section-title">AI 新闻资讯</h2>
+        <span class="section-subtitle">最新动态</span>
       </div>
 
-      <div class="star-card">
-        <div class="star-rank">1</div>
-        <div class="star-info">
-          <a href="https://github.com/obra/superpowers" class="star-name link" target="_blank">obra/superpowers</a>
-          <p class="star-desc">Agentic Skills框架与行之有效的软件开发方法论</p>
+      <div class="grid grid-2">
+        <!-- 国内媒体 -->
+        <div>
+          <h3 style="font-size: var(--text-xl); font-weight: 600; color: var(--gb-fg0); margin-bottom: var(--space-md);">
+            🇨🇳 国内
+          </h3>
+
+          <div class="news-card">
+            <span class="news-source tag-domestic">🇨🇳 新华网</span>
+            <a href="http://www.news.cn/tech/20260126/05174e5018164e8b86379019a4b43441/c.html" class="news-title link" target="_blank">
+              展望全球人工智能2026年演进新局
+            </a>
+            <p class="news-summary">
+              中国AI企业数量超6000家，AI核心产业规模预计突破1.2万亿元，同比增长近30%。国产大模型在多个领域实现突破。
+            </p>
+          </div>
+
+          <div class="news-card">
+            <span class="news-source tag-domestic">🇨🇳 央视网</span>
+            <a href="https://news.cctv.cn/2026/01/28/ARTIEvCAzmKkHNEUbwOAS6et260128.shtml" class="news-title link" target="_blank">
+              2026年中国AI发展趋势前瞻
+            </a>
+            <p class="news-summary">
+              AI核心产业规模预计突破1.2万亿元，国产大模型在文本、图像、视频生成等领域持续追赶国际先进水平。
+            </p>
+          </div>
         </div>
-        <div class="star-growth">★ 206,604</div>
+
+        <!-- 国外媒体 -->
+        <div>
+          <h3 style="font-size: var(--text-xl); font-weight: 600; color: var(--gb-fg0); margin-bottom: var(--space-md);">
+            🌍 国际
+          </h3>
+
+          <div class="news-card">
+            <span class="news-source tag-international">🌍 WaveSpeed AI</span>
+            <a href="https://wavespeed.ai/blog/posts/june-2026-ai-launch-wave/" class="news-title link" target="_blank">
+              June 2026 AI Launch Wave: A Builder's Decision Map
+            </a>
+            <p class="news-summary">
+              Anthropic、Google、xAI、OpenAI 均在6月发布重大更新。Claude 4.8、GPT-5.6、Gemini 3.5 Pro 全面竞争。
+            </p>
+          </div>
+
+          <div class="news-card">
+            <span class="news-source tag-international">🌍 TradingKey</span>
+            <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/261934290-anthropic-claude-opus-google-openai-chatgpt-agent-tradingkey" class="news-title link" target="_blank">
+              Anthropic Launches Claude Opus 4.8
+            </a>
+            <p class="news-summary">
+              Anthropic 于5月28日发布 Claude Opus 4.8，超越 OpenAI GPT-5.5，在多项基准测试中取得领先。
+            </p>
+          </div>
+
+          <div class="news-card">
+            <span class="news-source tag-international">🌍 TrendForce</span>
+            <a href="https://www.trendforce.com/news/2026/04/27/news-openclaws-popularity-ignites-the-ai-agent-trend-advantech-and-d8ai-join-forces-to-lower-barriers-and-accelerate-enterprise-adoption/" class="news-title link" target="_blank">
+              OpenClaw's Popularity Ignites the AI Agent Trend
+            </a>
+            <p class="news-summary">
+              OpenClaw 的火爆点燃 AI Agent 趋势，研华科技与 d8AI 联手降低企业采用门槛，加速企业级 AI Agent 部署。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- X / Twitter Discussions -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-icon">🐦</span>
+        <h2 class="section-title">X / Twitter 热议</h2>
+        <span class="section-subtitle">社区讨论</span>
       </div>
 
-      <div class="star-card">
-        <div class="star-rank">2</div>
-        <div class="star-info">
-          <a href="https://github.com/affaan-m/ECC" class="star-name link" target="_blank">affaan-m/ECC</a>
-          <p class="star-desc">Agent harness性能优化系统，支持多模型生态</p>
+      <div class="grid grid-2">
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">W</div>
+            <div>
+              <p class="tweet-author">Will Manidis</p>
+              <p class="tweet-handle">@WillManidis</p>
+            </div>
+          </div>
+          <p class="tweet-content">
+            "72% of voters want to slow down AI development. 82% want strict safety regulations." — 美国选民对AI发展的态度正在发生显著转变，反AI情绪可能成为2026年最被低估的政治力量。
+          </p>
+          <div class="tweet-stats">
+            <span>💬 1.2K</span>
+            <span>🔄 5.6K</span>
+            <span>❤️ 18K</span>
+          </div>
         </div>
-        <div class="star-growth">★ 192,701</div>
-      </div>
 
-      <div class="star-card">
-        <div class="star-rank">3</div>
-        <div class="star-info">
-          <a href="https://github.com/NousResearch/hermes-agent" class="star-name link" target="_blank">NousResearch/hermes-agent</a>
-          <p class="star-desc">自带学习循环的自我改进开源AI Agent</p>
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">S</div>
+            <div>
+              <p class="tweet-author">Stanford HAI</p>
+              <p class="tweet-handle">@StanfordHAI</p>
+            </div>
+          </div>
+          <p class="tweet-content">
+            Introducing the #AIIndex2026: Our most comprehensive report yet. AI investment continues to surge, but public concern about safety and job displacement is at an all-time high.
+          </p>
+          <div class="tweet-stats">
+            <span>💬 567</span>
+            <span>🔄 3.4K</span>
+            <span>❤️ 12K</span>
+          </div>
         </div>
-        <div class="star-growth">★ 167,494</div>
-      </div>
 
-      <div class="star-card">
-        <div class="star-rank">4</div>
-        <div class="star-info">
-          <a href="https://github.com/multica-ai/andrej-karpathy-skills" class="star-name link" target="_blank">multica-ai/andrej-karpathy-skills</a>
-          <p class="star-desc">Karpathy启发的单文件CLAUDE.md，显著改善Claude Code行为</p>
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">B</div>
+            <div>
+              <p class="tweet-author">Buck</p>
+              <p class="tweet-handle">@BucknSF</p>
+            </div>
+          </div>
+          <p class="tweet-content">
+            "The first wave of AI-driven layoffs in 2026 did what 2008 couldn't — it made white-collar workers feel expendable." — AI 驱动的裁员浪潮正在重塑劳动力市场。
+          </p>
+          <div class="tweet-stats">
+            <span>💬 234</span>
+            <span>🔄 1.2K</span>
+            <span>❤️ 4.5K</span>
+          </div>
         </div>
-        <div class="star-growth">★ 155,331</div>
-      </div>
 
-      <div class="star-card">
-        <div class="star-rank">5</div>
-        <div class="star-info">
-          <a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" class="star-name link" target="_blank">x1xhlol/system-prompts-and-models-of-ai-tools</a>
-          <p class="star-desc">全网最全AI工具系统提示词与内部模型合集</p>
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">A</div>
+            <div>
+              <p class="tweet-author">Ai4 Conferences</p>
+              <p class="tweet-handle">@Ai4Conferences</p>
+            </div>
+          </div>
+          <p class="tweet-content">
+            Ai4 2026 is set to be even bigger and better. Join us as we explore the latest in AI innovation, from agentic workflows to enterprise adoption strategies.
+          </p>
+          <div class="tweet-stats">
+            <span>💬 89</span>
+            <span>🔄 456</span>
+            <span>❤️ 2.1K</span>
+          </div>
         </div>
-        <div class="star-growth">★ 138,255</div>
-      </div>
-
-      <div class="star-card">
-        <div class="star-rank">6</div>
-        <div class="star-info">
-          <a href="https://github.com/anthropics/claude-code" class="star-name link" target="_blank">anthropics/claude-code</a>
-          <p class="star-desc">Anthropic官方终端agentic编码工具</p>
-        </div>
-        <div class="star-growth">★ 126,552</div>
-      </div>
-
-      <div class="star-card">
-        <div class="star-rank">7</div>
-        <div class="star-info">
-          <a href="https://github.com/github/spec-kit" class="star-name link" target="_blank">github/spec-kit</a>
-          <p class="star-desc">GitHub官方Spec-Driven Development工具包</p>
-        </div>
-        <div class="star-growth">★ 105,911</div>
-      </div>
-
-      <div class="star-card">
-        <div class="star-rank">8</div>
-        <div class="star-info">
-          <a href="https://github.com/mattpocock/skills" class="star-name link" target="_blank">mattpocock/skills</a>
-          <p class="star-desc">Skills for Real Engineers — 实用工程师技能集</p>
-        </div>
-        <div class="star-growth">★ 105,480</div>
-      </div>
-
-      <div class="star-card">
-        <div class="star-rank">9</div>
-        <div class="star-info">
-          <a href="https://github.com/garrytan/gstack" class="star-name link" target="_blank">garrytan/gstack</a>
-          <p class="star-desc">Garry Tan的Claude Code完整配置方案</p>
-        </div>
-        <div class="star-growth">★ 102,628</div>
-      </div>
-
-      <div class="star-card">
-        <div class="star-rank">10</div>
-        <div class="star-info">
-          <a href="https://github.com/farion1231/cc-switch" class="star-name link" target="_blank">farion1231/cc-switch</a>
-          <p class="star-desc">跨平台All-in-One AI CLI工具管理器，支持多模型切换</p>
-        </div>
-        <div class="star-growth">★ 80,932</div>
       </div>
     </section>
 
@@ -776,126 +967,42 @@
       </div>
 
       <div class="hot-topic">
-        <span class="hot-icon">🔄</span>
+        <span class="hot-icon">🚀</span>
         <div>
-          <p class="hot-title">Andrej Karpathy官宣加入Anthropic</p>
-          <p class="hot-desc">OpenAI联合创始人、前Tesla AI高管Karpathy宣布加入Anthropic核心预训练团队，引发业界对AI人才流动的高度关注</p>
-        </div>
-      </div>
-
-      <div class="hot-topic">
-        <span class="hot-icon">🔮</span>
-        <div>
-          <p class="hot-title">Google I/O 2026 Gemini进入"Action Era"</p>
-          <p class="hot-desc">Gemini 3.5 Flash（速度为竞品4倍）、Omni视频生成模型、Spark 24/7 AI代理齐发，月活达9亿</p>
-        </div>
-      </div>
-
-      <div class="hot-topic">
-        <span class="hot-icon">🎨</span>
-        <div>
-          <p class="hot-title">智象未来发布2000亿参数图像大模型HiDream-O1</p>
-          <p class="hot-desc">采用原生全模态架构UiT，刷新多项SOTA纪录，标志着国产多模态大模型进入新阶段</p>
-        </div>
-      </div>
-
-      <div class="hot-topic">
-        <span class="hot-icon">💻</span>
-        <div>
-          <p class="hot-title">从"Vibe Coding"到"Agentic Engineering"范式跃迁</p>
-          <p class="hot-desc">开发者社区热议：AI编码正从简单的vibe coding向系统化的agentic engineering转变，Anthropic发布2026趋势报告</p>
+          <p class="hot-title">June 2026 AI 发布潮</p>
+          <p class="hot-desc">Claude 4.8、GPT-5.6、Gemini 3.5 Pro 齐发，AI 模型竞争进入白热化阶段</p>
         </div>
       </div>
 
       <div class="hot-topic">
         <span class="hot-icon">🏢</span>
         <div>
-          <p class="hot-title">百度Create 2026：李彦宏提出"DAA"新概念</p>
-          <p class="hot-desc">百度AI开发者大会上，李彦宏提出"日活智能体数(DAA)"概念和"AI时代进化论"，聚焦智能体生态建设</p>
+          <p class="hot-title">OpenClaw 企业采用加速</p>
+          <p class="hot-desc">AI Agent 从概念验证走向生产环境，企业级部署门槛持续降低</p>
         </div>
       </div>
-    </section>
 
-    <!-- AI News -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-icon">📰</span>
-        <h2 class="section-title">AI 新闻</h2>
+      <div class="hot-topic">
+        <span class="hot-icon">⚠️</span>
+        <div>
+          <p class="hot-title">反 AI 情绪升温</p>
+          <p class="hot-desc">72% 选民希望放缓 AI 发展，AI 安全与监管成为政治焦点议题</p>
+        </div>
       </div>
 
-      <div class="grid grid-2">
-        <!-- 国内媒体 -->
+      <div class="hot-topic">
+        <span class="hot-icon">📊</span>
         <div>
-          <h3 style="font-size: var(--text-xl); font-weight: 600; color: var(--gb-fg0); margin-bottom: var(--space-md);">
-            🇨🇳 国内媒体
-          </h3>
-
-          <div class="news-card">
-            <span class="news-source tag-domestic">🇨🇳 新浪财经/量子位</span>
-            <a href="https://finance.sina.com.cn/jjxw/2026-05-20/doc-inhypxki6878911.shtml" class="news-title link" target="_blank">
-              智象未来发布超两千亿参数图像大模型HiDream-O1
-            </a>
-            <p class="news-summary">
-              5月19日，智象未来在北京举办首届开放日，正式发布基于原生全模态架构UiT的图像大模型HiDream-O1-Image-Pro，采用2000亿参数，刷新多项SOTA纪录，标志着国产多模态大模型进入新阶段。
-            </p>
-          </div>
-
-          <div class="news-card">
-            <span class="news-source tag-domestic">🇨🇳 财联社</span>
-            <a href="https://www.cls.cn/subject/1321" class="news-title link" target="_blank">
-              抖音AI求真大模型上线后谣言处置效率大幅提升
-            </a>
-            <p class="news-summary">
-              抖音公布数据：自AI求真大模型上线后，谣言被处置时的平均浏览量下降62%，这意味着AI在内容治理和信息真实性验证方面展现出显著效果，为大模型在社会治理中的应用提供了新范例。
-            </p>
-          </div>
-
-          <div class="news-card">
-            <span class="news-source tag-domestic">🇨🇳 证券时报/百度</span>
-            <a href="https://www.stcn.com/article/detail/3906473.html" class="news-title link" target="_blank">
-              百度Create 2026 AI开发者大会：李彦宏提出DAA概念
-            </a>
-            <p class="news-summary">
-              5月13日，Create 2026百度AI开发者大会正式开幕。李彦宏发表主题演讲，提出"日活智能体数(DAA)"概念和"AI时代进化论"，强调"自我进化"是面向AI时代的从未有过的大机会。
-            </p>
-          </div>
+          <p class="hot-title">中国 AI 产业规模破万亿</p>
+          <p class="hot-desc">AI 核心产业规模预计突破 1.2 万亿元，企业数量超 6000 家</p>
         </div>
+      </div>
 
-        <!-- 国外媒体 -->
+      <div class="hot-topic">
+        <span class="hot-icon">💼</span>
         <div>
-          <h3 style="font-size: var(--text-xl); font-weight: 600; color: var(--gb-fg0); margin-bottom: var(--space-md);">
-            🌍 国外媒体
-          </h3>
-
-          <div class="news-card">
-            <span class="news-source tag-international">🌍 Reuters</span>
-            <a href="https://www.reuters.com/business/autos-transportation/former-tesla-ai-executive-openai-founding-member-andrej-karpathy-joins-anthropic-2026-05-19/" class="news-title link" target="_blank">
-              Andrej Karpathy宣布加入Anthropic核心预训练团队
-            </a>
-            <p class="news-summary">
-              OpenAI联合创始人、前Tesla AI高管Andrej Karpathy于5月19日宣布加入Anthropic，将在公司最核心的预训练团队工作。他表示"对未来几年LLM前沿发展充满期待"，此举被视为AI人才争夺战的重大事件。
-            </p>
-          </div>
-
-          <div class="news-card">
-            <span class="news-source tag-international">🌍 TechCrunch/新浪科技</span>
-            <a href="https://techcrunch.com/2026/05/19/google-updates-its-gemini-app-to-take-on-chatgpt-and-claude-at-io-2026/" class="news-title link" target="_blank">
-              Google I/O 2026发布Gemini 3.5 Flash/Omni/Spark
-            </a>
-            <p class="news-summary">
-              Google I/O 2026大会上，Gemini应用全面改版，推出Gemini 3.5 Flash（速度为竞品4倍）、Omni视频生成模型、Spark 24/7 AI代理。皮查伊宣布Gemini月活达9亿，每月处理Token达3.2千万亿。
-            </p>
-          </div>
-
-          <div class="news-card">
-            <span class="news-source tag-international">🌍 OpenAI Blog</span>
-            <a href="https://openai.com/index/running-codex-safely/" class="news-title link" target="_blank">
-              OpenAI详解Codex安全运行策略
-            </a>
-            <p class="news-summary">
-              OpenAI发布长文详解Codex的安全运行机制，包括容器化隔离、权限控制、代码审计和自动回滚等策略。随着GPT-5.3-Codex的广泛部署，安全成为agentic coding生态的核心议题。
-            </p>
-          </div>
+          <p class="hot-title">AI 驱动裁员潮</p>
+          <p class="hot-desc">2026 年第一波 AI 驱动裁员来袭，白领工作者面临前所未有的职业焦虑</p>
         </div>
       </div>
     </section>
@@ -910,19 +1017,10 @@
       <div class="grid grid-2">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Google Gemini</h3>
-          </div>
-          <p class="card-desc">
-            <strong>Gemini 3.5 Flash</strong>：速度为竞品4倍的前沿智能模型。<strong>Gemini Omni</strong>：支持从任意输入创建视频的生成模型。<strong>Gemini Spark</strong>：24/7全天候个人AI代理。<strong>I/O 2026</strong>：月活突破9亿，全面进入"Action Era"。
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
             <h3 class="card-title">Anthropic Claude</h3>
           </div>
           <p class="card-desc">
-            <strong>Karpathy加入</strong>：前OpenAI/Tesla AI高管加入核心预训练团队。<strong>Claude Code开源</strong>：官方终端agentic编码工具GitHub star突破12万。<strong>SpaceX计算合作</strong>：与SpaceX达成算力协议，提升服务上限。
+            <strong>Opus 4.8</strong>：5月28日发布，默认 High Effort，Fast Mode 2.5倍速度。<strong>Dynamic Workflows</strong>：跨数百个后台 agent 编排工作。<strong>Agent View</strong>：集中管理所有会话的仪表板。<strong>Goal-Oriented Agents</strong>：/goal 命令实现跨轮目标追踪。
           </p>
         </div>
 
@@ -931,173 +1029,26 @@
             <h3 class="card-title">OpenAI GPT/Codex</h3>
           </div>
           <p class="card-desc">
-            <strong>GPT-5.3-Codex</strong>：原生Codex智能体，将前沿编程性能与通用推理结合。<strong>Codex安全策略</strong>：发布容器化隔离、权限控制等安全运行详解。<strong>自动AI研究</strong>：Sam Altman披露2026年内部目标为构建自动化AI研究实习生。
+            <strong>GPT-5.6</strong>：6月发布，与 Claude 4.8、Gemini 3.5 Pro 形成三强竞争。<strong>Codex 安全</strong>：容器化隔离、权限控制策略详解。<strong>自动AI研究</strong>：2026年内部目标为构建自动化AI研究实习生。
           </p>
         </div>
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">阿里Qwen / ByteDance</h3>
+            <h3 class="card-title">Google Gemini</h3>
           </div>
           <p class="card-desc">
-            <strong>Qwen3.7系列</strong>：5月20日阿里云峰会正式发布旗舰模型。<strong>deer-flow</strong>：字节跳动开源长程SuperAgent，支持分钟到小时的复杂任务处理，GitHub star已近7万。
+            <strong>Gemini 3.5 Pro</strong>：6月发布，进入 "Action Era"。<strong>Flash</strong>：速度为竞品4倍。<strong>Omni</strong>：视频生成模型。<strong>Spark</strong>：24/7 AI 代理。月活突破9亿。
           </p>
         </div>
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">智象未来 / 百度</h3>
+            <h3 class="card-title">AI Agent 生态</h3>
           </div>
           <p class="card-desc">
-            <strong>HiDream-O1</strong>：2000亿参数原生全模态图像大模型，采用UiT架构刷新SOTA。<strong>百度DAA</strong>：Create 2026提出"日活智能体数"新概念，推动智能体生态从数量到质量转变。
+            <strong>OpenClaw</strong>：企业采用率持续攀升。<strong>字节 deer-flow</strong>：开源长程 SuperAgent。<strong>Microsoft markitdown</strong>：文件转 Markdown 工具爆火。<strong>Supermemory</strong>：AI Agent 记忆引擎获关注。
           </p>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Agentic Coding生态</h3>
-          </div>
-          <p class="card-desc">
-            <strong>Skills爆炸</strong>：GitHub上AI编码技能库star数持续飙升，obra/superpowers突破20万星。<strong>多Agent编排</strong>：ruvnet/ruflo、bytedance/deer-flow等开源项目推动多智能体协作进入生产级阶段。
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI Leader Tweets -->
-    <section class="section">
-      <div class="section-header">
-        <span class="section-icon">🐦</span>
-        <h2 class="section-title">AI 大佬动态</h2>
-      </div>
-
-      <div class="grid grid-2">
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">A</div>
-            <div>
-              <p class="tweet-author">Andrej Karpathy</p>
-              <p class="tweet-handle">@karpathy · 前Tesla AI总监</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            "Personal update: I've joined Anthropic. I think the next few years at the frontier of LLMs will be incredibly exciting." — 宣布加入Anthropic核心预训练团队，引发全球AI社区震动。
-          </p>
-          <div class="tweet-stats">
-            <span>🔥 年度最受关注AI人事变动</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">A</div>
-            <div>
-              <p class="tweet-author">Andrej Karpathy</p>
-              <p class="tweet-handle">@karpathy · AI研究者</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            "A few random notes from claude coding quite a bit last few weeks..." — 分享大量使用Claude Code的实战经验，包括prompt技巧、工作流优化和常见陷阱，被开发者社区广泛转发学习。
-          </p>
-          <div class="tweet-stats">
-            <span>💡 Claude Code最佳实践指南</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">S</div>
-            <div>
-              <p class="tweet-author">Sam Altman</p>
-              <p class="tweet-handle">@sama · OpenAI CEO</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            "We have set internal goals of having an automated AI research intern by 2026..." — 披露OpenAI内部目标：2026年构建自动化AI研究实习生，2028年实现完全自主的AI研究者，引发对AGI时间线的热议。
-          </p>
-          <div class="tweet-stats">
-            <span>🚀 AGI时间线再引热议</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">S</div>
-            <div>
-              <p class="tweet-author">Sam Altman</p>
-              <p class="tweet-handle">@sama · OpenAI CEO</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            "we want to build tools to augment and elevate people, not entities to replace them." — 重申OpenAI的使命是增强人类而非替代人类，回应外界对AI取代就业的担忧。
-          </p>
-          <div class="tweet-stats">
-            <span>🤝 AI增强人类路线再确认</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">Y</div>
-            <div>
-              <p class="tweet-author">Yann LeCun</p>
-              <p class="tweet-handle">@ylecun · Meta AI Chief Scientist</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            持续推动世界模型（World Models）路线，与DeepMind学者就"LLMs是否真正理解"展开公开辩论。坚持认为当前LLM范式存在根本性局限，真正的智能需要世界模型和联合嵌入预测架构（JEPA）。
-          </p>
-          <div class="tweet-stats">
-            <span>🧠 世界模型vs LLM路线之争</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">S</div>
-            <div>
-              <p class="tweet-author">Sundar Pichai</p>
-              <p class="tweet-handle">@sundarpichai · Google CEO</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            Google I/O 2026主题演讲宣布Gemini进入"Action Era"（行动时代），从"回答问题"转向"完成任务"。发布Gemini Spark作为24/7个人AI代理，标志着Google从搜索引擎向AI代理平台的战略转型。
-          </p>
-          <div class="tweet-stats">
-            <span>🔮 Google全面转向AI Agent</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">D</div>
-            <div>
-              <p class="tweet-author">Dario Amodei</p>
-              <p class="tweet-handle">@DarioAmodei · Anthropic CEO</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            据NYT报道，Dario Amodei表示Anthropic今年可能增长80倍。同时他与印度总理莫迪会面讨论Anthropic在印度的合作。Anthropic企业采用率持续攀升，AI安全与规模化发展并重。
-          </p>
-          <div class="tweet-stats">
-            <span>📈 Anthropic或增长80倍</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">李</div>
-            <div>
-              <p class="tweet-author">李彦宏</p>
-              <p class="tweet-handle">百度创始人 · Create 2026</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            Create 2026百度AI开发者大会上提出"日活智能体数(DAA)"概念和"AI时代进化论"："自我进化是一次从未有过的大机会。"强调从"DAU思维"转向"DAA思维"，以智能体活跃度衡量AI应用价值。
-          </p>
-          <div class="tweet-stats">
-            <span>🇨🇳 中国AI智能体生态新指标</span>
-          </div>
         </div>
       </div>
     </section>
@@ -1106,7 +1057,11 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">AI Daily News · 每日自动更新 · 最后更新：2026-05-26</p>
+      <p class="footer-text">AI Daily News · 每日自动更新 · 最后更新：2026-06-01</p>
+      <p class="footer-text" style="margin-top: var(--space-sm);">
+        <a href="https://github.com/turingfx/ai-daily-news" class="link" target="_blank">GitHub 仓库</a> ·
+        <a href="https://turingfx.github.io/ai-daily-news" class="link" target="_blank">在线访问</a>
+      </p>
     </div>
   </footer>
 </body>
