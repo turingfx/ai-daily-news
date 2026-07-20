@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Daily News - 2026年7月18日</title>
+  <title>AI Daily News - 2026年7月20日</title>
   <style>
     :root {
       /* Gruvbox Dark Theme Colors */
@@ -53,7 +53,7 @@
       --space-3xl: 4rem;
 
       /* Typography */
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', Roboto, sans-serif;
       --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Fira Code', monospace;
       --text-xs: 0.75rem;
       --text-sm: 0.875rem;
@@ -407,6 +407,13 @@
       white-space: nowrap;
     }
 
+    .star-total {
+      font-size: var(--text-xs);
+      color: var(--gb-fg4);
+      white-space: nowrap;
+      margin-left: var(--space-sm);
+    }
+
     /* News Grid */
     .news-card {
       background: var(--color-bg-secondary);
@@ -493,6 +500,12 @@
       color: var(--gb-fg4);
     }
 
+    .tweet-date {
+      font-size: var(--text-xs);
+      color: var(--gb-fg4);
+      margin-bottom: var(--space-sm);
+    }
+
     /* Hot Topic */
     .hot-topic {
       display: flex;
@@ -562,6 +575,16 @@
         flex-direction: column;
         gap: var(--space-xs);
       }
+
+      .star-card {
+        flex-wrap: wrap;
+      }
+
+      .star-growth {
+        width: 100%;
+        text-align: left;
+        margin-top: var(--space-sm);
+      }
     }
 
     /* Utilities */
@@ -580,7 +603,7 @@
   <header class="header">
     <div class="container header-content">
       <h1 class="header-title"><span>AI</span> Daily News</h1>
-      <p class="header-date">2026年7月18日 · 周六</p>
+      <p class="header-date">2026年7月20日 · 周一</p>
     </div>
   </header>
 
@@ -588,15 +611,15 @@
     <!-- Daily Quote -->
     <section class="section">
       <div class="quote-banner">
-        <p class="quote-text">"Talk is cheap. Show me the code."</p>
-        <p class="quote-author">— Linus Torvalds</p>
+        <p class="quote-text">"The best way to predict the future is to invent it."</p>
+        <p class="quote-author">— Alan Kay</p>
       </div>
     </section>
 
     <!-- Date Coverage -->
     <section class="section">
       <div class="coverage-note">
-        <strong>日期覆盖说明：</strong>本期内容汇总了 2026年7月17日（昨日）至 2026年7月18日（今日）的 AI 动态、GitHub 热门项目及社区讨论。
+        <strong>日期覆盖说明：</strong>本期内容汇总了 2026年7月19日（昨日）至 2026年7月20日（今日）的 AI 动态、GitHub 热门项目及社区讨论。
       </div>
     </section>
 
@@ -611,12 +634,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-top">1</div>
         <div class="trending-content">
-          <a href="https://github.com/codecrafters-io/build-your-own-x" class="trending-name link" target="_blank">codecrafters-io/build-your-own-x</a>
-          <p class="trending-desc">通过从零复刻你最喜爱的技术来掌握编程，涵盖数据库、操作系统、浏览器等大量实战教程。</p>
+          <a href="https://github.com/tirth8205/code-review-graph" class="trending-name link" target="_blank">tirth8205/code-review-graph</a>
+          <p class="trending-desc">面向 MCP/CLI 的本地优先代码智能图谱，帮助 AI 工具聚焦代码库相关部分，降低代码审查时的上下文开销。</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">Markdown</span>
-            <span>★ 527,443</span>
-            <span style="color: var(--gb-green);">+1,068 today</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 21,375</span>
           </div>
         </div>
       </div>
@@ -624,12 +646,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-top">2</div>
         <div class="trending-content">
-          <a href="https://github.com/PostHog/posthog" class="trending-name link" target="_blank">PostHog/posthog</a>
-          <p class="trending-desc">产品自动化套件，提供 AI 可观测性、分析、会话回放、功能开关、实验、错误追踪、日志等能力。</p>
+          <a href="https://github.com/kvcache-ai/ktransformers" class="trending-name link" target="_blank">kvcache-ai/ktransformers</a>
+          <p class="trending-desc">体验异构 LLM 推理与微调优化的灵活框架，支持多种硬件与量化策略组合。</p>
           <div class="trending-stats">
             <span class="tag tag-lang">Python</span>
-            <span>★ 36,215</span>
-            <span style="color: var(--gb-green);">+438 today</span>
+            <span>★ 18,407</span>
           </div>
         </div>
       </div>
@@ -637,12 +658,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-top">3</div>
         <div class="trending-content">
-          <a href="https://github.com/HenryNdubuaku/maths-cs-ai-compendium" class="trending-name link" target="_blank">HenryNdubuaku/maths-cs-ai-compendium</a>
-          <p class="trending-desc">成为顶尖的 AI/ML 研究工程师：数学、计算机科学与人工智能知识体系汇总。</p>
+          <a href="https://github.com/rohitg00/ai-engineering-from-scratch" class="trending-name link" target="_blank">rohitg00/ai-engineering-from-scratch</a>
+          <p class="trending-desc">从零开始学习、构建并交付 AI 工程项目的实战资源集合。</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">TypeScript</span>
-            <span>★ 6,651</span>
-            <span style="color: var(--gb-green);">+200 today</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 39,746</span>
           </div>
         </div>
       </div>
@@ -650,12 +670,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">4</div>
         <div class="trending-content">
-          <a href="https://github.com/Nutlope/hallmark" class="trending-name link" target="_blank">Nutlope/hallmark</a>
-          <p class="trending-desc">Anti-AI-slop 设计 Skill，让 Claude Code、Cursor 与 Codex 输出更精致、更少「AI 味」的设计。</p>
+          <a href="https://github.com/jamiepine/voicebox" class="trending-name link" target="_blank">jamiepine/voicebox</a>
+          <p class="trending-desc">开源 AI 语音工作室，支持声音克隆、口述与创作。</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">CSS</span>
-            <span>★ 12,098</span>
-            <span style="color: var(--gb-green);">+1,485 today</span>
+            <span class="tag tag-lang">TypeScript</span>
+            <span>★ 43,427</span>
           </div>
         </div>
       </div>
@@ -663,12 +682,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">5</div>
         <div class="trending-content">
-          <a href="https://github.com/github/copilot-sdk" class="trending-name link" target="_blank">github/copilot-sdk</a>
-          <p class="trending-desc">多平台 SDK，用于将 GitHub Copilot Agent 集成到应用与服务中。</p>
+          <a href="https://github.com/KnockOutEZ/wigolo" class="trending-name link" target="_blank">KnockOutEZ/wigolo</a>
+          <p class="trending-desc">面向 AI 编程智能体的本地优先网络工具，通过 MCP 实现搜索、抓取与研究，无需 API Key 与云端。</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">Java</span>
-            <span>★ 9,805</span>
-            <span style="color: var(--gb-green);">+233 today</span>
+            <span class="tag tag-lang">TypeScript</span>
+            <span>★ 1,898</span>
           </div>
         </div>
       </div>
@@ -676,12 +694,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">6</div>
         <div class="trending-content">
-          <a href="https://github.com/anthropics/cwc-workshops" class="trending-name link" target="_blank">anthropics/cwc-workshops</a>
-          <p class="trending-desc">Anthropic 举办的 Claude Code 工作坊资料与示例集合。</p>
+          <a href="https://github.com/andrewrabert/jellium-desktop" class="trending-name link" target="_blank">andrewrabert/jellium-desktop</a>
+          <p class="trending-desc">Jellyfin 的非官方桌面客户端，使用 Rust 构建。</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">TypeScript</span>
-            <span>★ 1,600</span>
-            <span style="color: var(--gb-green);">+45 today</span>
+            <span class="tag tag-lang">Rust</span>
+            <span>★ 1,302</span>
           </div>
         </div>
       </div>
@@ -689,12 +706,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">7</div>
         <div class="trending-content">
-          <a href="https://github.com/PrismML-Eng/Bonsai-demo" class="trending-name link" target="_blank">PrismML-Eng/Bonsai-demo</a>
-          <p class="trending-desc">Bonsai 模型演示项目，展示面向 AI 智能体的新型推理与规划能力。</p>
+          <a href="https://github.com/github/copilot-sdk" class="trending-name link" target="_blank">github/copilot-sdk</a>
+          <p class="trending-desc">跨平台 SDK，用于将 GitHub Copilot Agent 集成到各类应用与服务中。</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">Shell</span>
-            <span>★ 1,720</span>
-            <span style="color: var(--gb-green);">+278 today</span>
+            <span class="tag tag-lang">Java</span>
+            <span>★ 9,970</span>
           </div>
         </div>
       </div>
@@ -702,12 +718,11 @@
       <div class="trending-item">
         <div class="trending-rank rank-normal">8</div>
         <div class="trending-content">
-          <a href="https://github.com/protocolbuffers/protobuf" class="trending-name link" target="_blank">protocolbuffers/protobuf</a>
-          <p class="trending-desc">Google 的数据交换格式 Protocol Buffers，语言中立、平台中立、可扩展的序列化方案。</p>
+          <a href="https://github.com/PostHog/posthog" class="trending-name link" target="_blank">PostHog/posthog</a>
+          <p class="trending-desc">构建自驱式产品的平台，集成分析、会话回放、功能开关、实验、错误追踪、日志及 MCP/Slack 控制。</p>
           <div class="trending-stats">
-            <span class="tag tag-lang">C++</span>
-            <span>★ 71,548</span>
-            <span style="color: var(--gb-green);">+11 today</span>
+            <span class="tag tag-lang">Python</span>
+            <span>★ 36,959</span>
           </div>
         </div>
       </div>
@@ -724,91 +739,101 @@
       <div class="star-card">
         <div class="star-rank">1</div>
         <div class="star-info">
-          <a href="https://github.com/mattpocock/skills" class="star-name link" target="_blank">mattpocock/skills</a>
-          <p class="star-desc">Skills for Real Engineers. Straight from my .agents directory. · Shell</p>
+          <a href="https://github.com/OpenCut-app/OpenCut" class="star-name link" target="_blank">OpenCut-app/OpenCut</a>
+          <p class="star-desc">开源 CapCut 替代品 · TypeScript</p>
         </div>
-        <div class="star-growth">+56</div>
+        <div class="star-growth">+68</div>
+        <div class="star-total">★ 75,923</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">2</div>
         <div class="star-info">
-          <a href="https://github.com/OpenCut-app/OpenCut" class="star-name link" target="_blank">OpenCut-app/OpenCut</a>
-          <p class="star-desc">The open-source CapCut alternative. · TypeScript</p>
+          <a href="https://github.com/mattpocock/skills" class="star-name link" target="_blank">mattpocock/skills</a>
+          <p class="star-desc">Skills for Real Engineers，来自 .agents 目录 · Shell</p>
         </div>
-        <div class="star-growth">+54</div>
+        <div class="star-growth">+65</div>
+        <div class="star-total">★ 177,614</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">3</div>
         <div class="star-info">
           <a href="https://github.com/1c7/chinese-independent-developer" class="star-name link" target="_blank">1c7/chinese-independent-developer</a>
-          <p class="star-desc">中国独立开发者项目列表 — 分享大家都在做什么。 · Python</p>
+          <p class="star-desc">中国独立开发者项目列表 · Python</p>
         </div>
-        <div class="star-growth">+40</div>
+        <div class="star-growth">+52</div>
+        <div class="star-total">★ 58,856</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">4</div>
         <div class="star-info">
           <a href="https://github.com/Graphify-Labs/graphify" class="star-name link" target="_blank">Graphify-Labs/graphify</a>
-          <p class="star-desc">AI coding assistant skill that turns code and documents into a queryable knowledge graph. · Python</p>
+          <p class="star-desc">AI 编程助手 Skill，将代码与文档转为可查询知识图谱 · Python</p>
         </div>
-        <div class="star-growth">+37</div>
+        <div class="star-growth">+50</div>
+        <div class="star-total">★ 91,638</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">5</div>
         <div class="star-info">
-          <a href="https://github.com/Shubhamsaboo/awesome-llm-apps" class="star-name link" target="_blank">Shubhamsaboo/awesome-llm-apps</a>
-          <p class="star-desc">100+ open-source AI agents, agent skills, and RAG apps. · Python</p>
+          <a href="https://github.com/Nutlope/hallmark" class="star-name link" target="_blank">Nutlope/hallmark</a>
+          <p class="star-desc">Anti-AI-slop 设计 Skill，让 Claude Code、Cursor 与 Codex 输出更精致 · CSS</p>
         </div>
-        <div class="star-growth">+33</div>
+        <div class="star-growth">+47</div>
+        <div class="star-total">★ 13,439</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">6</div>
         <div class="star-info">
-          <a href="https://github.com/Nutlope/hallmark" class="star-name link" target="_blank">Nutlope/hallmark</a>
-          <p class="star-desc">Anti-AI-slop design skill for Claude Code, Cursor, and Codex. · CSS</p>
+          <a href="https://github.com/Shubhamsaboo/awesome-llm-apps" class="star-name link" target="_blank">Shubhamsaboo/awesome-llm-apps</a>
+          <p class="star-desc">100+ 可真正运行的 AI Agent 与 RAG 应用 · Python</p>
         </div>
-        <div class="star-growth">+32</div>
+        <div class="star-growth">+35</div>
+        <div class="star-total">★ 124,591</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">7</div>
         <div class="star-info">
           <a href="https://github.com/DietrichGebert/ponytail" class="star-name link" target="_blank">DietrichGebert/ponytail</a>
-          <p class="star-desc">Makes your AI agent think like the laziest senior dev in the room. · Node.js</p>
+          <p class="star-desc">让 AI 智能体像最懒的资深开发者一样思考 · JavaScript</p>
         </div>
-        <div class="star-growth">+23</div>
+        <div class="star-growth">+28</div>
+        <div class="star-total">★ 86,126</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">8</div>
         <div class="star-info">
-          <a href="https://github.com/obra/superpowers" class="star-name link" target="_blank">obra/superpowers</a>
-          <p class="star-desc">An agentic skills framework & software development methodology that works. · Shell</p>
+          <a href="https://github.com/multica-ai/andrej-karpathy-skills" class="star-name link" target="_blank">multica-ai/andrej-karpathy-skills</a>
+          <p class="star-desc">改善 Claude Code 行为的 CLAUDE.md 文件 · —</p>
         </div>
-        <div class="star-growth">+23</div>
+        <div class="star-growth">+28</div>
+        <div class="star-total">★ 194,398</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">9</div>
         <div class="star-info">
-          <a href="https://github.com/JuliusBrussee/caveman" class="star-name link" target="_blank">JuliusBrussee/caveman</a>
-          <p class="star-desc">Makes AI coding agents talk like a caveman, saving ~65% of output tokens. · Node.js</p>
+          <a href="https://github.com/stablyai/orca" class="star-name link" target="_blank">stablyai/orca</a>
+          <p class="star-desc">管理并行智能体集群的 ADE，在桌面与移动设备运行编码智能体 · TypeScript</p>
         </div>
-        <div class="star-growth">+21</div>
+        <div class="star-growth">+24</div>
+        <div class="star-total">★ 22,473</div>
       </div>
 
       <div class="star-card">
         <div class="star-rank">10</div>
         <div class="star-info">
-          <a href="https://github.com/multica-ai/andrej-karpathy-skills" class="star-name link" target="_blank">multica-ai/andrej-karpathy-skills</a>
-          <p class="star-desc">A single CLAUDE.md file to improve Claude Code behavior. · —</p>
+          <a href="https://github.com/anomalyco/opencode" class="star-name link" target="_blank">anomalyco/opencode</a>
+          <p class="star-desc">开源编码智能体 · TypeScript</p>
         </div>
-        <div class="star-growth">+20</div>
+        <div class="star-growth">+23</div>
+        <div class="star-total">★ 187,557</div>
       </div>
     </section>
 
@@ -823,39 +848,39 @@
         <span class="hot-icon">🏙️</span>
         <div>
           <p class="hot-title">2026 世界人工智能大会在上海召开</p>
-          <p class="hot-desc">7月17日至20日，WAIC 2026 以「智能伙伴 共创未来」为主题，展览规模与首发产品数量创新高。</p>
-        </div>
-      </div>
-
-      <div class="hot-topic">
-        <span class="hot-icon">🚀</span>
-        <div>
-          <p class="hot-title">OpenAI GPT-5.6 获美国监管批准</p>
-          <p class="hot-desc">美国商务部在政府测试后批准 GPT-5.6 广泛上线，OpenAI 预计本周内更广泛发布。</p>
+          <p class="hot-desc">7月17日至20日，WAIC 2026 以「智能伙伴 共创未来」为主题，展览面积首破10万平米，1100余家企业参展。</p>
         </div>
       </div>
 
       <div class="hot-topic">
         <span class="hot-icon">🤖</span>
         <div>
-          <p class="hot-title">xAI Grok 4.5 专注编程与 Agentic 任务</p>
-          <p class="hot-desc">SpaceXAI 发布 Grok 4.5，基于数万亿 Cursor 交互 token 训练，定位为高性价比的编程模型。</p>
+          <p class="hot-title">Agentic Coding 成为开源社区焦点</p>
+          <p class="hot-desc">从 Claude Code、Codex 到 Graphify、Ponytail，AI 编程智能体与 MCP 生态持续升温。</p>
         </div>
       </div>
 
       <div class="hot-topic">
-        <span class="hot-icon">🔮</span>
+        <span class="hot-icon">🚀</span>
         <div>
-          <p class="hot-title">Google Gemini 3.5 Pro 瞄准 7月17日发布</p>
-          <p class="hot-desc">历经全面重建后，Gemini 3.5 Pro 被曝目标于 7月17日上线，具体规格仍未获官方确认。</p>
+          <p class="hot-title">Kimi K3 发布：全球首个开源 3 万亿级别模型</p>
+          <p class="hot-desc">月之暗面发布新一代基座模型，原生支持视觉理解，具备 100 万词元上下文窗口。</p>
         </div>
       </div>
 
       <div class="hot-topic">
-        <span class="hot-icon">⚖️</span>
+        <span class="hot-icon">🛡️</span>
         <div>
-          <p class="hot-title">AI 全球治理与监管呼声升温</p>
-          <p class="hot-desc">联合国专家小组警告 AI 发展速度快于监管能力，呼吁全球合作与独立监督以防止不平等加剧。</p>
+          <p class="hot-title">AI 模型出口管制与数字主权讨论升温</p>
+          <p class="hot-desc">中美均传出对前沿模型跨境流动的监管动向，开放权重模型的未来成为焦点。</p>
+        </div>
+      </div>
+
+      <div class="hot-topic">
+        <span class="hot-icon">🎨</span>
+        <div>
+          <p class="hot-title">Meta 推出自研图像模型 Muse Image</p>
+          <p class="hot-desc">Meta Superintelligence Labs 首个图像生成模型亮相，覆盖广告、创作与社交场景。</p>
         </div>
       </div>
     </section>
@@ -877,31 +902,21 @@
 
           <div class="news-card">
             <span class="news-source tag-domestic">🇨🇳 新华网</span>
-            <a href="https://www.news.cn/tech/20260717/a8c0a92bbfa946708820163403c77b4e/c.html" class="news-title link" target="_blank">
-              AI浪潮一线观察：中国智慧赋能全球智变
+            <a href="http://www.news.cn/tech/20260718/aa68663c58944eabbed8874c04e47786/c.html" class="news-title link" target="_blank">
+              新华鲜报·2026世界人工智能大会丨AI时刻，感受2026世界人工智能大会新浪潮
             </a>
             <p class="news-summary">
-              2026世界人工智能大会将于7月17日至20日在上海举行，主题为「智能伙伴 共创未来」，展览规模与首发产品数量创新高。记者以大会为窗口，梳理中国 AI 从技术突破、产业落地到全球治理的「三大变化」。
+              2026世界人工智能大会暨人工智能全球治理高级别会议于7月17日在上海开幕。习近平主席强调全球人工智能技术创新进入「前所未有的活跃期」。本届大会展览面积首破10万平方米，1100余家企业参展，华为昇腾950超节点、人形机器人等4400余款展品亮相。我国重点行业AI整体渗透率已突破80%，智能经济核心产业规模超过万亿元。
             </p>
           </div>
 
           <div class="news-card">
-            <span class="news-source tag-domestic">🇨🇳 央视网</span>
-            <a href="https://finance.cctv.com/2026/07/17/ARTIitFNOgrxkHBSJZdyGwNg260717.shtml" class="news-title link" target="_blank">
-              数智跨越 中国人工智能产业发展的「加速度」
+            <span class="news-source tag-domestic">🇨🇳 新浪网</span>
+            <a href="https://k.sina.com.cn/article_7857201856_1d45362c0019089trw.html?from=tech" class="news-title link" target="_blank">
+              新浪人工智能热点小时报丨2026年07月19日11时
             </a>
             <p class="news-summary">
-              文章以 2026 世界人工智能大会开幕为背景，用数据展现中国人工智能产业规模跨越万亿元、数字底座持续夯实、「人工智能+」深度融入千行百业的「加速度」。国家数据局预计，到「十五五」末，中国人工智能相关产业规模将突破 10 万亿元。
-            </p>
-          </div>
-
-          <div class="news-card">
-            <span class="news-source tag-domestic">🇨🇳 央视网</span>
-            <a href="https://news.cctv.com/2026/07/17/ARTI7yx5qiG4wACmCLycDHg5260717.shtml" class="news-title link" target="_blank">
-              AI产品「出海」惠及全球 为国际规则制定提供中国实践
-            </a>
-            <p class="news-summary">
-              全球人工智能治理面临规则缺位与思潮碰撞，中国倡导「智能向善、普惠公平」，通过开源模型与多边合作帮助发展中国家缩小智能鸿沟，为国际 AI 规则制定贡献可借鉴的中国样本。
+              汇总 WAIC 期间最新动态：中国气象局发布千亿参数级气象大语言模型「风和」并启动全球开源计划；上海揭牌医疗卫生行业人工智能算力调度中心，发布医疗AI评测体系 MedBench5.0；大会首次将「治理」写入名称，推出伦理审查智能体「一鉴」2.0。
             </p>
           </div>
         </div>
@@ -913,32 +928,32 @@
           </h3>
 
           <div class="news-card">
-            <span class="news-source tag-international">🌍 UN News</span>
-            <a href="https://news.un.org/en/story/2026/07/1167848" class="news-title link" target="_blank">
-              AI explained: Why the world needs to act now
+            <span class="news-source tag-international">🌍 Reuters</span>
+            <a href="https://www.reuters.com/world/asia-pacific/chinas-xi-promotes-chinas-commitment-ai-access-speech-shanghai-conference-2026-07-17/" class="news-title link" target="_blank">
+              Xi pitches China as leader of new global AI order
             </a>
             <p class="news-summary">
-              联合国科学专家小组警告，人工智能的发展速度正超过各国政府的监管能力，可能带来不平等、虚假信息和人类控制权削弱等风险。报告呼吁加强全球合作、独立监督与公平获取，使各国在受益的同时保护权利与民主。
+              中国国家主席习近平在 2026 世界人工智能大会上发表讲话，强调中国将推动人工智能的开放与普惠，倡导全球合作治理，并提升中国在新一轮全球 AI 秩序中的领导作用。
             </p>
           </div>
 
           <div class="news-card">
-            <span class="news-source tag-international">🌍 The Hindu Business Line</span>
-            <a href="https://www.thehindubusinessline.com/info-tech/openai-gets-us-approval-for-broad-gpt-56-rollout-axios/article71196687.ece" class="news-title link" target="_blank">
-              OpenAI gets US approval for broad GPT-5.6 rollout: Axios
+            <span class="news-source tag-international">🌍 Daily AI Digest</span>
+            <a href="https://dailyaidigest.net/archive/2026/07/08/" class="news-title link" target="_blank">
+              Is China Planning To Restrict Access To Its Models?
             </a>
             <p class="news-summary">
-              美国商务部已批准 OpenAI 的 GPT-5.6 模型在政府测试后广泛上线。OpenAI 预计将在与官员进一步会面和测试后，于本周内更广泛地发布 GPT-5.6。
+              7月8日简报援引路透社报道称，中国商务部正与阿里、字节、Z.ai 等企业讨论限制海外获取最前沿模型；同期美国商务部批准 OpenAI GPT-5.6 广泛上线，Meta 推出自研图像模型 Muse Image，Palantir 发布白皮书强调「Sovereignty is your alpha」。
             </p>
           </div>
 
           <div class="news-card">
-            <span class="news-source tag-international">🌍 developersdigest</span>
-            <a href="https://www.developersdigest.tech/blog/grok-45-xai-cursor-coding-model" class="news-title link" target="_blank">
-              Grok 4.5: xAI Releases Cursor-Trained Coding Model at $2/M Input Tokens
+            <span class="news-source tag-international">🌍 TechCrunch</span>
+            <a href="https://techcrunch.com/2026/06/17/world-leaders-want-american-ai-they-just-dont-want-america-to-be-able-to-turn-it-off/" class="news-title link" target="_blank">
+              World leaders want American AI. They just don't want America to be able to turn it off.
             </a>
             <p class="news-summary">
-              xAI 发布 Grok 4.5，这是一款面向编程的模型，基于「数万亿 Cursor 交互 token」训练，输入定价为每百万 token 2 美元。该模型基准测试大致达到 Opus 4.7 水平，定位为 Claude 与 GPT 之外更便宜的前沿级替代方案。
+              法国总统马克龙与印度总理莫迪在 G7 峰会上对美国突然切断 AI 服务表示担忧。文章以 Anthropic 此前服务中断为例，指出这种「被断供」的恐惧已成为真实的地缘政治风险。
             </p>
           </div>
         </div>
@@ -956,41 +971,21 @@
       <div class="grid grid-2">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Anthropic Claude Code 2.1.212</h3>
+            <h3 class="card-title">月之暗面 Kimi K3</h3>
             <span class="tag tag-new">Jul 17</span>
           </div>
           <p class="card-desc">
-            新版本为 <code>/fork</code> 增加后台会话，优化 <code>/resume</code> 与 <code>/background</code> 流程，并为 WebSearch、子代理与 Bash 执行增加更强安全保障；同时限制 Web 搜索与子代理调用次数，长 MCP 调用自动转入后台，并改进了 agent-view 的恢复选择器。
+            发布新一代基座大模型，号称「全球首个开源的 3 万亿级别模型」，原生支持视觉理解，具备 100 万词元上下文窗口，面向软件工程、知识工作与多模态理解优化。
           </p>
         </div>
 
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">OpenAI GPT-5.6</h3>
-            <span class="tag tag-new">Jul 8</span>
+            <h3 class="card-title">Anthropic Claude Fable 5</h3>
+            <span class="tag tag-new">Jun 30</span>
           </div>
           <p class="card-desc">
-            美国监管部门批准 GPT-5.6 广泛上线，OpenAI 预计本周内扩大发布范围。该模型被视为 OpenAI 当前能力最强的 GPT 版本，与 Claude 4.8、Gemini 3.5 Pro 形成三强竞争格局。
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">xAI Grok 4.5</h3>
-            <span class="tag tag-new">Jul 8</span>
-          </div>
-          <p class="card-desc">
-            SpaceXAI 发布 Grok 4.5，定位编程与知识工作，基于 Cursor 交互数据训练，定价每百万输入 token 2 美元。模型在编码基准上接近 Opus 4.7，强调高性价比的 Agentic 编程体验。
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Google Gemini 3.5 Pro</h3>
-            <span class="tag tag-feature">Jul 13</span>
-          </div>
-          <p class="card-desc">
-            据报道 Gemini 3.5 Pro 在经历全面重建后，目标于 7月17日 发布。目前所有具体规格仍未获官方确认，但外界普遍期待其在长上下文与 Agentic 能力上有所突破。
+            Anthropic 重新开放 Claude Fable 5 全球访问。此前因美国出口管制暂停，经与政府及亚马逊合作、改进安全分类器后，出口管制已解除，并呼吁建立行业级 AI 越狱严重程度评分框架。
           </p>
         </div>
 
@@ -1000,7 +995,37 @@
             <span class="tag tag-feature">Jun 16</span>
           </div>
           <p class="card-desc">
-            智谱 AI 上线 GLM-5.2 新一代旗舰模型，支持无损 1M 长上下文，并在编程与长程任务性能上有所提升，进一步巩固国产大模型在超长上下文场景下的竞争力。
+            智谱上线 GLM-5.2，支持 1M 无损上下文，在 Coding 与长程任务评测中达到开源 SOTA，真实开发体感进一步提升。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">阿里云 Qwen3.7-Plus</h3>
+            <span class="tag tag-feature">Jun 11</span>
+          </div>
+          <p class="card-desc">
+            通义千问 3.7 系列中端主力模型，依托百炼平台提供服务，在保持核心能力的同时显著降低调用成本，覆盖对话、推理、长文本、代码与图文多模态等九成以上日常与商用场景。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Meta Muse Image</h3>
+            <span class="tag tag-new">Jul 7</span>
+          </div>
+          <p class="card-desc">
+            Meta Superintelligence Labs 推出首个自研图像生成模型 Muse Image，在 Arena 文本到图像排行榜上位列第二，正逐步覆盖 Meta AI、Instagram、WhatsApp 及广告工具。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">xAI Grok 5</h3>
+            <span class="tag tag-feature">Jul 12</span>
+          </div>
+          <p class="card-desc">
+            xAI 文档目前仍指向 Grok 4.5 用于代码、聊天与 API。Grok 5 被传为 6 万亿参数 MoE 模型、150 万 token 上下文与动态多智能体能力，但官方尚未正式发布。
           </p>
         </div>
       </div>
@@ -1011,7 +1036,7 @@
       <div class="section-header">
         <span class="section-icon">🐦</span>
         <h2 class="section-title">X / Twitter 热议</h2>
-        <span class="section-subtitle">社区讨论</span>
+        <span class="section-subtitle">AI 大佬推文精选</span>
       </div>
 
       <div class="grid grid-2">
@@ -1023,31 +1048,14 @@
               <p class="tweet-handle">@karpathy</p>
             </div>
           </div>
+          <p class="tweet-date">2025年12月26日</p>
           <p class="tweet-content">
-            "It is hard to communicate how much programming has changed. You're spinning up AI agents, giving them tasks in English and managing and reviewing their work in parallel."
+            "I've never felt this much behind as a programmer. The profession is being dramatically refactored as the bits contributed by the programmer are increasingly sparse and between... There's a new programmable layer of abstraction to master involving agents, subagents, prompts, contexts, memory, modes, permissions, tools, plugins, skills, hooks, MCP, LSP, slash commands, workflows, IDE integrations..."
           </p>
           <div class="tweet-stats">
-            <span>💬 2.1K</span>
-            <span>🔄 8.7K</span>
-            <span>❤️ 42K</span>
-          </div>
-        </div>
-
-        <div class="tweet-card">
-          <div class="tweet-header">
-            <div class="tweet-avatar">S</div>
-            <div>
-              <p class="tweet-author">Sam Altman</p>
-              <p class="tweet-handle">@sama</p>
-            </div>
-          </div>
-          <p class="tweet-content">
-            "what problem do you most hope AI will solve in the future?"
-          </p>
-          <div class="tweet-stats">
-            <span>💬 5.6K</span>
-            <span>🔄 12K</span>
-            <span>❤️ 89K</span>
+            <span>💬 2,592</span>
+            <span>🔄 7,384</span>
+            <span>❤️ 55,569</span>
           </div>
         </div>
 
@@ -1059,13 +1067,90 @@
               <p class="tweet-handle">@karpathy</p>
             </div>
           </div>
+          <p class="tweet-date">2026年2月25日</p>
           <p class="tweet-content">
-            "2026 will be the Slopacolypse." — 随着 AI 生成内容爆炸式增长，如何辨别高质量信息、保持批判性思维将成为这一年的关键议题。
+            "It is hard to communicate how much programming has changed due to AI in the last 2 months... coding agents basically didn't work before December and basically work since... You're not typing computer code into an editor like the way things were since computers were invented, that era is over. You're spinning up AI agents, giving them tasks in English and managing and reviewing their work in parallel."
           </p>
           <div class="tweet-stats">
-            <span>💬 3.4K</span>
-            <span>🔄 15K</span>
-            <span>❤️ 67K</span>
+            <span>💬 1,597</span>
+            <span>🔄 4,701</span>
+            <span>❤️ 37,069</span>
+          </div>
+        </div>
+
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">A</div>
+            <div>
+              <p class="tweet-author">Andrej Karpathy</p>
+              <p class="tweet-handle">@karpathy</p>
+            </div>
+          </div>
+          <p class="tweet-date">2026年4月30日</p>
+          <p class="tweet-content">
+            "Fireside chat at Sequoia Ascent 2026... LLMs are about a lot more than just speeding up what existed before. Three examples: 1) menugen — an app fully engulfed by LLMs, 2) install .md skills instead of .sh scripts, 3) LLM knowledge bases over unstructured data — fundamentally impossible with classical code."
+          </p>
+          <div class="tweet-stats">
+            <span>💬 377</span>
+            <span>🔄 814</span>
+            <span>❤️ 6,168</span>
+          </div>
+        </div>
+
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">S</div>
+            <div>
+              <p class="tweet-author">Sam Altman</p>
+              <p class="tweet-handle">@sama</p>
+            </div>
+          </div>
+          <p class="tweet-date">2026年3月3日</p>
+          <p class="tweet-content">
+            "These are the principles I care most about for this decision: alignment, democratization, empowerment, and individual agency. The democratic process must stay in control, and we must democratize AI. OpenAI should not decide the fate of the world; no private company should. We need to work with governments, but also make sure individuals get increasing power."
+          </p>
+          <div class="tweet-stats">
+            <span>💬 729</span>
+            <span>🔄 123</span>
+            <span>❤️ 1,535</span>
+          </div>
+        </div>
+
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">S</div>
+            <div>
+              <p class="tweet-author">Sam Altman</p>
+              <p class="tweet-handle">@sama</p>
+            </div>
+          </div>
+          <p class="tweet-date">2026年3月24日</p>
+          <p class="tweet-content">
+            "AI will help discover new science, such as cures for diseases, which is perhaps the most important way to increase quality of life long-term. AI will also present new threats to society that we have to address... These are the areas the OpenAI Foundation will initially focus on, and will spend at least $1 billion over the next year."
+          </p>
+          <div class="tweet-stats">
+            <span>💬 1,723</span>
+            <span>🔄 537</span>
+            <span>❤️ 6,635</span>
+          </div>
+        </div>
+
+        <div class="tweet-card">
+          <div class="tweet-header">
+            <div class="tweet-avatar">S</div>
+            <div>
+              <p class="tweet-author">Sam Altman</p>
+              <p class="tweet-handle">@sama</p>
+            </div>
+          </div>
+          <p class="tweet-date">2025年10月29日</p>
+          <p class="tweet-content">
+            "We have set internal goals of having an automated AI research intern by September of 2026 running on hundreds of thousands of GPUs, and a true automated AI researcher by March of 2028. We may totally fail at this goal, but given the extraordinary potential impacts we think it is in the public interest to be transparent about this."
+          </p>
+          <div class="tweet-stats">
+            <span>💬 971</span>
+            <span>🔄 523</span>
+            <span>❤️ 5,480</span>
           </div>
         </div>
 
@@ -1077,31 +1162,33 @@
               <p class="tweet-handle">@ylecun</p>
             </div>
           </div>
+          <p class="tweet-date">2026年4月18日</p>
           <p class="tweet-content">
-            "AI is power, not intelligence." — LeCun 持续在 X 上反驳「当前 LLM 已接近 AGI」的观点，强调真正的智能需要世界模型与推理能力，而非仅依赖规模扩张。
+            "Dario is wrong. He knows absolutely nothing about the effects of technological revolutions on the labor market. Don't listen to him, Sam, Yoshua, Geoff, or me on this topic. Listen to economists who have spent their career studying this, like @Ph_Aghion, @erikbryn, @DAcemogluMIT, @amcafee, @davidautor."
           </p>
           <div class="tweet-stats">
-            <span>💬 1.8K</span>
-            <span>🔄 6.2K</span>
-            <span>❤️ 31K</span>
+            <span>💬 1,203</span>
+            <span>🔄 2,734</span>
+            <span>❤️ 21,195</span>
           </div>
         </div>
 
         <div class="tweet-card">
           <div class="tweet-header">
-            <div class="tweet-avatar">D</div>
+            <div class="tweet-avatar">A</div>
             <div>
-              <p class="tweet-author">Demis Hassabis</p>
-              <p class="tweet-handle">@demishassabis</p>
+              <p class="tweet-author">Anthropic</p>
+              <p class="tweet-handle">@AnthropicAI</p>
             </div>
           </div>
+          <p class="tweet-date">2026年6月10日</p>
           <p class="tweet-content">
-            据报道，Google DeepMind CEO Demis Hassabis 呼吁建立由美国牵头、具有执法权的全球 AI 监管机构，以应对前沿模型快速发展带来的安全与治理挑战。
+            "AI is advancing at a pace our policymaking institutions were never built for — and the gap between the two is becoming the central challenge of the technology. In his latest essay, our CEO Dario Amodei argues that the AI Exponential calls for a new, adaptive approach to governance and safety."
           </p>
           <div class="tweet-stats">
-            <span>💬 987</span>
-            <span>🔄 4.5K</span>
-            <span>❤️ 22K</span>
+            <span>💬 435</span>
+            <span>🔄 453</span>
+            <span>❤️ 5,498</span>
           </div>
         </div>
       </div>
@@ -1111,7 +1198,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">AI Daily News · 每日自动更新 · 最后更新：2026-07-18</p>
+      <p class="footer-text">AI Daily News · 每日自动更新 · 最后更新：2026-07-20</p>
       <p class="footer-text" style="margin-top: var(--space-sm);">
         <a href="https://github.com/turingfx/ai-daily-news" class="link" target="_blank">GitHub 仓库</a> ·
         <a href="https://turingfx.github.io/ai-daily-news" class="link" target="_blank">在线访问</a>
